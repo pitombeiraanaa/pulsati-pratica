@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Escreva um programa que calcule a variância dos valores de uma matriz. -->
+
+    <script>
+        // Function for calculating
+    // variance
+     
+    function variance(a,  n)
+    {
+         
+        // Compute mean (average of elements)
+         
+        var sum = 0;
+        for (var i = 0; i < n; i++){
+            sum += a[i];
+         }
+             
+        var mean = sum / n;
+     
+        // Compute sum squared
+        // differences with mean.
+         
+        var sqDiff = 0; 
+        for (var i = 0; i < n; i++) {
+            sqDiff += (a[i] - mean) * (a[i] - mean);
+        }
+         
+        return sqDiff / n;
+    }
+     
+    function standardDeviation(arr , n)
+    {
+        return Math.sqrt(variance(arr, n));
+    }
+     
+    // Driver Code
+ 
+        var arr = [600, 470, 170, 430, 300]
+        var n = arr.length;
+         
+        document.write( "Variance: " + 
+        variance(arr, n) + "<br>");
+                                 
+        document.write ("Standard Deviation: " +
+        standardDeviation(arr, n).toFixed(3));
+         
+     </script>
+    </script>
+</body>
+</html>

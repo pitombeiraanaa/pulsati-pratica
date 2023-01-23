@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  Escreva um programa que encontre o menor valor em uma lista e o seu índice. -->
+
+    <script>
+        let num = [1 , -12 , 2 , 5 , 0 , 14, 74];
+        let menorValor = 0;
+
+        menorValor = Math.min(...num);
+
+        document.write(menorValor, "<br>");
+        document.write(num.indexOf(menorValor));
+    </script>
+</body>
+</html>
