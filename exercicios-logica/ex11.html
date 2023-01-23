@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Faça um programa aonde você precisa pedir 1 numero ao usuario 
+    escreva na tela 5 numeros abaixo dele 5 numeros acima dele e o numero dele vezes 2 -->
+
+    <script>
+        let numero = parseInt(prompt('Insira um número: '))
+  
+        console.log('5 números abaixo de ' + numero + ':')
+        for (let i = 1; i <= 5; i++) {
+          console.log(numero - i)
+        }
+  
+        console.log('5 números acima de ' + numero + ':')
+        for (let i = 1; i <= 5; i++) {
+          console.log(numero + i)
+        }
+  
+        console.log('O dobro de ' + numero + ' é: ' + numero * 2)
+      </script>
+
+</body>
+
+</html>

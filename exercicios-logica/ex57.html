@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Escreva um programa que verifique se uma string é uma anagrama. -->
+
+    <script>
+      function checarAnagrama(a, b) {
+        let array = {};
+        if (a === b) {
+          return true;
+        }
+        if (a.length !== b.length) {
+          return false;
+        }
+        for (let i = 0; i < a.length; i++) {
+          let res = a.charCodeAt(i) - 97;
+          array[res] = (array[res] || 0) + 1;
+        }
+
+        for (let j = 0; j < b.length; j++) {
+          let res = b.charCodeAt(j) - 97;
+          if (!array[res]) {
+            return false;
+          }
+          array[res]--;
+        }
+        return true;
+      }
+      document.write(checarAnagrama("marrocos", "socorram"));
+    </script>
+  </body>
+</html>

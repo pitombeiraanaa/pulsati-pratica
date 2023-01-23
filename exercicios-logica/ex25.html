@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Escreva um código que verifica se um número é perfeito ou não e exibe a mensagem correspondente. -->
+
+    <script>
+      let numero = parseInt(prompt("Insira um número: "));
+      let soma = 0;
+
+      for (let i = 1; i < numero; i++) {
+        if (numero % i === 0) {
+          soma += i;
+        }
+      }
+
+      if (soma === numero) {
+        console.log(numero + " é um número perfeito.");
+      } else {
+        console.log(numero + " não é um número perfeito.");
+      }
+    </script>
+  </body>
+</html>

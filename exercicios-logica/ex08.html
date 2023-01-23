@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Peça para o Cliente escolher entre quatro pedidos sendo eles
+     Pizza = R$12,00 Pão de Queijo = R$ 4,00 Macarrão R$ 16,00 Pastel = R$ 4,50
+     Após a escolha pergunte quanto o cliente estará dando de valor ao caixa.
+     Ao final do programa calcule se o Cliente precisa de troco 
+     ou não e informe o valor do troco caso necesário. -->
+
+     <script>
+      let escolha = prompt('Digite seu pedido: ' );
+      let pizza = 12;
+      let pao = 4;
+      let macarrao = 16;
+      let pastel = 4.50;
+      
+      let valorNota = parseFloat(prompt('Qual o valor a ser pago?')) 
+      precisaTroco = escolha - valorNota
+      
+
+      if(precisaTroco) {
+        alert('Seu troco é de:' + precisaTroco);
+      } else {
+        alert('Obrigada pela preferência!')
+      }
+      
+
+      
+     </script>
+     
+</body>
+</html>

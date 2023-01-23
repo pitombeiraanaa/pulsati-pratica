@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Peça para o usuario informar qual mês ele faz aniversário, 
+        com uma função verifique se o numero do mes é par ou impar
+         e quantos meses faltam para acabar o ano -->
+
+         <script>
+            let aniver = parseInt(prompt('Digite o mês em que você faz aniversário:'));
+            let impar;
+            let par;
+            let mesesAno = 12;
+
+            function verificar (){
+            if(aniver % 2 === 0){
+                return true;
+            }else {  
+                return false;
+            }
+        }
+            verificar();
+            console.log(verificar())
+            console.log('Faltam ' + (mesesAno - aniver), ' meses para terminar o ano');
+         </script>
+</body>
+</html>

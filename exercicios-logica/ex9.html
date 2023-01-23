@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Escreva um programa para ler 3 valores inteiros (considere que não serão lidos valores iguais)
+     e escrevê-los em ordem crescente. -->
+
+    <script>
+      const valor1 = parseFloat(prompt("Digite o primeiro valor:"));
+      const valor2 = parseFloat(prompt("Digite o segundo valor:"));
+      const valor3 = parseFloat(prompt("Digite o terceiro valor:"));
+
+      if (valor1 == valor2 || valor2 == valor3 || valor3 == valor1) {
+        alert("Não digite valores iguais");
+      } else {
+        if (valor1 < valor2 && valor1 < valor3) {
+          if (valor2 < valor3) {
+            document.write("ordem:" + valor1, +valor2, +valor3);
+          }
+        }
+        if (valor2 < valor1 && valor2 < valor3) {
+          if (valor1 < valor3) {
+            document.write("ordem:" + valor2, +valor3, +valor1);
+          }
+        }
+        if (valor3 < valor1 && valor3 < valor2) {
+          if (valor2 < valor1) {
+            document.write("ordem:" + valor3, +valor2, +valor1);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

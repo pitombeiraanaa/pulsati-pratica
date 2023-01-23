@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Peça para o usuario informar duas notas com o prompt e depois converta para numero 
+    e depois mostre a media entre eles.
+    let numero1 = parseFloat(prompt('Digite o numero')); -->
+    <script>
+      let numero1 = parseFloat(prompt("Digite a primeira nota:"));
+      let numero2 = parseFloat(prompt("Digite a segunda nota: "));
+      let media = numero1 + numero2
+
+      if(media >= 7) {
+        alert('Aprovado')
+      } else {
+        alert('Reprovado')
+      }
+    </script>
+  </body>
+</html>

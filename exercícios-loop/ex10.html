@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- O Departamento Estadual de Meteorologia lhe 
+        contratou para desenvolver um programa que 
+        leia as um conjunto de 5 de temperaturas, 
+        e informe ao final a menor e a maior 
+        temperaturas informadas, bem como a
+        média das temperaturas. -->
+
+    <script>
+   let arr = [10, -5, 18, 35, 40]
+   let max = -999
+   let min = 999
+   let med = 0;
+   let soma = 0;
+   
+
+   for(let i = 0; i < arr.length; i++){
+
+    if(arr[i] < min ){
+        min = arr[i];
+    }
+    if(arr[i] > max){
+        max = arr[i];
+    } soma += arr[i]
+ }
+ med = (soma) / arr.length
+
+   
+   document.write('A menor temperatura é: ' + min, "</>");
+   document.write('A maior temperatura é: ' + max, "</br")
+   document.write('A média de temperatura é: ' + med, "</br")
+    </script>
+  </body>
+</html>

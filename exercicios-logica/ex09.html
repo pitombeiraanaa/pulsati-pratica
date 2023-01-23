@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Escreva um programa para ler 3 valores inteiros (considere que não serão lidos valores iguais)
+     e escrevê-los em ordem crescente. -->
+
+    <script>
+      let a = parseInt(prompt('Insira o primeiro valor: '))
+      let b = parseInt(prompt('Insira o segundo valor: '))
+      let c = parseInt(prompt('Insira o terceiro valor: '))
+
+      if (a > b) {
+        ;[a, b] = [b, a]
+      }
+      if (a > c) {
+        ;[a, c] = [c, a]
+      }
+      if (b > c) {
+        ;[b, c] = [c, b]
+      }
+
+      console.log('Ordem crescente: ', a, b, c)
+    </script>
+  </body>
+</html>

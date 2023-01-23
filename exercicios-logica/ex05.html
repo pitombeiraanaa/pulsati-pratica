@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Faça um programa onde peça para o usuario informar 3 numeros,
+     e depois mostre qual o MENOR numero entre eles. -->
+
+     <script>
+        let valor1 = parseFloat(prompt('Digite o valor 1:'));
+        let valor2 = parseFloat(prompt('Digite o valor 2:'));
+        let valor3 = parseFloat(prompt('Digite o valor 3:'));
+
+        if (valor1 < valor2 && valor3) {
+            alert(valor1 + ' é o menor valor');
+        } else if (valor2 < valor1 && valor3) {
+            alert(valor2 + ' é o menor valor');
+        } else if (valor3 < valor1 && valor2) {
+            alert(valor3 + ' é o menor valor')
+        }
+     </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Escreva um programa que calcule a soma dos números de uma lista dentro de um determinado intervalo. 
+        (de uma posicao escolhida ate a outra)
+  -->
+    <script>
+      let numeroEscolhido;
+      let numeros = [];
+      let opcao = true;
+      let soma = 0;
+
+      do {
+        (numeroEscolhido = parseInt(prompt("Digite um numero:"))),
+          numeros.push(numeroEscolhido);
+        opcao = confirm("Deseja continuar?");
+      } while (opcao == true);
+
+      let primeiro = parseInt(prompt("qual numero iniciar?"));
+      let segundo = parseInt(prompt("Qual número deseja finalizar?"));
+      document.write(numeros);
+      for (i = primeiro; i <= segundo; i++) {
+        soma += numeros[i];
+      }
+
+      document.write("soma" + soma);
+    </script>
+  </body>
+</html>

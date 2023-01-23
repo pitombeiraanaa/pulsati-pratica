@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Faça um programa que peça ao usuario o seu usuario o salario dele. <br> <br>
+
+        salários até R$ 280,00: aumento de 20% <br>
+
+        salários entre R$ 280,00 e R$ 700 00 : aumento de 15% <br>
+
+        salários maior que R$ 700,00 : aumento de 10%
+
+        salário antes do reajuste;
+        percentual de aumento aplicado;
+        valor do aumento;
+        novo salário, após o aumento. -->
+
+    <script>
+      let salario = parseFloat(prompt("Insira o seu salário: "));
+
+      let aumento;
+      let percentual;
+
+      if (salario <= 280) {
+        percentual = 20;
+        aumento = salario * 0.2;
+      } else if (salario > 280 && salario <= 700) {
+        percentual = 15;
+        aumento = salario * 0.15;
+      } else {
+        percentual = 10;
+        aumento = salario * 0.1;
+      }
+
+      let novoSalario = salario + aumento;
+
+      console.log("Salário antes do reajuste: R$ " + salario);
+      console.log("Percentual de aumento aplicado: " + percentual + "%");
+      console.log("Valor do aumento: R$ " + aumento);
+      console.log("Novo salário, após o aumento: R$ " + novoSalario);
+    </script>
+  </body>
+</html>

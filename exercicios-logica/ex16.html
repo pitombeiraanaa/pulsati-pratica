@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--  Faça um script, onde você informa o numero de dias trabalhados no mês, 
+        quantas horas trabalha por dia, e quanto ganha por hora, e o programa calcula o salario bruto. 
+        Porém se o valor de horas somado passar do valor de 8 horas por dia,
+         o calculo do salario deverá ter um acrecimo de 10% no valor do salario bruto. -->
+
+    <script>
+      let diasTrabalhados = parseInt(
+        prompt("Informe o número de dias trabalhados no mês: ")
+      );
+      let horasTrabalhadas = parseInt(
+        prompt("Informe o número de horas trabalhadas por dia: ")
+      );
+      let salarioHora = parseFloat(prompt("Informe o salário por hora: "));
+
+      let salarioBruto = diasTrabalhados * horasTrabalhadas * salarioHora;
+
+      if (horasTrabalhadas > 8) {
+        salarioBruto = salarioBruto + salarioBruto * 0.1;
+      }
+
+      console.log("Salário bruto: R$ " + salarioBruto);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Escreva um programa que calcule a formula de baskara de números definidos pelo usuário -->
+
+    <script>
+
+        // valor a = 10.0
+        // valor b = 20.1
+        // valor c = 5.1
+        let a = parseFloat(prompt('Digite o valor de A'));
+        let b = parseFloat(prompt('Digite o valor de B'));
+        let c = parseFloat(prompt('Digite o valor de c'));
+
+        let delta = Math.pow(b,2) - 4*a*c;
+
+        let x1 = (-b + Math.sqrt(delta)) / (2*a);
+        let x2 = (-b + Math.sqrt(delta)) / (2*a);
+
+        alert(x1.toFixed(2) + x2.toFixed(2));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Faça um programa que peça o valor do carro e o 
+        ano de lançamento e se o valor for menor que 20.000
+         ou o ano for menor que 2020. Pergunte de novo
+          até ele informar um carro
+           mais novo ou mais caro. -->
+
+    <script>
+     let valor = parseInt(prompt('Digite o valor do carro:'));
+     let anoLan = parseInt(prompt('Digite o ano de lançamento do carro:'));
+
+     if (valor < 20.000 && anoLan < 2020){
+        document.write('Favor preencher ano e valor válido! Tente novamente. ')
+     } else {
+        document.write('Carregando informações....')
+     }
+  
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Escreva um script que verifica se uma string contém uma determinada parte de um texto 
+        de sua escolha  e exibe a mensagem correspondente. -->
+
+    <script>
+      let texto = prompt("Insira uma string:");
+      let busca = prompt("Insira o texto a ser buscado:");
+
+      if (texto.includes(busca)) {
+        console.log("A string contém o texto buscado: " + busca);
+      } else {
+        console.log("A string não contém o texto buscado: " + busca);
+      }
+    </script>
+  </body>
+</html>

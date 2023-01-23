@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Faça um script para que o usuário informe 3 numeros e o programa mostre os pares de numeros.
+
+   Exemplo: <br> 3 2 3 => 2 - 3 3 <br> 5 5 7 => 7 - 5 5 -->
+
+    <script>
+      let numero1 = parseInt(prompt("Insira o primeiro número: "));
+      let numero2 = parseInt(prompt("Insira o segundo número: "));
+      let numero3 = parseInt(prompt("Insira o terceiro número: "));
+
+      console.log("Pares de números: ");
+
+      if (numero1 % 2 === 0) {
+        console.log(numero1 + " - ");
+      }
+      if (numero2 % 2 === 0) {
+        console.log(numero2 + " - ");
+      }
+      if (numero3 % 2 === 0) {
+        console.log(numero3 + " - ");
+      }
+
+      if (numero1 % 2 !== 0) {
+        console.log(" - " + numero1);
+      }
+      if (numero2 % 2 !== 0) {
+        console.log(" - " + numero2);
+      }
+      if (numero3 % 2 !== 0) {
+        console.log(" - " + numero3);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Escreva um programa que encontre o número mais distante de um dado número em uma lista. -->
+    <div id="resultado"></div>
+    <script>
+      var meuArray = [0, 12, 13, 2, 1273, 28, 1];
+      var maior = Math.max.apply(null, meuArray);
+
+      document.getElementById("resultado").innerHTML = maior;
+
+      // OU
+
+      //   var numeros = [1, 2, 5, 200, 89, 5, 50];
+      //   var maior = Math.max(...numeros);
+      //   console.log(maior);
+    </script>
+  </body>
+</html>

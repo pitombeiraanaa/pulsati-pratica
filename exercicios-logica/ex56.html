@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Escreva um programa que encontre o número mais frequente em uma lista. -->
+    <script>
+      var entrada = [1, 2, 5, 8, 2, 5, 2, 2, 3];
+
+      var maior = null;
+      var ocorrenciasMaior = -1;
+
+      for (var i = 0; i < entrada.length; i++) {
+        var ocorrencias = 1;
+        for (var t = i + 1; t < entrada.length; t++)
+          if (entrada[i] == entrada[t]) ocorrencias++;
+
+        if (ocorrencias > ocorrenciasMaior) {
+          maior = entrada[i];
+          ocorrenciasMaior = ocorrencias;
+        }
+      }
+
+      document.body.innerHTML +=
+        "<p>" + maior + " (" + ocorrenciasMaior + " ocorrências)</p>";
+    </script>
+  </body>
+</html>

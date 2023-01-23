@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Crie um programa onde o usuario informa 
+        uma quantidade indeterminada de notas e 
+        você (COM UMA FUNÇÃO) mostra a média das notas -->
+    <script>
+      let notas = [];
+      let soma = 0;
+      let notasEscolhidas;
+      let opcao = true;
+
+      do {
+        notasEscolhidas = parseInt(prompt("Digite uma nota:"));
+        notas.push(notasEscolhidas);
+        opcao = confirm("Deseja adicionar mais notas?");
+      } while (opcao == true)
+        soma = notas.reduce(function(soma, notas){
+        return soma + notas;
+      })
+      
+      let media = soma / notas.length
+      console.log (media)
+    </script>
+  </body>
+</html>

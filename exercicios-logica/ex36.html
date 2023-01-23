@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Escreva um programa que verifique se todos os números são ou pares ou impares de um array. -->
+
+    <script>
+      const numbers = ['2', '4', '8', '88', '6', '0'];
+      
+      
+      if(numbers.every((e) => e % 2 === 0)){
+       console.log('São pares:' + numbers)
+      }else if(numbers.every((e) => e % 2 !== 0 )){
+        console.log('São impares: ' + numbers)
+      };
+ 
+      
+    </script>
+  </body>
+</html>
