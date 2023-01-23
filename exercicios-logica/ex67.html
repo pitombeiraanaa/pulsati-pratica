@@ -1,15 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Escreva um programa que calcule a média geométrica de uma lista de números.
   -->
+    <script>
+      let lista = [3, 12, 16, 36];
+      let tamanhoLista = lista.length;
 
-  
-</body>
+      let multiplicacaoLista = 1;
+
+      for (let i = 0; i < lista.length; i++) {
+        multiplicacaoLista = multiplicacaoLista * lista[i];
+      }
+
+      let indicador = 1;
+      let numeroFatorial = 0;
+      for (let i = 1; i < multiplicacaoLista; i++) {
+        indicador = i;
+        for (let y = 1; y < tamanhoLista; y++) {
+          indicador = indicador * i;
+        }
+
+        if (indicador == multiplicacaoLista) {
+          numeroFatorial = i;
+          break;
+        }
+        if (indicador > multiplicacaoLista) {
+          numeroFatorial = "Indefinido";
+          break;
+        }
+      }
+
+      document.write(`
+      A lista atual é a [${lista}] <br>
+      O tamanho da lista  é  [${tamanhoLista}] <br>
+      A média geométrica da lista é  ${numeroFatorial} <br>
+      <br>
+      Resolução: Raiz (quantidade de números) da lista de números.<br>
+      _________________.<br>
+      ${tamanhoLista}√${lista}|.<br>
+      [${lista}] multiplicado entre si =  ${multiplicacaoLista}. <br>
+      O fatorial de ${multiplicacaoLista} é ${numeroFatorial}, ou seja:<br>
+       ${numeroFatorial} elevado a ${tamanhoLista} anula a raiz ${tamanhoLista}º sobre os números.<br>
+       _________________.<br>
+       ${tamanhoLista}√${numeroFatorial}º[${tamanhoLista}]|.<br>
+      `);
+    </script>
+  </body>
 </html>
