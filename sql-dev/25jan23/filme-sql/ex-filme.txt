@@ -1,0 +1,20 @@
+Crie uma tabela chamada NOME_DE_VOCES_filmes
+A tabela deverá conter os seguintes campos id, nome, descricao, data_lancamento, 
+quantidade_vendas, pais_origem 
+
+Insira uns 30 registros para base de dados
+
+ 1 - Deverá trazer todos os filmes com vendas maiores que 800 e que a descriçao contenha
+no meio da string "Harry Potter"
+
+SELECT quantidade_vendas,descricao FROM ANA_FILMES WHERE quantidade_vendas >= '800'
+AND descricao LIKE '%Harry Potter%';
+
+
+
+
+ 2- Deverá trazer todos os filmes que o pais de origem 
+seja Brasil ou que o nome do filme contenha Brasil
+
+SELECT nome,pais_origem FROM ANA_FILMES WHERE pais_origem LIKE '%Brasil%'
+OR nome LIKE '%Brasil%'
