@@ -1,0 +1,2 @@
+--Faça um select (Query) que traga somente as pessoas nascidas depois dos anos 2000
+SELECT nome,data_nascimento FROM ANA_TABELA WHERE data_nascimento >= '01/01/2000'; 

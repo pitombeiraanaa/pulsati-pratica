@@ -1,0 +1,2 @@
+--Faça um select (Query) onde traga o email das pessoas que terminem com I
+SELECT email FROM ANA_TABELA WHERE email LIKE '%I@%';

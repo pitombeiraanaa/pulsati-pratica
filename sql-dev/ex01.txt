@@ -1,0 +1,4 @@
+// Faça um select (query) que traga todos os dados das pessoas
+SELECT * FROM ANA_TABELA
+
+

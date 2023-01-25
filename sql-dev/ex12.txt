@@ -1,0 +1,2 @@
+--Faça um select (Query) onde traga a menor data de nascimento onde o email contenha @outlook.com
+SELECT MIN(data_nascimento) FROM ANA_TABELA WHERE email LIKE '%@outlook.com%'

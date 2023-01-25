@@ -1,0 +1,3 @@
+--Faça um select (Query) que traga a pessoa que tenha um id igual a 33
+
+SELECT * FROM ANA_TABELA WHERE id LIKE '%33'

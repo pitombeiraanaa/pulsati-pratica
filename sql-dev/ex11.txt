@@ -1,0 +1,2 @@
+--Faça um select (Query) onde traga qual a maior data de nascimento onde o email contenha @hotmail.com
+SELECT MAX(data_nascimento) FROM ANA_TABELA WHERE email LIKE '%@hotmail.com%'

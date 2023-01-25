@@ -1,0 +1,6 @@
+--Faça um select (Query) que traga todas as pessoas onde nasceram no dia 12/12/2000 
+--OU o nome contenha M em qualquer lugar da palavra
+
+SELECT nome,data_nascimento FROM ANA_TABELA WHERE data_nascimento = '12/12/2000'
+OR nome LIKE '%m%' 
+OR nome LIKE '%M%';
