@@ -1,0 +1,3 @@
+-- 09)  traga todos os registros com id entre 10 e 15
+SELECT * FROM ANA_ALICE_FUNCIONARIOS 
+WHERE id >= 10

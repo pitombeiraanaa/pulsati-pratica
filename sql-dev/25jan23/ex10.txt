@@ -1,0 +1,5 @@
+-- 10) selecione apenas os campos de id cpf, rg e traga somente os registros em que o o rg e 
+--o cpf não começem com os digitos do id da linha.
+
+SELECT id,cpf,rg FROM ANA_ALICE_FUNCIONARIOS
+WHERE SUBSTR(RG, 0,1) <> ID AND SUBSTR(CPF, 0,1) <> ID

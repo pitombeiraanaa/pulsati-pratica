@@ -1,0 +1,2 @@
+-- 07) Crie um select onde você traga todas as pessoas ordenadas pela função de trabalho
+SELECT primeiro_nome,funcao FROM ANA_ALICE_FUNCIONARIOS ORDER BY FUNCAO;

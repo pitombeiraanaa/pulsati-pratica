@@ -1,0 +1,2 @@
+-- 05) Crie um select que traga quais pessoas existem na base de dados porém sem repetir
+SELECT DISTINCT primeiro_nome,segundo_nome FROM ANA_ALICE_FUNCIONARIOS;

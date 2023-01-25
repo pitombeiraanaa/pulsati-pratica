@@ -1,0 +1,4 @@
+-- 08) Crie um select onde você traga a média salarial agrupada por funcao 
+SELECT AVG(salario) AS media_salario,funcao
+FROM ANA_ALICE_FUNCIONARIOS
+GROUP BY FUNCAO

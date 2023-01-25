@@ -1,0 +1,7 @@
+-- 06) Crie um select onde você traga o nome e o sobrenome concatenados em uma coluna de 
+  todas as pessoas com mais de 20 anos ou que o telefone termina com 9
+
+SELECT(primeiro_nome||' '||segundo_nome) as nome_completo,data_nascimento,telefone
+FROM ANA_ALICE_FUNCIONARIOS
+WHERE(TRUNC((SYSDATE-data_nascimento)/365)> 20)
+OR(telefone LIKE '%9');

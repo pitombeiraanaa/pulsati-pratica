@@ -1,0 +1,2 @@
+-- 03) Crie um select em que o rg da pessoa seja diferente de 123.456.789-01
+RETORNOU VAZIO!!

@@ -1,0 +1,2 @@
+-- 04) Crie um select que traga quais cidades existem na base de dados porém sem repetir 
+SELECT DISTINCT cidade FROM ANA_ALICE_FUNCIONARIOS;
