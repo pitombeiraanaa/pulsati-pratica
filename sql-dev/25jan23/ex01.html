@@ -1,60 +1,93 @@
 EXERCICIOS
  
-Tabela PAISES:
+                                         Tabela PAISES:
  
-PAIS_ID numero
-NOME_PAIS texto nao nulo
+                                         PAIS_ID numero
+                                         NOME_PAIS texto nao nulo
+                                         Insira registros em todas as tabelas
 
 
   ------------------------------------------------------------------------------------------------
+  CREATE TABLE ANA_PAISES(
+    pais_id NUMBER PRIMARY KEY,
+    nome_pais VARCHAR2(400) NOT NULL
+   );
+   COMMIT;
 
   INSERT INTO ANA_PAISES(pais_id, nome_pais) VALUES (1, 'Brasil');
   INSERT INTO ANA_PAISES(pais_id, nome_pais) VALUES (2, 'Portugal');
   INSERT INTO ANA_PAISES(pais_id, nome_pais) VALUES (3, 'Argentina'); 
-  
+  COMMIT;
 
   ----------------------------------------------------------------------------------------------
  
-Tabela ESTADOS
+                                         Tabela ESTADOS
  
-ESTADO_ID numero
-NOME_ESTADO texto nao nulo
-FK_ID_PAIS
+                                         ESTADO_ID numero
+                                         NOME_ESTADO texto nao nulo
+                                         FK_ID_PAIS
+                                         Insira registros em todas as tabelas
  
 ------------------------------------------------------------------------------------------------
+CREATE TABLE ANA_ESTADOS(
+   estado_id NUMBER PRIMARY KEY,
+   nome_estado VARCHAR2(400) NOT NULL,
+   id_pais NUMBER,
+   CONSTRAINT id_pais_ana_fk FOREIGN KEY(id_pais) REFERENCES ANA_PAISES(pais_id)
+);
+COMMIT;
 
 INSERT INTO ANA_ESTADOS(estado_id, nome_estado, id_pais) VALUES (1, 'Santa Catarina', 1);
 INSERT INTO ANA_ESTADOS(estado_id, nome_estado, id_pais) VALUES (2, 'Lisboa', 2);
 INSERT INTO ANA_ESTADOS(estado_id, nome_estado, id_pais) VALUES (3, 'Paraná', 1);
 INSERT INTO ANA_ESTADOS(estado_id, nome_estado, id_pais) VALUES (4, 'Chaco', 3);
- 
+COMMIT;
 -------------------------------------------------------------------------------------------------
 
 
 
-Tabela Cidades
+                                            Tabela Cidades
  
-CIDADE_ID numero
-NOME_CIDADE texto not nulo
-FK_ID_ESTADO
+                                           CIDADE_ID numero
+                                           NOME_CIDADE texto not nulo
+                                           FK_ID_ESTADO
+                                           Insira registros em todas as tabelas
 
  ------------------------------------------------------------------------------------------------
+ CREATE TABLE ANA_CIDADES(
+   cidade_id NUMBER PRIMARY KEY,
+   nome_cidade VARCHAR2(400) NOT NULL,
+   id_estado NUMBER,
+   CONSTRAINT id_estado_ana_fk FOREIGN KEY(id_estado) REFERENCES ANA_ESTADOS(estado_id)
+);
+COMMIT;
+
  INSERT INTO ANA_CIDADES(cidade_id,nome_cidade,id_estado) VALUES (1,'Blumenau', 1);
  INSERT INTO ANA_CIDADES(cidade_id,nome_cidade,id_estado) VALUES (2,'Sintra', 2);
  INSERT INTO ANA_CIDADES(cidade_id,nome_cidade,id_estado) VALUES (3,'Curitiba', 3);
  INSERT INTO ANA_CIDADES(cidade_id,nome_cidade,id_estado) VALUES (4,'Resistencia', 4);
-
+ COMMIT;
 ------------------------------------------------------------------------------------------
 
-Tabela PESSOAS
+                                          Tabela PESSOAS
  
-PESSOA_ID numero
-NOME_PESSOA texto
-EMAIL_PESSOA texto
-DATA_NASCIMENTO data nao nulo
-FK_ID_CIDADE
+                                          PESSOA_ID numero
+                                          NOME_PESSOA texto
+                                          EMAIL_PESSOA texto
+                                          DATA_NASCIMENTO data nao nulo
+                                          FK_ID_CIDADE
+                                          Insira registros em todas as tabelas
 
 ----------------------------------------------------------------------------------------------
+CREATE TABLE ANA_PESSOAS(
+   pessoa_id NUMBER PRIMARY KEY,
+   nome_pessoa VARCHAR2(400) NOT NULL,
+   email_pessoa VARCHAR2(200) NOT NULL,
+   data_nascimento DATE NOT NULL,
+   id_cidade NUMBER,
+   CONSTRAINT id_cidade_ana_fk FOREIGN KEY(id_cidade) REFERENCES ANA_CIDADES(cidade_id)
+);
+COMMIT;
 
 INSERT INTO ANA_PESSOAS(pessoa_id,nome_pessoa,email_pessoa,data_nascimento,id_cidade)
 VALUES (7,'Veronica','veronica@gmail.com', TO_DATE('28/06/2003', 'DD/MM/YYYY'), 4);
@@ -76,9 +109,9 @@ VALUES(5,'Ana','aninha@gmail.com', TO_DATE('12/12/2000', 'DD/MM/YYYY'), 3);
 
 INSERT INTO ANA_PESSOAS(pessoa_id,nome_pessoa,email_pessoa,data_nascimento,id_cidade)
 VALUES(6,'Eduardo','edu.ardo@hotmail.com', TO_DATE('03/11/2004', 'DD/MM/YYYY'), 2);
- 
+COMMIT;
 
-Insira registros em todas as tabelas
+--------------------------------------------------------------------------------------------------------------------------------------------------
  
  
 ## Ex01
