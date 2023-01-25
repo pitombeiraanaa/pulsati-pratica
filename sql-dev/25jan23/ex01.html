@@ -1,0 +1,162 @@
+EXERCICIOS
+ 
+Tabela PAISES:
+ 
+PAIS_ID numero
+NOME_PAIS texto nao nulo
+
+
+  ------------------------------------------------------------------------------------------------
+
+  INSERT INTO ANA_PAISES(pais_id, nome_pais) VALUES (1, 'Brasil');
+  INSERT INTO ANA_PAISES(pais_id, nome_pais) VALUES (2, 'Portugal');
+  INSERT INTO ANA_PAISES(pais_id, nome_pais) VALUES (3, 'Argentina'); 
+  
+
+  ----------------------------------------------------------------------------------------------
+ 
+Tabela ESTADOS
+ 
+ESTADO_ID numero
+NOME_ESTADO texto nao nulo
+FK_ID_PAIS
+ 
+------------------------------------------------------------------------------------------------
+
+INSERT INTO ANA_ESTADOS(estado_id, nome_estado, id_pais) VALUES (1, 'Santa Catarina', 1);
+INSERT INTO ANA_ESTADOS(estado_id, nome_estado, id_pais) VALUES (2, 'Lisboa', 2);
+INSERT INTO ANA_ESTADOS(estado_id, nome_estado, id_pais) VALUES (3, 'Paraná', 1);
+INSERT INTO ANA_ESTADOS(estado_id, nome_estado, id_pais) VALUES (4, 'Chaco', 3);
+ 
+-------------------------------------------------------------------------------------------------
+
+
+
+Tabela Cidades
+ 
+CIDADE_ID numero
+NOME_CIDADE texto not nulo
+FK_ID_ESTADO
+
+ ------------------------------------------------------------------------------------------------
+ INSERT INTO ANA_CIDADES(cidade_id,nome_cidade,id_estado) VALUES (1,'Blumenau', 1);
+ INSERT INTO ANA_CIDADES(cidade_id,nome_cidade,id_estado) VALUES (2,'Sintra', 2);
+ INSERT INTO ANA_CIDADES(cidade_id,nome_cidade,id_estado) VALUES (3,'Curitiba', 3);
+ INSERT INTO ANA_CIDADES(cidade_id,nome_cidade,id_estado) VALUES (4,'Resistencia', 4);
+
+------------------------------------------------------------------------------------------
+
+Tabela PESSOAS
+ 
+PESSOA_ID numero
+NOME_PESSOA texto
+EMAIL_PESSOA texto
+DATA_NASCIMENTO data nao nulo
+FK_ID_CIDADE
+
+----------------------------------------------------------------------------------------------
+
+INSERT INTO ANA_PESSOAS(pessoa_id,nome_pessoa,email_pessoa,data_nascimento,id_cidade)
+VALUES (7,'Veronica','veronica@gmail.com', TO_DATE('28/06/2003', 'DD/MM/YYYY'), 4);
+
+INSERT INTO ANA_PESSOAS(pessoa_id,nome_pessoa,email_pessoa,data_nascimento,id_cidade)
+VALUES(1,'Vanessa','vane.sch@gmail.com', TO_DATE('22/01/2003', 'DD/MM/YYYY'), 1);
+
+INSERT INTO ANA_PESSOAS(pessoa_id,nome_pessoa,email_pessoa,data_nascimento,id_cidade)
+VALUES(2,'Julia','juliaa@hotmail.com', TO_DATE('15/08/1996', 'DD/MM/YYYY'), 3);
+
+INSERT INTO ANA_PESSOAS(pessoa_id,nome_pessoa,email_pessoa,data_nascimento,id_cidade)
+VALUES(3,'Pedro','pedro1520@outlook.com', TO_DATE('09/04/2006', 'DD/MM/YYYY'), 2);
+
+INSERT INTO ANA_PESSOAS(pessoa_id,nome_pessoa,email_pessoa,data_nascimento,id_cidade)
+VALUES(4,'Matheus','matheussilva@outlook.com', TO_DATE('28/02/1994', 'DD/MM/YYYY'), 4);
+
+INSERT INTO ANA_PESSOAS(pessoa_id,nome_pessoa,email_pessoa,data_nascimento,id_cidade)
+VALUES(5,'Ana','aninha@gmail.com', TO_DATE('12/12/2000', 'DD/MM/YYYY'), 3);
+
+INSERT INTO ANA_PESSOAS(pessoa_id,nome_pessoa,email_pessoa,data_nascimento,id_cidade)
+VALUES(6,'Eduardo','edu.ardo@hotmail.com', TO_DATE('03/11/2004', 'DD/MM/YYYY'), 2);
+ 
+
+Insira registros em todas as tabelas
+ 
+ 
+## Ex01
+ 
+`Fazer uma consulta (Query), onde traga o email da pessoa, e de qual Cidade essa pessoa pertence.`
+
+
+
+ SELECT ap.nome_pessoa, ap.email_pessoa, ap.id_cidade, ac.nome_cidade 
+ FROM ANA_PESSOAS ap
+ INNER JOIN ANA_CIDADES ac
+ ON ap.id_cidade = ac.cidade_id;
+  
+ 
+## Ex02
+ 
+`Fazer uma consulta (Query), onde traga quantas pessoas estão cadastradas em cada pais`
+ 
+## Ex03
+ 
+`Fazer um consulta (Query), onde traga quantas pessoas estão cadastradas em cada cidade`
+ 
+## Ex04
+ 
+`Fazer uma consulta (Query), onde traga quantas pessoas estão cadastradas em cada estado`
+ 
+ 
+## Ex05
+ 
+`Fazer uma consulta (Query), onde traga qual é o nome e o código dos paises cadastrados.`
+ 
+## Ex06
+ 
+`Fazer uma consulta (Query), onde traga todas as pessoas que moram no pais com Id 3 e que nasceram depois do dia 01/01/2000 e que o email contenha @gmail.com`
+ 
+ 
+## Ex07
+ 
+`Fazer uma consulta (Query), onde traga a pessoa mais velha do pais com id 1`
+ 
+ 
+## Ex08
+ 
+`Fazer uma consulta (Query), onde traga o nome e o email pessoa mais nova do estado Rio grande do sul`
+ 
+ 
+## Ex09
+ 
+`Fazer uma consulta (Query), onde traga o nome da pessoa, nome da cidade, nome do estado, e nome do pais das pessoas com mais de 30 anos UTILIZAR DATEDIFF NO WHERE`
+ 
+## Ex10
+ 
+`Fazer uma consulta (Query), onde traga o nome da pessoa, nome da cidade, nome do estado, e nome do pais das pessoas com menos de 20 anos UTILIZAR DATEDIFF NO WHERE`
+ 
+## Ex11
+ 
+`Fazer uma consulta (Query), onde traga o nome da pessoa, o email da pessoa, e o Estado que essa pessoa mora.`
+ 
+## Ex12
+ 
+`Fazer uma consulta (Query), onde traga todas as pessoas que terminam com A no brasil`
+ 
+ 
+## Ex13
+ 
+`Fazer uma consulta (Query), onde traga a pessoa mais velha e a pessoa mais nova dentre todos os paises`
+ 
+## Ex14
+ 
+`Fazer uma consulta (Query), onde traga as pessoas que nao forem de Santa catarina, Sao paulo e Texas`
+ 
+ 
+## Ex15
+ 
+`Fazer uma consulta (Query), onde traga todas as pessoas do japão e que tenham mais de 35 anos`
+ 
+ 
+## Ex16
+ 
+`Fazer uma consulta (Query), onde traga quantas pessoas no japão tem o email do outlook.`
+ 
