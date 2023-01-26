@@ -129,10 +129,12 @@ COMMIT;
 `Fazer uma consulta (Query), onde traga quantas pessoas estão cadastradas em cada pais`
 
 
-
-
-
-
+SELECT ap.nome_pais, count(pessoa_id) FROM ANA_PAISES ap
+ INNER JOIN ANA_ESTADOS ae ON ae.id_pais = ap.pais_id
+ INNER JOIN ANA_CIDADES ac ON ac.id_estado = ae.estado_id
+ INNER JOIN ANA_PESSOAS ap ON ap.id_cidade = ac.cidade_id
+ 
+GROUP BY ap.nome_pais 
 
 
 
@@ -142,13 +144,9 @@ COMMIT;
  
 `Fazer um consulta (Query), onde traga quantas pessoas estão cadastradas em cada cidade`
 
-
-
-
-
-
-
-
+SELECT ac.nome_cidade, count(pessoa_id) FROM ANA_CIDADES ac
+INNER JOIN ANA_PESSOAS ap ON ap.id_cidade = ac.cidade_id
+GROUP BY ac.nome_cidade
 
 
 
@@ -158,12 +156,10 @@ COMMIT;
 `Fazer uma consulta (Query), onde traga quantas pessoas estão cadastradas em cada estado`
  
 
-
-
-
-
-
-
+SELECT ae.nome_estado, count(ap.pessoa_id) FROM ANA_ESTADOS ae
+INNER JOIN ANA_CIDADES ac ON ac.id_estado = ae.estado_id
+INNER JOIN ANA_PESSOAS ap ON ap.id_cidade = ac.cidade_id
+GROUP BY ae.nome_estado
 
 
 --------------------------------------------------------------------------------------------------------------------------------------
@@ -171,32 +167,27 @@ COMMIT;
  
 `Fazer uma consulta (Query), onde traga qual é o nome e o código dos paises cadastrados.`
 
-
-
-
-
-
-
+SELECT ap.nome_pais, count(pais_id) FROM ANA_PAISES ap 
+INNER JOIN ANA_ESTADOS ae ON ae.id_pais = ap.pais_id
+GROUP BY ap.nome_pais
 
 
 
 -------------------------------------------------------------------------------------------------------------------------------------
  ## Ex06
  
-`Fazer uma consulta (Query), onde traga todas as pessoas que moram no pais com Id 3 e que nasceram depois do dia 01/01/2000 e que o email contenha @gmail.com`
+`Fazer uma consulta (Query), onde traga todas as pessoas que moram no pais com Id 3 e que nasceram depois do dia 01/01/2000 
+e que o email contenha @gmail.com`
  
+SELECT ap.pais_id, ap.nome_pessoa FROM ANA_PAISES ap
+INNER JOIN ANA_ESTADOS ae ON ae.id_pais = ap.pais_id
+INNER JOIN ANA_CIDADES ac ON ac.id_estado = ae.estado_id
+INNER JOIN ANA_PESSOAS ap ON ap.id_cidade = ac.cidade_id
+WHERE(ap.pais_id = 3)
+AND(data_nascimento >= '01/01/2000')
+AND(email_pessoa LIKE '%@gmail.com%')
+
  
-
-
-
-
-
-
-
-
-
-
-
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## Ex07
@@ -204,15 +195,11 @@ COMMIT;
 `Fazer uma consulta (Query), onde traga a pessoa mais velha do pais com id 1`
  
  
-
-
-
-
-
-
-
-
-
+SELECT apess.data_nascimento, apess.nome_pessoa from ANA_PAISES ap
+INNER JOIN ana_estados ae ON ae.id_pais = ap.pais_id
+INNER JOIN ana_cidades ac ON ac.id_estado = ae.estado_id
+INNER JOIN ana_pessoas apess ON apess.id_cidade = ac.cidade_id
+WHERE (ID_PAIS = 1)
 
 
 
@@ -222,13 +209,10 @@ COMMIT;
 `Fazer uma consulta (Query), onde traga o nome e o email pessoa mais nova do estado Rio grande do sul`
  
 
-
-
-
-
-
-
-
+SELECT MAX(data_nascimento) FROM ANA_ESTADOS ae
+INNER JOIN ANA_CIDADES ac ON ac.id_estado = ae.estado_id
+INNER JOIN ANA_PESSOAS apess ON apess.id_cidade = ac.cidade_id
+WHERE(ae.nome_estado LIKE '%Rio Grande do Sul%')
 
 
 
@@ -239,12 +223,6 @@ COMMIT;
 `Fazer uma consulta (Query), onde traga o nome da pessoa, nome da cidade, nome do estado, e nome do pais das
  pessoas com mais de 30 anos UTILIZAR DATEDIFF NO WHERE`
  
-
-
-
-
-
-
 
 
 
@@ -263,20 +241,10 @@ pais das pessoas com menos de 20 anos UTILIZAR DATEDIFF NO WHERE`
 
 
 
-
-
-
-
-
 ----------------------------------------------------------------------------------------------------------------------------------
 ## Ex11
  
 `Fazer uma consulta (Query), onde traga o nome da pessoa, o email da pessoa, e o Estado que essa pessoa mora.`
-
-
-
-
-
 
 
 
@@ -299,20 +267,10 @@ pais das pessoas com menos de 20 anos UTILIZAR DATEDIFF NO WHERE`
 
 
 
-
-
-
-
-
-
 ------------------------------------------------------------------------------------------------------------------------------------ 
 ## Ex13
  
 `Fazer uma consulta (Query), onde traga a pessoa mais velha e a pessoa mais nova dentre todos os paises`
-
-
-
-
 
 
 
@@ -327,16 +285,10 @@ pais das pessoas com menos de 20 anos UTILIZAR DATEDIFF NO WHERE`
 
 
 
-
-
-
 ------------------------------------------------------------------------------------------------------------------------------
 ## Ex15
  
 `Fazer uma consulta (Query), onde traga todas as pessoas do japão e que tenham mais de 35 anos`
-
-
-
 
 
 
