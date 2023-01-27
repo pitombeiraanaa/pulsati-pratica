@@ -1,0 +1,16 @@
+2-Escreva um bloco PL/SQL que calcule e exiba a soma dos números pares entre 10 e 20.-- 2-Escreva um bloco PL/SQL que calcule e exiba a soma dos números pares entre 10 e 20.
+
+DECLARE
+SOMA NUMBER := 0;
+INDICE NUMBER ;
+
+BEGIN 
+  FOR INDICE IN 10..20 LOOP 
+  IF MOD(INDICE,2) = 0 THEN
+    SOMA := SOMA + INDICE; 
+  END IF;
+END LOOP;
+
+DBMS_OUTPUT.PUT_LINE('A SOMA É DE!' || SOMA);
+
+END;

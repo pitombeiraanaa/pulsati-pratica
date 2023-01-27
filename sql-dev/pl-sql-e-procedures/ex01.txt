@@ -1,0 +1,13 @@
+--1-Escreva um bloco PL/SQL que exiba "Número par" se o número for par e "Número ímpar" se for ímpar.
+
+DECLARE 
+W_CODIGO_PRODUTO NUMBER := 2;
+
+BEGIN
+ IF MOD(W_CODIGO_PRODUTO,2) = 0 
+ THEN DBMS_OUTPUT.PUT_LINE('É PAR');
+ ELSE DBMS_OUTPUT.PUT_LINE('É IMPAR');
+ END IF;
+END;
+
+SELECT * FROM ANA_PRODUTO

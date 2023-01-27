@@ -1,0 +1,11 @@
+--6-Escreva um bloco PL/SQL que exiba a tabuada de um número.
+DECLARE 
+
+BEGIN
+DBMS_OUTPUT.PUT_LINE('-TABUADA-');
+
+FOR INDICE IN 1..10 LOOP    
+
+DBMS_OUTPUT.PUT_LINE('9 x ' || INDICE || ' = ' || 9 * indice);  
+END LOOP;
+END; 

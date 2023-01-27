@@ -1,0 +1,18 @@
+4-Escreva um bloco PL/SQL que calcule e exiba o fatorial de um número.
+DECLARE
+NUM NUMBER := 6;
+FATORIAL NUMBER := 1;
+TEMP NUMBER;
+
+BEGIN 
+
+TEMP := NUM;
+
+WHILE (TEMP>0) LOOP
+FATORIAL := FATORIAL*TEMP;
+TEMP := TEMP -1;
+
+END LOOP;
+
+DBMS_OUTPUT.PUT_LINE('FATORIAL DE ' || NUM || ' É ' || FATORIAL);
+END;

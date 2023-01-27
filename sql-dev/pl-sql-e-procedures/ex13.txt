@@ -1,0 +1,1 @@
+13-Escreva uma procedure PL/SQL que determine e exiba se uma string é palíndrome ou não.

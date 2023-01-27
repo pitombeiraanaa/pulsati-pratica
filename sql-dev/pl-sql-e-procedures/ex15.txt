@@ -1,0 +1,1 @@
+15-Escreva um procedimento PL/SQL que calcule e exiba a média de uma tabela de números específica.

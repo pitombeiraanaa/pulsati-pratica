@@ -1,0 +1,1 @@
+10-Escreva um bloco PL/SQL que determine e exiba a quantidade de números pares e ímpares em uma tabela de números inteiros.

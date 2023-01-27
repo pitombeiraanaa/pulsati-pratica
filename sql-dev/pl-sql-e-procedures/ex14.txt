@@ -1,0 +1,2 @@
+14-Escreva uma função PL/SQL que determine e retorne a quantidade de caracteres vogais em uma string específica.
+

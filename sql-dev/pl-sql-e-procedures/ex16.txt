@@ -1,0 +1,1 @@
+16-Escreva um procedimento PL/SQL que determine e exiba o maior e menor número em uma tabela de números específica.

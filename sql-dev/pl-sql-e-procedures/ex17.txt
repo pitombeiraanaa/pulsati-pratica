@@ -1,0 +1,1 @@
+17-Escreva uma função PL/SQL que calcule e retorne a soma dos números pares entre dois números específicos.

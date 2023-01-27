@@ -1,0 +1,19 @@
+--3-Escreva um bloco PL/SQL que determine e exiba se um número é primo ou não.
+
+DECLARE
+NUMERO NUMBER := 24;
+CONTADOR NUMBER := 0;
+
+BEGIN 
+ FOR NUMERO IN 1..CONTADOR LOOP
+   IF MOD(CONTADOR,NUMERO) = 0 THEN
+     CONTADOR:= CONTADOR +1;
+   END IF;
+ END LOOP;
+ 
+ IF CONTADOR = 2 THEN
+   DBMS_OUTPUT.PUT_LINE('É PRIMO');
+ ELSE 
+   DBMS_OUTPUT.PUT_LINE('N É PRIMO');
+ END IF;
+END;

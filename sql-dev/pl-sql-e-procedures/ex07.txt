@@ -1,0 +1,12 @@
+7-Escreva um bloco PL/SQL que calcule e exiba a média de uma tabela de números inteiros.
+
+DECLARE 
+MEDIA NUMBER;
+
+BEGIN 
+FOR r IN  (SELECT ID_PRODUTO FROM ANA_PRODUTO) LOOP
+SELECT AVG(ID_PRODUTO) 
+INTO MEDIA FROM ANA_PRODUTO;
+END LOOP;
+DBMS_OUTPUT.PUT_LINE('A MÉDIA DO ID DOS PRODUTOS É: ' || MEDIA);
+END;

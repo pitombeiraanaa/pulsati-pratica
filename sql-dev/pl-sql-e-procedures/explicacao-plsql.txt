@@ -1,0 +1,241 @@
+--select nome, 
+      --  CASE
+         --  WHEN SEXO = 'F' THEN 'Feminino'
+          -- WHEN SEXO = 'M' THEN 'Masculino'
+          -- ELSE 'Não informado'
+        --END
+--FROM ANA_TABELA; 
+
+
+-------UNION E UNION ALL----- 
+--SELECT nome, tipo_sanguineo,
+--FROM ANA_TABELA
+--WHERE tipo_sanguineo = 'A+'
+
+--union 
+-- nome, tipo_sanguineo,
+--FROM ANA_TABELA
+--WHERE tipo_sanguineo = 'A-'
+
+--union all - é igual ao distint mostra uma vez o que se repete varias vezes
+
+-----------------------------------------------------------------------------------------
+
+--criando uma View 
+
+--CREATE VIEW johnny_view as 
+--select id, 
+--nome,
+--case when sexo = sexo'F' then 'Feminino' else 'M' end as sexo
+      -- tipo_sanguineo,
+--from ana_tabela
+
+
+--== CREATE OR REPLACE VIEW JOHNNY_VIEW == 
+
+--DELETE
+--DROP VIEW 
+
+
+-------------------------------------------------------------------------------
+
+--PL/SQL 
+
+--criar variavel dentro do DECLARE 
+--criar o codigo a ser executado dentro do BEGIN 
+--:= RECEBE O VALOR 
+
+--EXIBIR = SAIDA DBMS = BOTÃO VERDE
+--CHAVE DE ABERTURA IF É O THEN E A DE FECHAMENTO É O END IF; 
+
+--estrutura: 
+
+DECLARE
+W_NOME VARCHAR2(1000):= 'ANA';
+W_IDADE NUMBER;
+
+BEGIN 
+     IF W_NOME = 'ANA' and THEN
+       DBMS_OUTPUT.PUT_LINE('O NOME É: ' || W_NOME);
+     ELSEIF W_NOME = '' THEN 
+       DBMS_OUTPUT.PUT_LINE('O NOME ESTÁ VAZIO!');
+     ELSE  
+        DBMS_OUTPUT.PUT_LINE('NÃO SEI O NOME!');
+     END IF;
+
+END;
+
+
+guardar uma variavel 
+
+DECLARE
+W_DADO_CPF VARCHAR2(1000):= '';
+W_IDADE NUMBER;
+
+BEGIN 
+  select cpf 
+  INTO W_DADO_CPF
+  FROM ANA_TABELA 
+  where id = 1;
+  
+  DBMS_OUTPUT.PUT_LINE('O CPF ENCONTRADO FOI: ' || W_DADO_CPF);
+  END;
+
+
+------------------------------------------------------------------------
+
+DECLARE
+W_SALARIO VARCHAR2(1000):= '';
+W_IDADE NUMBER;
+
+BEGIN 
+  select max(salario) 
+  INTO W_SALARIO
+  FROM ANA_FUNCIONARIOS 
+  where id = 1;
+  
+  DBMS_OUTPUT.PUT_LINE('O SALARIO ENCONTRADO FOI: ' || W_SALARIO);
+  END;
+
+--=======================================================================
+-- PEGANDO DOIS DADOS AO MESMO TEMPO --
+DECLARE
+W_DADO_CPF VARCHAR2(1000):= '';
+W_NOME VARCHAR2(1000) := '';
+W_IDADE NUMBER;
+
+BEGIN 
+  select cpf, NOME
+  INTO W_DADO_CPF, W_NOME
+  FROM ANA_TABELA 
+  where id = 1;
+  
+  DBMS_OUTPUT.PUT_LINE('O CPF ENCONTRADO FOI: ' || W_DADO_CPF);
+  END;
+
+--======================================================================
+-- TIPAGEM 
+DECLARE
+W_CPF ANA_TABELA.CPF%TYPE;
+W_DADO_CPF VARCHAR2(15):= '';
+W_NOME VARCHAR2(1000) := '';
+W_IDADE NUMBER;
+
+BEGIN 
+  select cpf, NOME
+  INTO W_DADO_CPF, W_NOME
+  FROM ANA_TABELA 
+  where id = 1;
+  
+  DBMS_OUTPUT.PUT_LINE('O CPF ENCONTRADO FOI: ' || W_DADO_CPF);
+  END;
+
+--============================================================================
+-- LOOPING (FOR) 
+
+DECLARE
+W_CPF ANA_TABELA.CPF%TYPE;
+W_DADO_CPF VARCHAR2(15):= '';
+W_NOME VARCHAR2(1000) := '';
+W_IDADE NUMBER;
+W_SEXO VARCHAR2(4000);
+
+BEGIN 
+
+     --FOR R IN (SELECT * FROM ANA_TABELA) LOOP -- para pegar todos os campos
+     FOR R IN (SELECT SEXO, NOME FROM ANA_TABELA) LOOP -- pegar campos especificos 
+     '
+     SELECT 
+         CASE 
+            WHEN R.SEXO = 'M' THEN 'MASCULINO'
+            WHEN R.SEXO = 'F' THEN 'FEMINO'
+            ELSE 'NÃO INFORMADO'
+  END LOOP;
+ END;
+ INTO W_SEXO 
+ FROM DUAL;
+
+
+DECLARE 
+    CPF ADRI_USUARIOS.CPF%TYPE;
+    NOME VARCHAR2(1000):= '';
+    IDADE NUMBER;
+    SEXO VARCHAR2(4000);
+BEGIN
+    FOR R IN(SELECT SEXO, NOME FROM ADRI_USUARIOS) LOOP
+    
+    SELECT 
+        CASE
+            WHEN R.SEXO = 'M' THEN 'MASCULIUNO'
+            WHEN R.SEXO = 'F' THEN 'FEMININO'
+            ELSE 'NÃO DEFINIDO'
+        END
+        INTO SEXO
+        FROM DUAL;
+        
+        DBMS_OUTPUT.PUT_LINE('O NOME DA VEZ É '|| R.NOME);
+        DBMS_OUTPUT.PUT_LINE('O SEXO DA VEZ É '|| R.SEXO);
+        END LOOP;
+END;
+
+
+
+
+
+
+-------- for que roda com length 
+
+
+
+DECLARE
+W_CPF ADRI_USUARIOS.cpf%type;
+W_NOME VARCHAR(1000);
+W_CONTAGEM NUMBER := 200;
+w_SEXO VARCHAR2(4000)
+
+BEGIN 
+ FOR INDICE IN 1..W_CONTAGEM LOOP
+ DBMS_OUTPUT.PUT_LINE(INDICE);
+ END LOOP;
+ 
+END; 
+
+
+--------------------------PROCEDURES---------------------------------------
+
+--SÃO FUNÇOES QUE NÃO RETORNAM NADA, FAZ UM LOOPING OU INSERT E NÃO RETORNA NADA
+
+--PROCEDURE PRECISA DE PARAMETROS(DÁ UM NOME, DEFINE SE É ENTRADA E SAIDA E DÁ UM TIPO)
+-- TIPAGEM NÃO PRECISA DEFINIR O TAMANHO 
+
+
+CREATE OR REPLACE PROCEDURE ANA_PROCEDURE(p_id in NUMBER)
+
+IS
+W_SALARIO ADRI_FUNCIONARIOS.SALARIO%TYPE := 0;
+W_NOME ADRI_FUNCIONARIOS.PRIMEIRO_NOME%TYPE;
+
+BEGIN 
+   SELECT PRIMEIRO_NOME, SALARIO
+   INTO W_NOME, W_SALARIO
+   FROM ADRI_FUNCIONARIOS
+   WHERE ID = p_id;
+
+     DBMS_OUTPUT.PUT_LINE(W_NOME);
+     DBMS_OUTPUT.PUT_LINE(W_SALARIO);
+
+
+  IF W_SALARIO <= 2000 THEN 
+     DBMS_OUTPUT.PUT_LINE('O SALARIO ERA ' || W_SALARIO);
+     
+  
+   UPDATE ADRI_FUNCIONARIOS 
+     SET SALARIO = W_SALARIO * 1.1
+     WHERE ID = P_ID;
+     COMMIT;
+    ELSE 
+     DBMS_OUTPUT.PUT_LINE('NÃO É POSSIVEL AUMENTAR O SALARIO');
+   
+  END IF; 
+END;
+SELECT * FROM ADRI_FUNCIONARIOS
