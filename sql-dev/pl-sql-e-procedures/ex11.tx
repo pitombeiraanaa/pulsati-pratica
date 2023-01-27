@@ -1,1 +1,29 @@
 11-Escreva um bloco PL/SQL que determine e exiba a quantidade de caracteres vogais e consoantes em uma string.
+
+DECLARE
+    w_somavogais NUMBER := 0;
+    w_somaconsoantes NUMBER := 0;
+    w_string VARCHAR2(100);
+    w_letraselecionada VARCHAR2(100);
+BEGIN
+        SELECT
+            nome_produto
+        INTO w_string
+        FROM
+            ana_produto
+        WHERE
+            id_produto = 21;
+   FOR indice IN 1..LENGTH(w_string) LOOP
+        w_letraselecionada := substr(w_string, indice, 1);
+        IF w_letraselecionada = 'A' 
+          OR w_letraselecionada = 'E'
+          OR w_letraselecionada = 'I'
+          OR w_letraselecionada = 'O'
+          OR w_letraselecionada = 'U' THEN
+            w_somavogais := w_somavogais + 1;
+        ELSE
+            w_somaconsoantes := w_somaconsoantes + 1;
+        END IF;    
+END LOOP;     
+dbms_output.put_line(w_somavogais || w_somaconsoantes);
+END;
