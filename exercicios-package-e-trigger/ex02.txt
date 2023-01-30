@@ -1,0 +1,1 @@
+2-Crie uma trigger para impedir a inserção de cidades com nome repetido na tabela "cidades".

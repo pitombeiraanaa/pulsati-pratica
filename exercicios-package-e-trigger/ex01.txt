@@ -1,0 +1,23 @@
+1-Crie uma trigger para inserir automaticamente a data de criação da cidade
+quando for inserido um novo registro na tabela "cidades".
+
+
+create or replace NONEDITIONABLE TRIGGER ANA_TR 
+BEFORE INSERT OR UPDATE ON ANA_CIDADES 
+FOR EACH ROW 
+
+DECLARE 
+
+BEGIN
+IF INSERTING THEN:NEW.data_criacao:= sysdate;
+END IF;
+
+IF UPDATING THEN
+     DBMS_OUTPUT.PUT_LINE('ATUALIZANDO');
+    END IF;
+
+END;
+
+ALTER TABLE ANA_CIDADES
+ADD DATA_CRIACAO DATE;
+COMMIT;

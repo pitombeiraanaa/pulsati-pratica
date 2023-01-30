@@ -1,0 +1,11 @@
+1-Crie uma trigger para inserir automaticamente a data de criação da cidade
+quando for inserido um novo registro na tabela "cidades".
+2-Crie uma trigger  para impedir a inserção de cidades com nome repetido na tabela "cidades".
+3-Crie um pacote PL/SQL para retornar todas as cidades de um determinado estado.
+4-Crie um pacote PL/SQL para retornar o nome do país a partir do id do estado na tabela "estado".
+5-Crie um gatilho para atualizar o nome do país automaticamente na tabela "cidades" quando for alterado na tabela "países".
+6-Crie um pacote PL/SQL para retornar a quantidade de cidades por estado.
+7-Crie um gatilho para impedir a exclusão de estados que possuam cidades na tabela "estado".
+8-Crie um pacote PL/SQL para retornar o nome de todas as cidades de um determinado país.
+9-Crie um gatilho para atualizar o nome do estado automaticamente na tabela "cidades" quando for alterado na tabela "estado".
+10-Crie um pacote PL/SQL para retornar a quantidade de cidades por país.
