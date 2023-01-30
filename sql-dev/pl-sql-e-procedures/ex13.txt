@@ -1,1 +1,33 @@
 13-Escreva uma procedure PL/SQL que determine e exiba se uma string é palíndrome ou não.
+------------> EXEMPLOS PARA TESTE <----------
+
+Input: str = geeksskeeg
+Output: geeksskeeg is palindrome
+
+Input: str = geeks
+Output: geeks is not palindrome
+
+-----------------------------------------------
+DECLARE   
+    s VARCHAR2(10) := 'abccba'; 
+    l VARCHAR2(20); 
+    t VARCHAR2(10); 
+BEGIN 
+    FOR i IN REVERSE 1..Length(s) LOOP 
+        l := Substr(s, i, 1); 
+  
+        t := t 
+             ||'' 
+             ||l; 
+    END LOOP; 
+  
+    IF t = s THEN 
+      dbms_output.Put_line(t 
+                           ||'' 
+                           ||' É PALINDROME'); 
+    ELSE 
+      dbms_output.Put_line(t 
+                           ||'' 
+                           ||' NÃO É PALINDROME'); 
+    END IF; 
+END; 

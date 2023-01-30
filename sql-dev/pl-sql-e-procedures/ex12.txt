@@ -1,1 +1,29 @@
 12-Escreva um bloco PL/SQL que determine e exiba se um ano é bissexto ou não.
+
+Um ano é um ano bissexto se as seguintes condições forem satisfeitas:
+1) O ano é múltiplo de 400
+2) O ano é múltiplo de 4 e não múltiplo de 100
+
+---------- > opções de teste: <-------------
+
+Input: 1500, 2023
+Output: INPUT não é um ano bissexto.
+
+Input: 1600, 2024
+Output: INTPUT é um ano bissexto.
+
+-------------------------------------------------
+DECLARE 
+ANO NUMBER := 2024;
+
+BEGIN 
+IF MOD(ANO, 4) = 0
+AND
+MOD(ANO, 100)!= 0
+OR
+MOD(ANO, 400)=0 THEN
+DBMS_OUTPUT.PUT_LINE(ANO || ' É UM ANO BISSEXTO.');
+ELSE
+DBMS_OUTPUT.PUT_LINE(ANO || ' NÃO É UM ANO BISSEXTO.');
+END IF;
+END;
