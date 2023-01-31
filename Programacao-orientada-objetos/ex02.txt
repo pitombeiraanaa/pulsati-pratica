@@ -1,0 +1,28 @@
+//Projeto exercicio2 Computador(int memoria, String processador)
+
+
+public class Exercicio2 {
+
+    public static void main(String[] args) {
+        String texto = "pulsati";
+        computador objeto1 = new computador();
+        objeto1.memoria = 500;
+        objeto1.processador = "Ryzen 7";
+        objeto1.imprimeComputador();
+        
+        
+        computador objeto2 = new computador();
+        objeto2.memoria = 500;
+        objeto2.processador = "i5";
+        objeto2.imprimeComputador();
+    }
+}
+
+public class computador {
+    int memoria;
+    String processador;
+    
+    public void imprimeComputador() {
+        System.out.println("O COMPUTADOR TEM " + memoria + " DE MEMORIA E O PROCESSADOR DE " + processador);
+    }
+}

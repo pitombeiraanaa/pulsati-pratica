@@ -1,0 +1,55 @@
+Os quatro pilares da Orientação ao Objeto
+// Abstração
+// Polimosfismo
+// Encapsulamento
+// Herança
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.primeiroprojeto;
+
+/**
+ *
+ * @author ana.machado
+ */
+public class Primeiroprojeto {
+
+    public static void main(String[] args){
+       cachorro objeto1 = new cachorro();
+       objeto1.Nome = "Spike";
+       objeto1.idade = 5;
+       objeto1.imprimeCaracteristicas();
+       
+       cachorro objeto2 = new cachorro();
+       objeto2.Nome = "Marie";
+       objeto2.idade = 3;
+       objeto2.imprimeCaracteristicas();
+    }
+}
+
+
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.primeiroprojeto;
+
+/**
+ *
+ * @author ana.machado
+ */
+public class cachorro {
+    
+    //caracteristicas
+    public String Nome;
+    public int idade;
+    
+    
+    //método
+    public void imprimeCaracteristicas(){
+        System.out.println("O cão"+Nome+"tem"+idade+"Anos de idade");
+    }
+}

@@ -1,0 +1,28 @@
+// Projeto exercicio3 Aluno( double nota, String nome)
+
+public class Exercicio3 {
+
+    public static void main(String[] args) {
+        String texto = "pulsati";
+        aluno objeto1 = new aluno ();
+        objeto1.nota = 50;
+        objeto1.nome = "Maria";
+        objeto1.imprimeAluno();
+        
+        
+        aluno objeto2 = new aluno();
+        objeto2.nota = 80;
+        objeto2.nome = "Lucas";
+        objeto2.imprimeAluno();
+                
+    }
+}
+
+public class aluno {
+    double nota;
+    String nome;
+    
+     public void imprimeAluno() {
+        System.out.println("a nota foi " + nota + " do aluno " + nome);
+    }
+}

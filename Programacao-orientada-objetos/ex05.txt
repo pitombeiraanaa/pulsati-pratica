@@ -1,0 +1,31 @@
+//Projeto exercicio5 Carro(int litrosTanque, String Montadora)
+
+public class Exercicio5 {
+
+    public static void main(String[] args) {
+        String texto = "pulsati";
+        carro objeto1 = new carro ();
+        objeto1.litrosTanque = 30;
+        objeto1.Montadora = "Ford";
+        objeto1.imprimeCarro();
+        
+ 
+        carro objeto2 = new carro ();
+        objeto1.litrosTanque = 15;
+        objeto1.Montadora = "Nissan";
+        objeto1.imprimeCarro();
+        
+        
+       
+    }
+}
+
+
+public class carro {
+    int litrosTanque;
+    String Montadora;
+    public void imprimeCarro() {
+        System.out.println("O CARRO TEM A CAPACIDADE DE  " + litrosTanque + " NO TANQUE, E É DA MONTADORA " + Montadora);
+    }
+  
+}

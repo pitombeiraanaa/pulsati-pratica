@@ -1,0 +1,30 @@
+  //Projeto exercicio4 Casa(int metrosQuadrados, String cor)
+
+public class Exercicio4 {
+
+    public static void main(String[] args) {
+        String texto = "pulsati";
+        casa objeto1 = new casa ();
+        objeto1.metrosQuadrados = 72;
+        objeto1.cor = "Amarela";
+        objeto1.imprimeCasa();
+        
+        
+        casa objeto2 = new casa();
+        objeto2.metrosQuadrados = 200;
+        objeto2.cor = "Cinza";
+        objeto2.imprimeCasa();
+        
+    }
+}
+
+
+public class casa {
+    int metrosQuadrados;
+    String cor;
+    
+    
+            public void imprimeCasa() {
+        System.out.println("A CASA TEM " + metrosQuadrados + "com a cor " + cor); 
+            }
+}

@@ -1,0 +1,30 @@
+//Projeto exercicio6 Professor(String nome, String curso)
+
+public class Exercicio6 {
+
+    public static void main(String[] args) {
+        String texto = "pulsati";
+        professor objeto1 = new professor ();
+        objeto1.nome = "Lucas";
+        objeto1.curso = "JAVA";
+        objeto1.imprimeProfessor();
+        
+     
+        professor objeto2 = new professor ();
+        objeto1.nome = "Rafael";
+        objeto1.curso = "Python";
+        objeto1.imprimeProfessor();
+      
+             
+    }
+}
+
+public class professor {
+    String nome;
+    String curso;
+    
+    public void imprimeProfessor() {
+        System.out.println("O nome do professor é " + nome + " e o curso é de " + curso);
+    }
+}
+

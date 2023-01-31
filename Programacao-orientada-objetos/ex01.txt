@@ -1,0 +1,28 @@
+public class Exercicio1 {
+
+    public static void main(String[] args) {
+       String texto = "pulsati";
+       pessoa objeto1 = new pessoa();
+       objeto1.nome = "Ana";
+       objeto1.idade = 24;
+       objeto1.imprimePessoa();
+       
+       
+       pessoa objeto2 = new pessoa();
+       objeto2.nome = "Luiz";
+       objeto2.idade = 34;
+       objeto2.imprimePessoa();
+    }
+}
+
+
+
+public class pessoa {
+    String nome;
+    int idade;
+    
+    public void imprimePessoa(){
+        System.out.println( nome + "tem " + idade + " anos.");
+    }
+    
+}
