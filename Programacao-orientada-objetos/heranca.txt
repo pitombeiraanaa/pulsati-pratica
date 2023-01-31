@@ -1,0 +1,92 @@
+public class ExHeranca {
+
+    public static void imprimeMensagem(veiculo v){
+        System.out.println("Quantidade passageiros: " + v.getQuantidadePassageiros());
+    }
+    public static void main(String[] args) {
+        aviao objetoAviao = new aviao ();
+        moto objetoMoto = new moto();
+        
+        objetoAviao.setQuantidadeJanela(50);
+        objetoAviao.setQuantidadePassageiros(200);
+        objetoAviao.setQuantidadePorta(2);
+        objetoAviao.setVelocidade(200);
+        
+        objetoMoto.setQuantidadePassageiros(2);
+        objetoMoto.setComprimentoGuidao(45);
+        objetoMoto.setQuantidadeRetrovisor(2);
+        objetoMoto.setVelocidade(120);
+        
+        imprimeMensagem(objetoAviao);
+        imprimeMensagem(objetoMoto);
+    }
+}
+
+
+
+public class veiculo {
+    private double velocidade;
+    private int quantidadePassageiros;
+
+    public double getVelocidade() {
+        return velocidade;
+    }
+
+    public void setVelocidade(double velocidade) {
+        this.velocidade = velocidade;
+    }
+
+    public int getQuantidadePassageiros() {
+        return quantidadePassageiros;
+    }
+
+    public void setQuantidadePassageiros(int quantidadePassageiros) {
+        this.quantidadePassageiros = quantidadePassageiros;
+    }
+    
+}
+
+
+public class moto extends veiculo{
+    private double comprimentoGuidao;
+    private int quantidadeRetrovisor;
+
+    public double getComprimentoGuidao() {
+        return comprimentoGuidao;
+    }
+
+    public void setComprimentoGuidao(double comprimentoGuidao) {
+        this.comprimentoGuidao = comprimentoGuidao;
+    }
+
+    public int getQuantidadeRetrovisor() {
+        return quantidadeRetrovisor;
+    }
+
+    public void setQuantidadeRetrovisor(int quantidadeRetrovisor) {
+        this.quantidadeRetrovisor = quantidadeRetrovisor;
+    }
+}
+
+
+public class aviao extends veiculo{
+    private int quantidadePorta;
+    private int quantidadeJanela;
+
+    public int getQuantidadePorta() {
+        return quantidadePorta;
+    }
+
+    public void setQuantidadePorta(int quantidadePorta) {
+        this.quantidadePorta = quantidadePorta;
+    }
+
+    public int getQuantidadeJanela() {
+        return quantidadeJanela;
+    }
+
+    public void setQuantidadeJanela(int quantidadeJanela) {
+        this.quantidadeJanela = quantidadeJanela;
+    }
+    
+}

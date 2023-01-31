@@ -1,0 +1,51 @@
+ //Criar uma classe aluno
+        //com os atributos Nota e nome
+        //fazer um meto
+        //encapsular os campos
+        //criar um objeto dessa classe Aluno na classe principal
+
+
+
+
+        public class ExEncapsulamento2 {
+
+    public static void main(String[] args) {
+        
+        aluno obj = new aluno();
+        obj.setNome("Maria");
+        obj.setNota(50);
+        obj.imprimeAluno();
+    }
+}
+
+
+
+public class aluno {
+    private int nota;
+    private String nome;
+
+    public void imprimeAluno(){
+    System.out.println("o nome do aluno é " + getNome() + " e a nota foi " + getNota()) ;
+    }
+    
+    public int getNota() {
+        return nota;
+    }
+
+    public void setNota(int nota) {
+        if(nota < 70){
+        this.nota = nota;
+        }else
+            System.out.println("Você está de recuperação") ;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    
+}
