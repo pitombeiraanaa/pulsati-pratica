@@ -1,0 +1,38 @@
+package com.mycompany.exemplonecessidadeconstrutor;
+
+public class Agenda {
+    private Pessoa pessoa;
+    
+    Agenda(){
+        pessoa = new Pessoa();
+    }
+    
+    public void adicionaInformacaoPessoa(String nome, int idade){
+        pessoa.setIdade(idade);
+        pessoa.setNome(nome);
+    }
+    public void imprime(){
+        String Mensagem = pessoa.getNome()+", "+ pessoa.getIdade()+" Anos";
+        Mensagem += "\n com o email:"+getEmail()+" e o telefone: "+getNumeroCelular();
+        System.out.println(Mensagem);
+    }
+    private int numeroCelular;
+    private String email;
+
+    public int getNumeroCelular() {
+        return numeroCelular;
+    }
+
+    public void setNumeroCelular(int numeroCelular) {
+        this.numeroCelular = numeroCelular;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+}
