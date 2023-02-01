@@ -1,0 +1,82 @@
+public class ExAbstracao {
+   public static void imprimePessoa(pessoa param){
+       param.imprime();
+   }
+    public static void main(String[] args) {
+          funcionario objetoFuncionario = new funcionario ();
+          cliente objetoCliente = new cliente ();
+          
+          
+          objetoCliente.setNome("Paulo");
+          objetoCliente.setIdade(30);
+          objetoCliente.setCodCliente(9320);
+          
+          
+          objetoFuncionario.setNome("Ana");
+          objetoFuncionario.setIdade(20);
+          objetoFuncionario.setCracha(6002);
+          
+          imprimePessoa(objetoCliente);
+          imprimePessoa(objetoFuncionario);
+    }
+}
+
+
+public class cliente extends pessoa{
+    private int codCliente;
+
+    public int getCodCliente() {
+        return codCliente;
+    }
+
+    public void setCodCliente(int codCliente) {
+        this.codCliente = codCliente;
+    }
+
+    @Override
+    public void imprime() {
+        System.out.println("O cliente " + getNome() + "tem " +getIdade() + " anos e possui o código  " + getCodCliente());       
+    }
+}
+
+
+public class funcionario extends pessoa {
+    private int cracha;
+
+    public int getCracha() {
+        return cracha;
+    }
+
+    public void setCracha(int cracha) {
+        this.cracha = cracha;
+    }
+
+    @Override
+    public void imprime() {
+        System.out.println("O funcionario " + getNome() + "tem " +getIdade() + " anos e possui o crachá " + getCracha());
+    }
+}
+
+
+public abstract class pessoa {
+    private String nome;
+    private int idade;
+    
+    public abstract void imprime(); //abstracao
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+}
