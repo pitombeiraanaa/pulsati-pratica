@@ -1,0 +1,100 @@
+public class Exercicio4Pilares {
+   public static void imprimeVeiculo(veiculo param){
+       param.imprime();
+   }
+    public static void main(String[] args) {
+        // criar uma classe veiculo com velocidade e quantidade de passageiros e um metodo abstrato imprime
+        // criar duas classes herdeiras, avião e moto
+        // encapsular os atributos de todas as classes
+        // implementar o metodo imprime nas 2 classes filhas 
+         
+        moto objMoto = new moto ();
+        aviao objAviao = new aviao ();
+        
+        objMoto.setQtdPassageiros(2);
+        objMoto.setRetrovisor(2);
+        objMoto.setVelocidade(80);
+        
+        objAviao.setPorta(3);
+        objAviao.setJanela(50);
+        
+        imprimeVeiculo(objMoto);
+        imprimeVeiculo(objAviao);
+           
+        
+    }
+}
+
+
+public abstract class veiculo {
+    private int velocidade;
+    private int qtdPassageiros;
+  
+    public abstract void imprime(); //abstracao
+    
+
+    public int getVelocidade() {
+        return velocidade;
+    }
+
+    public void setVelocidade(int velocidade) {
+        this.velocidade = velocidade;
+    }
+
+    public int getQtdPassageiros() {
+        return qtdPassageiros;
+    }
+
+
+
+    public void setQtdPassageiros(int qtdPassageiros) {
+        this.qtdPassageiros = qtdPassageiros;
+    }
+    
+}
+
+public class moto extends veiculo{
+    private int retrovisor;
+
+    public int getRetrovisor() {
+        return retrovisor;
+    }
+
+    public void setRetrovisor(int retrovisor) {
+        this.retrovisor = retrovisor;
+    }
+
+    @Override
+    public void imprime() {
+        System.out.println("A moto possui " + getRetrovisor() + " retrovisores");
+    }
+}
+
+public class aviao extends veiculo{
+    private int porta;
+    private int janela;
+
+    public int getPorta() {
+        return porta;
+    }
+
+    public void setPorta(int porta) {
+        this.porta = porta;
+    }
+
+    public int getJanela() {
+        return janela;
+    }
+
+    public void setJanela(int janela) {
+        this.janela = janela;
+    }
+
+
+
+    @Override
+    public void imprime() {
+        System.out.println("O avião possui " + getPorta() + "portas e " + getJanela() + " janelas");       
+    }
+
+}
