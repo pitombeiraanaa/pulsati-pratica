@@ -1,4 +1,12 @@
-
+//Sistema de gerenciamento de biblioteca: 
+//Crie uma classe abstrata "Item" para representar um item na biblioteca: 
+//com atributos como "título", "autor" e "número de exemplares".
+//Em seguida, crie outras duas classes que herdam de "Item":classe livro Livro(INT ISBN, int numPaginas )
+//classe Revista (int numEdicao)Crie tambem uma classe biblioteca:Metodos:   
+//AlugarItem, que recebe um item, e mostra uma mensagem dizendo (item.titulo + " foi alugado") 
+//exemplo: "É assim que acaba foi alugado"   
+//DevolverrItem, que recebe um item, e mostra uma mensagem 
+//dizendo (item.titulo + " foi devolvido") exemplo: "É assim que acaba foi devolvido"
 package com.mycompany.desafiobiblioteca;
 
 public class DesafioBiblioteca {

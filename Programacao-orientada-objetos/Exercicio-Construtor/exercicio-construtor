@@ -1,0 +1,19 @@
+ //Criar uma classe pessoa(nome e idade) com um construtor que recebe esses atributos
+ //Criar uma classe endereco(Rua,Numero,CEP) 
+ //criar um construtor que recebe esses atributos 
+ //criar uma classe contato(pessoa,endereco, Int numeroCelular, String Email)
+ //Na classe principal adicionar um contato usando os contrutores
+
+package com.mycompany.exercicio.construtor;
+
+
+public class ExercicioConstrutor {
+
+    public static void main(String[] args) {
+        contato objContato = new contato ();
+        objContato.adcicionarInformacoes("Maria", 18, "Rua do zero", 0, 0000000, 33232425, 
+                "mariadaruazero@gmail.com");
+        
+        objContato.imprime();
+    }
+}

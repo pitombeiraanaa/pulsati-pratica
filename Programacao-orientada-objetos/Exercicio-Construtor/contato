@@ -1,0 +1,50 @@
+package com.mycompany.exercicio.construtor;
+
+
+public class contato {
+    private int numeroCelular;
+    private String email;
+    
+    private Pessoa pessoaContato;
+    private Endereco enderecoContato;
+    
+    contato (){
+        pessoaContato = new Pessoa();
+    
+        enderecoContato = new Endereco();
+    }
+    
+    public void adcicionarInformacoes (String nome, int idade, String rua, int numero, int cep, int numeroCelular, String email){
+     pessoaContato.setNome(nome);
+     pessoaContato.setIdade(idade);
+     enderecoContato.setRua(rua);
+     enderecoContato.setNumero(numero);
+     enderecoContato.setCep(cep);
+     this.numeroCelular = numeroCelular;
+     this.email = email;   
+    }
+    
+    public void imprime(){
+        System.out.println("A pessoa " + pessoaContato.getNome() + " tem " + pessoaContato.getIdade() +
+                " anos e mora na rua " + enderecoContato.getRua() + "número " + enderecoContato.getNumero() +
+                " com CEP " + enderecoContato.getCep() + " possui o número de celular " + getNumeroCelular() + 
+                " e possui o email " + getEmail());
+    }
+    
+    public int getNumeroCelular() {
+        return numeroCelular;
+    }
+
+    public void setNumeroCelular(int numeroCelular) {
+        this.numeroCelular = numeroCelular;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+ }

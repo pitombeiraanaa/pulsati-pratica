@@ -1,3 +1,9 @@
+ //Sistema de gerenciamento de contas:
+ //Crie uma classe "Conta" para representar uma conta bancária, com atributos como "nome do titular", "saldo" e "número da conta":
+ //Implemente métodos para depositar, sacar e transferir dinheiro entre contas.
+ //Em seguida, crie outras duas classes que herdam de "Conta":
+ //"ContaEspecial"(double Limite)
+ //"ContaPoupanca"(double taxaRendimento)
 package com.mycompany.desafiobanco;
 
 public class DesafioBanco {
