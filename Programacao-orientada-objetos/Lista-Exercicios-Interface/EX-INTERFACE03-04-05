@@ -1,4 +1,6 @@
 3- Crie uma interface veiculo com métodos para acelerar e frear.
+4- Crie três classes que implementem a interface veiculo: Carro, Bicicleta, Caminhao.
+5- Adicione um atributo Velocidade à interface veiculo e implemente-o nas três classes criadas no exercício anterior.
 
 //main
 

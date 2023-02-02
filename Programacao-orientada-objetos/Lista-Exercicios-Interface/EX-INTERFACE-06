@@ -1,0 +1,2 @@
+6- Criar uma interface chamada "Calculadora" com dois métodos abstratos "somar" e "subtrair". 
+Implemente a interface em uma classe chamada "CalculadoraImpl" e forneça implementações para os métodos "somar" e "subtrair".
