@@ -1,0 +1,67 @@
+1- Crie uma classe pessoa que possua os atributos nome e idade. 
+Adicione um método que retorne uma string no formato "Nome: [nome], Idade: [idade]".
+
+2- Crie uma classe estudante que herde da classe pessoa e adicione um 
+atributoidentificadorEstudante. Adicione um método que retorne uma string no formato 
+"Nome: [nome], Idade: [idade], Matrícula: [identificadorEstudante]".
+
+// CLASSE PESSOA 
+
+public class pessoa {
+    private String nome;
+    private int idade;
+   
+    
+    
+      pessoa(){}
+      
+      pessoa(String nome, int idade){}
+  
+      public String getNome() {
+          return nome;
+      }
+  
+      public void setNome(String nome) {
+          this.nome = nome;
+      }
+  
+      public int getIdade() {
+          return idade;
+      }
+  
+      public void setIdade(int idade) {
+          this.idade = idade;
+      }
+  }
+
+// CLASSE ESTUDANTE 
+ public class estudante extends pessoa{
+ private int matricula;
+
+    public int getMatricula() {
+        return matricula;
+    }
+    
+    estudante(){}
+    
+    public String retorna(){
+        return "nome: " + getNome() + " idade: " + getIdade() + " matricula: " +matricula;
+    }
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+}
+
+
+// MAIN
+public class ExInterface01 {
+
+    public static void main(String[] args) {
+       estudante objEstudante = new estudante();
+       objEstudante.setIdade(15);
+       objEstudante.setNome("Maria");
+       objEstudante.setMatricula(5);
+      System.out.println(objEstudante.retorna());  
+    }
+}
+

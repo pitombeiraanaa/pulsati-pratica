@@ -1,0 +1,142 @@
+3- Crie uma interface veiculo com métodos para acelerar e frear.
+
+//main
+
+package com.mycompany.ex.interface03;
+
+/**
+ *
+ * @author ana.machado
+ */
+public class ExInterface03 {
+
+    public static void main(String[] args) {
+        carro objCarro = new carro();
+        objCarro.setVelocidadeCarro(50);
+       objCarro.acelerar();
+        
+    } 
+}
+
+// interface veiculo
+package com.mycompany.ex.interface03;
+
+
+public interface veiculo {
+
+    static int velocidadeInicial = 0;
+    
+    void acelerar();
+    void frear();
+    void velocidade();
+}
+
+//class carro
+package com.mycompany.ex.interface03;
+
+
+public class carro implements veiculo {
+
+    private int velocidadeCarro;
+    
+    carro(){}
+    
+    @Override
+    public void acelerar() {
+        setVelocidadeCarro(getVelocidadeCarro() + 50);
+        System.out.println("Seu carro aumentou a velocidade em 50km/h");
+    }
+
+    @Override
+    public void frear() {
+       setVelocidadeCarro(getVelocidadeCarro() -30);
+        System.out.println("Seu carro diminuiu a velocidade em 30km/h");
+    }
+
+    @Override
+    public void velocidade() {
+        System.out.println("A velocidade atual do carro é " + getVelocidadeCarro());
+    }
+
+    public int getVelocidadeCarro() {
+        return velocidadeCarro;
+    }
+
+    public void setVelocidadeCarro(int velocidadeCarro) {
+        this.velocidadeCarro = velocidadeCarro;
+    }
+
+}
+
+// class bicicleta
+package com.mycompany.ex.interface03;
+
+public class bicicleta implements veiculo {
+    
+    private int velocidadeBicicleta;
+    
+    bicicleta(){}
+
+    @Override
+    public void acelerar() {
+        setVelocidadeBicicleta(getVelocidadeBicicleta() + 5);
+        System.out.println("Sua bicicleta aumentou a velocidade em 5km/h");
+    }
+
+    @Override
+    public void frear() {
+    setVelocidadeBicicleta(getVelocidadeBicicleta() - 3);
+        System.out.println("Sua bicicleta diminuiu a velocidade em 3km/h");
+    }
+
+    @Override
+    public void velocidade() {
+        System.out.println("A velocidade atual da sua bicicleta é de " + getVelocidadeBicicleta());
+    }
+
+    public int getVelocidadeBicicleta() {
+        return velocidadeBicicleta;
+    }
+
+    public void setVelocidadeBicicleta(int velocidadeBicicleta) {
+        this.velocidadeBicicleta = velocidadeBicicleta;
+    }
+}
+
+
+//class caminhão
+
+package com.mycompany.ex.interface03;
+
+
+public class caminhao implements veiculo {
+
+    private int velocidadeCaminhao;
+    caminhao(){}
+
+    @Override
+    public void acelerar() {
+        setVelocidadeCaminhao(getVelocidadeCaminhao() + 10);
+        System.out.println("Seu caminhão acelerou 10km/h");
+    }
+
+    @Override
+    public void frear() {
+     setVelocidadeCaminhao(getVelocidadeCaminhao() - 5);
+        System.out.println("Seu caminhão diminuiu 5km/h");
+    }
+
+    @Override
+    public void velocidade() {
+        System.out.println("A sua velocidade atual é " + getVelocidadeCaminhao());
+    }
+
+    public int getVelocidadeCaminhao() {
+        return velocidadeCaminhao;
+    }
+
+    public void setVelocidadeCaminhao(int velocidadeCaminhao) {
+        this.velocidadeCaminhao = velocidadeCaminhao;
+    }
+    
+}

@@ -1,0 +1,26 @@
+
+1- Crie uma classe pessoa que possua os atributos nome e idade. 
+Adicione um método que retorne uma string no formato "Nome: [nome], Idade: [idade]".
+
+2- Crie uma classe estudante que herde da classe pessoa e adicione um 
+atributoidentificadorEstudante. Adicione um método que retorne uma string no formato 
+"Nome: [nome], Idade: [idade], Matrícula: [identificadorEstudante]".
+
+
+3- Crie uma interface veiculo com métodos para acelerar e frear.
+
+4- Crie três classes que implementem a interface veiculo: Carro, Bicicleta, Caminhao.
+
+
+5- Adicione um atributo Velocidade à interface veiculo e implemente-o nas três classes criadas no exercício anterior.
+
+6- Criar uma interface chamada "Calculadora" com dois métodos abstratos "somar" e "subtrair". 
+Implemente a interface em uma classe chamada "CalculadoraImpl" e forneça implementações para os métodos "somar" e "subtrair".
+
+
+7- Criar uma interface chamada "Veículo" com três métodos abstratos "acelerar", "frear" e "mudarMarcha". 
+Implemente a interface em uma classe "Carro" e forneça implementações para os métodos "acelerar", "frear" e "mudarMarcha".
+
+
+8- Criar uma interface chamada "MusicPlayer" com três métodos abstratos "play", "pause" e "stop".
+ Implemente a interface em uma classe "MP3Player" e forneça implementações para os métodos "play", "pause" e "stop".
