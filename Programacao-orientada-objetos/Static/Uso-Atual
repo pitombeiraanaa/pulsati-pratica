@@ -1,0 +1,30 @@
+package com.mycompany.exemploestatico;
+
+/**
+ *
+ * @author ana.machado
+ */
+public class ExemploEstatico {
+
+    public static void main(String[] args) {
+        String texto = "OlA sEja BeM vINDO";
+        texto = utilitario.deixarMinusculo(texto);
+    }
+}
+
+
+
+package com.mycompany.exemploestatico;
+
+/**
+ *
+ * @author ana.machado
+ */
+public class utilitario {
+    public static String deixarMaiusculo(String texto){
+        return texto.toUpperCase();
+    }
+    public static String deixarMinusculo(String texto){
+        return texto.toLowerCase();
+    }
+}
