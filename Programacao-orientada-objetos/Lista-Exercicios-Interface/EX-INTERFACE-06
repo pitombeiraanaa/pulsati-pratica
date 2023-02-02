@@ -54,7 +54,6 @@ public class CalculadoraImpl implements calculadora{
    }
    
 
-
 // MAIN 
 
 public class ExInterface06 {

@@ -1,0 +1,5 @@
+7- Criar uma interface chamada "Veículo" com três métodos abstratos 
+"acelerar", "frear" e "mudarMarcha". 
+Implemente a interface em uma classe "Carro" e forneça implementações para os métodos
+ "acelerar", "frear" e "mudarMarcha".
+
