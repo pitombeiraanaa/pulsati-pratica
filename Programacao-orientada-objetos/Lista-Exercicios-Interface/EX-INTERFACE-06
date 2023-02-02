@@ -1,2 +1,71 @@
 6- Criar uma interface chamada "Calculadora" com dois métodos abstratos "somar" e "subtrair". 
 Implemente a interface em uma classe chamada "CalculadoraImpl" e forneça implementações para os métodos "somar" e "subtrair".
+
+//INTERFACE CALCULADORA
+
+public interface calculadora {
+  void somar();
+  void subtrair();
+}
+
+//CALCULADORA IMPL
+
+public class CalculadoraImpl implements calculadora{
+    private int valor1;
+    private int valor2;
+    private int resultado;
+      
+   
+       @Override
+       public void somar() {
+           setResultado(getValor1() + getValor2());
+           System.out.println("O resultado é: "+getResultado());
+       }
+   
+       @Override
+       public void subtrair() {
+           setResultado(getValor1() - getValor2());
+           System.out.println("O resultado é: " + getResultado());
+       }
+   
+       public int getValor1() {
+           return valor1;
+       }
+   
+       public void setValor1(int valor1) {
+           this.valor1 = valor1;
+       }
+   
+       public int getValor2() {
+           return valor2;
+       }
+   
+       public void setValor2(int valor2) {
+           this.valor2 = valor2;
+       }
+   
+       public int getResultado() {
+           return resultado;
+       }
+   
+       public void setResultado(int resultado) {
+           this.resultado = resultado;
+       }
+   }
+   
+
+
+// MAIN 
+
+public class ExInterface06 {
+
+    public static void main(String[] args) {
+       CalculadoraImpl calcula = new CalculadoraImpl();
+       
+       calcula.setValor1(5);
+       calcula.setValor2(8);
+       calcula.subtrair();
+    }
+}
+
+

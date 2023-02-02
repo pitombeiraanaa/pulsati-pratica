@@ -24,3 +24,22 @@ Implemente a interface em uma classe "Carro" e forneça implementações para os
 
 8- Criar uma interface chamada "MusicPlayer" com três métodos abstratos "play", "pause" e "stop".
  Implemente a interface em uma classe "MP3Player" e forneça implementações para os métodos "play", "pause" e "stop".
+
+
+
+ 9- Crie uma classe Carro com três variáveis membro: potência, velocidade e marca.
+  Crie duas classes filhas chamadas Sedan e SUV que herdam os atributos da classe Carro. 
+  Adicione um método acelerar() às duas classes filhas que simule o comportamento de aceleração 
+  dos carros de acordo com suas respectivas potências.
+  
+
+
+  10- Crie uma interface Transporte que possui um método move(). 
+  crie duas classes que implementam essa interface: Avião e Trem.
+  Adicione um método para calcular o tempo de viagem para cada classe, usando
+   diferentes algoritmos para calcular a velocidade média (para avião) e tempo de viagem (para trem).
+
+
+ 11- Crie ua classe abstrata chamada Reptil que herde da classe Animal e adicione um método abstrato
+ para imprimir a temperatura corporal destes animais.
+ Crie uma classe chamada Cobra que herde da classe Reptil e adicione um método para imprimir se a cobra é venenosa ou não.
