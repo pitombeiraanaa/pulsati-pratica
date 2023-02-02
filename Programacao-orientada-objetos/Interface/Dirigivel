@@ -1,0 +1,10 @@
+package com.mycompany.interface;
+
+/**
+ *
+ * @author ana.machado
+ */
+public interface Dirigivel {
+    void dirige();
+    
+}

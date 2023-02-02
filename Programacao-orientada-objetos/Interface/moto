@@ -1,0 +1,13 @@
+package com.mycompany.interface;
+
+/**
+ *
+ * @author ana.machado
+ */
+public class moto implements Dirigivel {
+    
+    @Override
+    public void dirige(){
+        System.out.println("Dirigindo uma moto");
+    }
+}
