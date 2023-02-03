@@ -1,0 +1,4 @@
+//Baseado em como foi implementado Pessoa,
+//crie as classes Modelo, e controler que retorna o objeto em json
+
+04- crie a mesma estrutura para funcionario, com os atributos id, nome, cpf
