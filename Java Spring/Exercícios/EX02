@@ -1,0 +1,68 @@
+//Baseado em como foi implementado Pessoa,
+//crie as classes Modelo, e controler que retorna o objeto em json
+02- crie a mesma estrutura para cliente, com os atributos id, nome, cpf
+
+
+//main
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProjetoExemploApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProjetoExemploApplication.class, args);
+	}
+//controller
+}
+
+// controller
+
+package com.example.demo.controller;
+
+
+import com.example.demo.model.clienteModel;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+public class clienteController {
+    @GetMapping("/cliente")
+
+        public ResponseEntity<List<clienteModel>>cliente(){
+        List<clienteModel> cliente = new ArrayList<>();
+
+                cliente.add(new clienteModel(1, "Heloisa", "13648994"));
+        return ResponseEntity.ok(cliente);
+        }
+
+}
+
+// model
+package com.example.demo.model;
+
+import lombok.Data;
+
+@Data
+public class clienteModel {
+    private int id;
+    private String nome;
+    private String cpf;
+
+    clienteModel() {
+    }
+
+    public clienteModel(int id, String nome, String cpf)
+
+    {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+}
