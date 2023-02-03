@@ -1,0 +1,79 @@
+package com.example.demo.controller;
+
+// controller 
+
+import com.example.demo.model.pessoaModel;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+// anotação para indicar que é um controller 
+// ele vai fazer com que o Spring saiba que essa classe tem rotas para ele listar.
+
+public class pessoaController { 
+
+    @GetMapping("/pessoa")
+    //anotação para indicar que é uma rota
+    // do tipo get, que vai ser acessada pela pessoa
+
+    public ResponseEntity<List<pessoaModel>> pessoa(){
+        List<pessoaModel> pessoas = new ArrayList<>();
+
+     //ResponseEntity é um objeto que vai ser retornado
+     //List<pessoaModel> é o tipo de dado que vai ser retornado
+     //o ResponseEntity transforma a lista em um objeto JSON com os dados
+
+        pessoaModel pessoa1 = new pessoaModel() ; // adiciona pessoas usando o construtor de pessoa
+        pessoaModel pessoa2 = new pessoaModel(); // o mesmo de cima mas com dados diferentes
+
+
+        pessoa1.setId(1);
+        pessoa1.setNome("João");
+        pessoa1.setIdade(20);
+
+
+
+        pessoa2.setId(2);
+        pessoa2.setNome("Maria");
+        pessoa2.setIdade(25);
+
+        pessoas.add(pessoa1);
+        pessoas.add(pessoa2);
+
+        return ResponseEntity.ok(pessoas); // da o retorna da lista de pessoas
+    }
+}
+
+
+
+// pessoaModel 
+
+package com.example.demo.model;
+
+import lombok.Data;
+
+@Data
+public class pessoaModel {
+    private int id;
+    private String nome;
+    private int idade;
+}
+
+
+//main
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProjetoExemploApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProjetoExemploApplication.class, args);
+	}
+

@@ -1,0 +1,62 @@
+//Main 
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProjetoExemploApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProjetoExemploApplication.class, args);
+	}
+
+
+    // controller
+
+    package com.example.demo.controller;
+
+
+import com.example.demo.model.pessoaModel;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+public class pessoaController {
+
+    @GetMapping("/pessoa")
+    public ResponseEntity<List<pessoaModel>> pessoa(){
+        List<pessoaModel> pessoas = new ArrayList<>();
+
+        pessoas.add(new pessoaModel(1, "José", 20));
+        pessoas.add(new pessoaModel(2, "Ana", 23));
+
+        return ResponseEntity.ok(pessoas);
+    }
+}
+
+
+//construtor
+
+package com.example.demo.model;
+
+import lombok.Data;
+
+@Data
+public class pessoaModel {
+    private int id;
+    private String nome;
+    private int idade;
+
+    //construtor
+    pessoaModel(){}
+    public pessoaModel(int id, String nome, int idade){
+        this.id = id;
+        this.nome = nome;
+        this.idade = idade;
+    }
+}
