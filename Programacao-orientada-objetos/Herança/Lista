@@ -1,0 +1,14 @@
+1- Crie uma classe "Produto" com atributos como nome, preço e descrição. 
+Depois, crie subclasses para produtos como eletrônicos, livros e roupas.
+
+
+2- Crie uma classe "Animação" com atributos como título, diretor e duração. 
+Depois, crie subclasses para animações como desenhos animados e filmes.
+
+3- Crie uma classe "Restaurante" com atributos como nome, endereço e tipo de cozinha. 
+Depois, crie subclasses para restaurantes como italianos, japoneses e mexicanos.
+
+
+4- Crie uma classe "Jogador" com atributos como nome, posição e número de camisa. Depois, crie subclasses para jogadores de futebol, basquete e beisebol.
+
+5- Crie uma classe "Filme" com atributos como título, diretor e gênero. Depois, crie subclasses para filmes como ação, comédia e drama.
