@@ -1,0 +1,61 @@
+//Baseado em como foi implementado Pessoa,
+//crie as classes Modelo, e controler que retorna o objeto em json
+03- crie a mesma estrutura para fornecedor, com os atributos id, nome, cnpj
+
+// main
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProjetoExemploApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProjetoExemploApplication.class, args);
+	}
+
+// controller
+package com.example.demo.controller;
+
+import com.example.demo.model.fornecedorModel;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+public class fornecedorController {
+    @GetMapping("/fornecedor")
+
+    public ResponseEntity<List<fornecedorModel>> fornecedor(){
+        List<fornecedorModel> fornecedor = new ArrayList<>();
+
+        fornecedor.add(new fornecedorModel(1, "Bonassoli", "0021116489749469"));
+        return ResponseEntity.ok(fornecedor);
+    }
+}
+
+//Model
+package com.example.demo.model;
+
+import lombok.Data;
+
+@Data
+public class fornecedorModel {
+    private int id;
+    private String nome;
+    private String cnpj;
+
+    fornecedorModel() {
+    }
+
+    public fornecedorModel(int id, String nome, String cnpj){
+    this.id =id;
+    this.nome =nome;
+    this.cnpj = cnpj;
+}
+
+}
