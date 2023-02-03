@@ -1,0 +1,66 @@
+//Baseado em como foi implementado Pessoa,
+//crie as classes Modelo, e controler que retorna o objeto em json
+
+01- crie a mesma estrutura para produto, com os atributos id, nome, preco
+
+
+//Main
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProjetoExemploApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProjetoExemploApplication.class, args);
+	}
+
+    //produtoModel 
+
+    package com.example.demo.model;
+import lombok.Data;
+
+@Data
+public class produtoModel {
+    private int id;
+    private String nome;
+    private int preco;
+
+    produtoModel(){}
+
+    public produtoModel(int id, String nome, int preco){
+        this.id = id;
+        this.nome= nome;
+        this.preco = preco;
+    }
+}
+
+// produtoController
+
+package com.example.demo.controller;
+
+import com.example.demo.model.produtoModel;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+public class produtoController {
+
+    @GetMapping("/produto")
+
+    public ResponseEntity<List<produtoModel>> produto(){
+      List<produtoModel> produto = new ArrayList<>();
+
+      produto.add(new produtoModel(1, "Hidratante", 35));
+      return ResponseEntity.ok(produto);
+
+    }
+}
+
+
