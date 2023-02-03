@@ -1,0 +1,7 @@
+//Baseado em como foi implementado Pessoa,
+//crie as classes Modelo, e controler que retorna o objeto em json
+
+01- crie a mesma estrutura para produto, com os atributos id, nome, preco
+02- crie a mesma estrutura para cliente, com os atributos id, nome, cpf
+03- crie a mesma estrutura para fornecedor, com os atributos id, nome, cnpj
+04- crie a mesma estrutura para funcionario, com os atributos id, nome, cpf
