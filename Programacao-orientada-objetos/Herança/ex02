@@ -1,0 +1,2 @@
+2- Crie uma classe "Animação" com atributos como título, diretor e duração. 
+Depois, crie subclasses para animações como desenhos animados e filmes.
