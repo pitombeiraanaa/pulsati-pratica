@@ -3,6 +3,9 @@
     •   Implemente um controlador que permita adicionar, editar, exibir e excluir contatos.
     •   Armazene os contatos em memória usando o Lombok e spring web
 
+
+
+
 2-   Crie uma aplicação de gerenciamento de tarefas:
     •   Crie uma classe de modelo para representar as tarefas.
     •   Implemente um controlador que permita adicionar, editar, exibir e excluir tarefas.

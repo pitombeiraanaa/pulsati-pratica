@@ -1,0 +1,126 @@
+1- Crie uma aplicação de gerenciamento de contatos:
+    •   Crie uma classe de modelo para representar os contatos.
+    •   Implemente um controlador que permita adicionar, editar, exibir e excluir contatos.
+    •   Armazene os contatos em memória usando o Lombok e spring web
+
+
+
+
+    //model
+
+    package com.example.demo.model;
+
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+
+ @Data
+ @AllArgsConstructor
+ public class contatoModel {
+    private int id;
+    private String nome;
+    private String numCel;
+}
+
+//controller
+package com.example.demo.controller;
+
+
+
+import com.example.demo.model.contatoModel;
+import com.example.demo.repository.contatoRepository;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping ("/contato")
+public class contatoController {
+
+    private contatoRepository contatoRepository = new contatoRepository();
+
+    @GetMapping("/buscar")
+    public ResponseEntity<List<contatoModel>> getContatos(){
+        return ResponseEntity.ok(contatoRepository.getContato());
+    }
+
+    @GetMapping("/buscar/{id}")
+    public ResponseEntity<contatoModel> getContatoById(@PathVariable int id){
+        return ResponseEntity.ok(contatoRepository.getContatoById(id));
+    }
+
+    @PostMapping("/adicionar")
+    public void addContato(@RequestBody contatoModel contato){
+        contatoRepository.addContato(contato);
+    }
+
+    @DeleteMapping("/deletar")
+    public void deleteContato(@RequestBody contatoModel contato){
+        contatoRepository.deleteContato(contato);
+    }
+
+    @PutMapping("/atualizar")
+    public void updateContato(@RequestBody contatoModel contato){
+        contatoRepository.updateContato(contato);
+    }
+}
+
+//repository
+
+package com.example.demo.repository;
+
+import com.example.demo.model.contatoModel;
+import com.example.demo.model.funcionarioModel;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class contatoRepository {
+    List<contatoModel> contatos = new ArrayList<contatoModel>();
+
+    public contatoRepository(){
+        contatos.add(new contatoModel(1, "Iracema", "2499254578"));
+        contatos.add(new contatoModel(2, "Juraci", "24998795427"));
+        contatos.add(new contatoModel(3, "Jubiscreia", "48992543218"));
+        contatos.add(new contatoModel(4, "Ignacio", "47998254578"));
+    }
+
+    // ADD
+    public void addContato(contatoModel contato) {
+        contatos.add(contato);
+    }
+
+    //GET
+    public List<contatoModel> getContato(){
+        return contatos;
+    }
+
+    //DELETE
+    public void deleteContato(contatoModel contato){
+        contatos.remove(contato);
+    }
+
+    //UPDATE
+    public void  updateContato(contatoModel contato) {
+        for (contatoModel c : contatos) {
+            if (c.getId() == contato.getId()) {
+                c.setId(contato.getId());
+                c.setNome(contato.getNome());
+                c.setNumCel(contato.getNumCel());
+            }
+        }
+    }
+
+            // GET for ID
+            public contatoModel getContatoById(int id) {
+                for (contatoModel c : contatos) {
+                    if (c.getId() == id) {
+                        return c;
+                    }
+
+                }
+                return null;
+            }
+}
