@@ -1,0 +1,158 @@
+// main
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+
+}
+
+//model
+
+package com.example.demo.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+@Data
+@AllArgsConstructor
+public class funcionarioModel {
+        private int id;
+        private String nome;
+        private int idade;
+        private int cracha;
+    }
+
+
+
+
+//Controller
+
+package com.example.demo.controller;
+
+
+import com.example.demo.model.clienteModel;
+import com.example.demo.model.funcionarioModel;
+import com.example.demo.repository.clienteRepository;
+import com.example.demo.repository.funcionarioRepository;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/funcionario")
+public class funcionariController {
+
+
+
+    private funcionarioRepository  funcionarioRepository= new funcionarioRepository();
+
+    @GetMapping("/buscar")
+
+    public ResponseEntity<List<funcionarioModel>> getFuncionarios(){
+        return ResponseEntity.ok(funcionarioRepository.getFuncionario());
+    }
+    //localhost:8080/funcionario/buscar
+
+    @PostMapping("/adicionar")
+    public void addFuncionario(@RequestBody funcionarioModel funcionario){
+        funcionarioRepository.addFuncionario(funcionario);
+    }
+
+    @DeleteMapping("/deletar")
+    public void deleteFuncionario(@RequestBody funcionarioModel funcionario){
+        funcionarioRepository.deleteFuncionario(funcionario);
+    }
+
+    @PutMapping("/atualizar")
+    public void updateFuncionario(@RequestBody funcionarioModel funcionario){
+        funcionarioRepository.updateFuncionario(funcionario);
+    }
+
+    @GetMapping("/buscar/{id}")
+    public ResponseEntity<funcionarioModel> getFuncionarioById(@PathVariable int id){
+        return ResponseEntity.ok(funcionarioRepository.getFuncionarioById(id));
+    }
+
+}
+
+// Repository
+
+package com.example.demo.repository;
+
+import com.example.demo.model.clienteModel;
+import com.example.demo.model.funcionarioModel;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class funcionarioRepository {
+    List<funcionarioModel> funcionarios = new ArrayList<funcionarioModel>();
+
+
+    public funcionarioRepository(){
+        funcionarios.add(new funcionarioModel(1, "Marcia", 30 ,  123));
+        funcionarios.add(new funcionarioModel(2, "Joana", 32 ,  456));
+        funcionarios.add(new funcionarioModel(3, "Ana", 24 ,  789));
+        funcionarios.add(new funcionarioModel(4, "Luiz", 34 ,  198));
+        funcionarios.add(new funcionarioModel(5, "Carol", 18 ,  875));
+    }
+
+
+    //Add funcionario
+    public void addFuncionario(funcionarioModel funcionario){
+        funcionarios.add(funcionario);
+    }
+
+
+    //GET funcionario
+    public List<funcionarioModel> getFuncionario(){
+        return funcionarios;
+    }
+
+    // DELETE
+    public void deleteFuncionario(funcionarioModel funcionario){
+        funcionarios.remove(funcionario);
+    }
+
+    //UPDATE
+    public void updateFuncionario(funcionarioModel funcionario){
+        for(funcionarioModel c : funcionarios){
+            if(c.getId()== funcionario.getId()){
+                c.setNome(funcionario.getNome());
+                c.setIdade(funcionario.getIdade());
+                c.setCracha(funcionario.getCracha());
+            }
+        }
+    }
+
+    // GET FOR ID
+    public funcionarioModel getFuncionarioById(int id){
+        for (funcionarioModel c: funcionarios){
+            if(c.getId()== id){
+                return c;
+            }
+        }
+        return null;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

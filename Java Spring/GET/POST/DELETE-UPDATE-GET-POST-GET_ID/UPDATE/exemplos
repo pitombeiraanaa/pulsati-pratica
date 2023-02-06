@@ -1,0 +1,44 @@
+// REPOSITORY COM GET, GET ID POST, UPDATE E DELETE 
+
+public class clienteRepository {
+List<clienteModel> clientes = new ArrayList<clienteModel>();
+
+
+ //ADD
+ public void addCliente(clienteModel cliente) {
+     clientes.add(cliente);
+ }
+
+ //GET
+ public List<clienteModel> getClientes(){
+     return clientes;
+ }
+
+  // DELETE
+  public void deleteCliente(clienteModel cliente){
+     clientes.remove(cliente);
+  }
+
+  //UPDATE
+    public void updateCliente(clienteModel cliente){
+     for(clienteModel c : clientes){
+         if(c.getId()== cliente.getId()){
+             c.setNome(cliente.getNome());
+             c.setIdade(cliente.getIdade());
+             c.setCodigoCadastro(cliente.getCodigoCadastro());
+         }
+     }
+    }
+    
+    // GET ID
+    public clienteModel getClienteById(int id){
+     for (clienteModel c: clientes){
+         if(c.getId()== id){
+             return c;
+         }
+     }
+     return null;
+    }
+
+
+}
