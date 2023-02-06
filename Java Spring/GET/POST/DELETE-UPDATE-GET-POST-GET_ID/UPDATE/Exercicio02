@@ -1,0 +1,122 @@
+2-   Crie uma aplicação de gerenciamento de tarefas:
+    •   Crie uma classe de modelo para representar as tarefas.
+    •   Implemente um controlador que permita adicionar, editar, exibir e excluir tarefas.
+    •   Armazene as tarefas em memória usando o Lombok e spring web
+
+
+    //model
+    package com.example.demo.model;
+
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+
+ @Data
+ @AllArgsConstructor
+ public class tarefasModel {
+
+    private int id;
+    private String materia;
+    private String curso;
+}
+
+//repository 
+
+package com.example.demo.repository;
+
+import com.example.demo.model.funcionarioModel;
+import com.example.demo.model.tarefasModel;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class tarefasRepository {
+    List<tarefasModel> tarefas = new ArrayList<tarefasModel>();
+    
+    public tarefasRepository(){
+        tarefas.add(new tarefasModel(1, "Posicionamento", "Radiologia"));
+        tarefas.add(new tarefasModel(2, "Anatomia" , "Enfermagem"));
+        tarefas.add(new tarefasModel(3, "POO" , "Back End"));
+        tarefas.add(new tarefasModel(4, "Arquitetura de dados", "Arquitetura de Software"));
+    }
+    
+    // add tarefas
+    public void addTarefas(tarefasModel tarefa){
+        tarefas.add(tarefa);
+    }
+    
+    
+    //GET tarefas
+    
+    public List<tarefasModel>getTarefas(){
+        return tarefas;
+    }
+    
+    //DELETE
+    public void deleteTarefas(tarefasModel tarefa){
+        tarefas.remove(tarefa);
+    }
+    
+    //update
+    public void updateTarefas(tarefasModel tarefa){
+        for(tarefasModel t : tarefas){
+            if(t.getId()== tarefa.getId()){
+                t.setMateria(tarefa.getMateria());
+                t.setCurso(tarefa.getCurso());
+            }
+        }
+    }
+
+    // GET FOR ID
+    public tarefasModel getTarefasById(int id){
+        for (tarefasModel t: tarefas){
+            if(t.getId()== id){
+                return t;
+            }
+        }
+        return null;
+    }
+}
+
+
+//controller
+
+package com.example.demo.controller;
+
+import com.example.demo.model.tarefasModel;
+import com.example.demo.repository.tarefasRepository;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/tarefas")
+public class tarefasController {
+    private tarefasRepository tarefasRepository= new tarefasRepository();
+
+    @GetMapping("/buscar")
+    public ResponseEntity<List<tarefasModel>>
+    getTarefas(){
+        return ResponseEntity.ok(tarefasRepository.getTarefas());
+    }
+
+    @PostMapping("/adicionar")
+    public void addTarefas(@RequestBody tarefasModel tarefas){
+        tarefasRepository.addTarefas(tarefas);
+    }
+
+    @DeleteMapping("/deletar")
+    public void deleteTarefas(@RequestBody tarefasModel tarefas){
+        tarefasRepository.deleteTarefas(tarefas);
+    }
+
+    @PutMapping("/atualizar")
+    public void updateTarefas(@RequestBody tarefasModel tarefas){
+        tarefasRepository.updateTarefas(tarefas);
+    }
+
+    @GetMapping("/atualizar/{id}")
+    public ResponseEntity<tarefasModel>getTarefasById(@PathVariable int id){
+        return ResponseEntity.ok(tarefasRepository.getTarefasById(id));
+    }
+}
