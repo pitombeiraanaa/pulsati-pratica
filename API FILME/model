@@ -1,0 +1,44 @@
+package com.example.demo.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+import java.util.Date;
+
+
+/*
+ID
+NOME
+DESCRICAO
+DATA_LANCAMENTO
+QUANTIDADE_VENDAS
+PAIS_ORIGEM
+ */
+@Data
+@Table(name="ANA_FILMES")
+@Entity
+public class filmeModel {
+
+    @Id
+    @Column(name = "ID")
+    private int ID;
+
+    @Column(name = "NOME")
+    private String nome;
+
+    @Column(name = "DESCRICAO")
+    private String descricao;
+
+    @Column(name = "DATA_LANCAMENTO")
+    private Date dataLancamento;
+
+    @Column(name = "QUANTIDADE_VENDAS")
+    private String quantidadeVendas;
+
+    @Column(name = "PAIS_ORIGEM")
+    private String paisOrigem;
+
+}

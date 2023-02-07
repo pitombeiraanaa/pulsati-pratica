@@ -1,0 +1,40 @@
+package com.example.demo.controller;
+
+import com.example.demo.model.filmeModel;
+import com.example.demo.repository.filmeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RequestMapping("/filme")
+@RestController
+public class filmeController {
+    @Autowired
+    private filmeRepository repository;
+
+    @GetMapping("/buscar")
+    public List<filmeModel> buscarTodos(){
+        return repository.findAll();
+    }
+
+    @GetMapping("/buscar/{id}")
+    public filmeModel buscarPorId(@PathVariable int id){
+        return repository.findById(id).get();
+    }
+
+    @PutMapping("/atualizar")
+    public filmeModel atualizar(@RequestBody filmeModel filme){
+        return repository.save(filme);
+    }
+
+    @PostMapping("/adicionar")
+    public filmeModel salvar(@RequestBody filmeModel filme){
+        return repository.save(filme);
+    }
+
+    @DeleteMapping("/apagar/{id}")
+    public void deletar(@PathVariable int id){
+        repository.deleteById(id);
+    }
+}
