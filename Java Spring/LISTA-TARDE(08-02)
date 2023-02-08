@@ -129,4 +129,4 @@ create TABLE produtos (
 );
 
 1- Criar os metodos CRUD do produtos.
-2- Possibilitar:Buscar somente os produtos com estoque superior a 0
+2- Possibilitar: Buscar somente os produtos com estoque superior a 0
