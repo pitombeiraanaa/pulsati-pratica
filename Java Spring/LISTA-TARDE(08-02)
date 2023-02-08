@@ -128,5 +128,18 @@ create TABLE produtos (
   unidades_estoque NUMBER(10)
 );
 
-1- Criar os metodos CRUD do produtos.
-2- Possibilitar: Buscar somente os produtos com estoque superior a 0
+// 1- Criar os metodos CRUD do produtos. OK
+// 2- Possibilitar Buscar: OK
+3- Somente os produtos com estoque superior a 0(Criar um get separado);
+4- Buscar por nome_produto usando o like do sql e ignorando 
+o case usando o UPPER(Criar um get separado);
+5- Buscar por descricao usando o like do sql e ignorando o case usando o UPPER(Criar um get separado);
+6- Buscar por categoria(Criar um get separado);
+7- Buscar por fornecedor(Criar um get separado);
+8- Buscar por fabricante(Criar um get separado);
+9- Ao cadastrar: O preco deve ser superior a 0;
+10- O produto deve ter no minimo 4 caracteres e no maximo 100;
+11- A Categoria nao pode estar vazia;
+12- nao pode cadastrar produto com unidades_estoque menor que 1;
+
+
