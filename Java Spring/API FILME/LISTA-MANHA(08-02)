@@ -1,0 +1,215 @@
+CREATE TABLE tarefas (
+  id_tarefa NUMBER PRIMARY KEY,
+  nome_tarefa VARCHAR2(50) NOT NULL,
+  descricao_tarefa VARCHAR2(200),
+  data_inicio DATE NOT NULL,
+  status VARCHAR2(20) NOT NULL,
+  prioridade NUMBER(1) NOT NULL
+);
+
+1- Criar uma API para gerenciar a tabela de tarefas com todos os metodos CRUD
+2- e com a posibilide de:Filtrar por Status; Filtrar por Prioridade;
+
+--- Application 
+@SpringBootApplication
+public class ExercicioApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ExercicioApplication.class, args);
+	}
+
+}
+
+--- Modell
+
+@Data
+@Table(name = "TAREFAS")
+@Entity
+public class tarefasModel {
+
+    @Id
+    @Column(name = "id_tarefa")
+    private int ID;
+
+    @Column(name = "nome_tarefa")
+    private String nome;
+
+    @Column(name = "descricao_tarefa")
+    private String descricao;
+
+    @Column(name = "data_inicio")
+    private String dataInicio;
+
+    @Column(name = "status")
+    private String status;
+
+    @Column(name = "prioridade")
+    private int prioridade;
+}
+
+
+
+----- Controller
+package com.example.demo.controller;
+
+import com.example.demo.model.tarefasModel;
+import com.example.demo.repository.tarefasRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RequestMapping("/tarefa")
+@RestController
+public class tarefasController {
+    @Autowired
+    private tarefasRepository repository;
+
+    @GetMapping("/buscar")
+    public List<tarefasModel> buscarTodos() {
+        return repository.findAll();
+    }
+
+    @GetMapping("/buscar/{id}")
+    public tarefasModel buscarPorId(@PathVariable int id) {
+        return repository.findById(id);
+    }
+
+    @PutMapping("/atualizar")
+    public tarefasModel atualizar(@RequestBody tarefasModel tarefas) {
+        return repository.save(tarefas);
+    }
+
+    @PostMapping("/inserir")
+    public tarefasModel inserir(@RequestBody tarefasModel tarefas) {
+        return repository.save(tarefas);
+    }
+
+    @DeleteMapping("/deletar/{id}")
+    public void deletar(@PathVariable int id) {
+        repository.deleteById(id);
+    }
+
+    @GetMapping("/buscarPorStatus/{status}")
+    public List<tarefasModel> buscarPorStatus(@PathVariable String status) {
+        return repository.findByStatus(status);
+    }
+
+    @GetMapping("/buscarPorPrioridade/{prioridade}")
+    public List<tarefasModel> buscarPorPrioridade(@PathVariable int prioridade) {
+        return repository.findByPrioridade(prioridade);
+    }
+}
+
+--- Repository
+
+package com.example.demo.repository;
+
+import com.example.demo.model.tarefasModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
+
+public interface tarefasRepository extends JpaRepository<tarefasModel, Integer> {
+
+    public List<tarefasModel> findAll();
+
+    public tarefasModel findById(int id);
+
+
+    @Query(value = "SELECT * FROM TAREFAS WHERE status = :status", nativeQuery = true)
+    public List<tarefasModel> findByStatus(String status);
+
+    @Query(value = "SELECT * FROM TAREFAS t WHERE t.prioridade = :prioridade", nativeQuery = true)
+            public List<tarefasModel>findByPrioridade(int prioridade);
+
+}
+
+-------------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE contatos (
+  id_contato NUMBER PRIMARY KEY,
+  nome VARCHAR2(50) NOT NULL,
+  email VARCHAR2(100) NOT NULL,
+  telefone VARCHAR2(15),
+  endereco VARCHAR2(200)
+);
+
+
+1- Criar uma API para gerenciar a tabela de contatos com todos os metodos CRUD
+2- e com a posibilide de:Filtrar por nome;
+
+
+-- Application
+@SpringBootApplication
+public class ExercicioApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ExercicioApplication.class, args);
+	}
+
+}
+
+--model
+@Data
+@Table(name = "contatos")
+@Entity
+public class contatosModel {
+
+
+    @Id
+    @Column(name = "id_contato")
+    private int idContato;
+
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "telefone")
+    private String telefone;
+
+    @Column(name = "endereco")
+    private String endereco;
+
+}
+
+-- controller
+@RequestMapping("/contato")
+@RestController
+public class contatosController {
+    @Autowired
+    private contatosRepository repository;
+
+    @GetMapping("/buscar")
+    public List<contatosModel> buscarTodos(){
+        return repository.findAll();
+    }
+
+    @GetMapping("/buscarPorId/{id}")
+    public contatosModel buscarPorId(@PathVariable int id){
+        return repository.findById(id);
+    }
+
+    @GetMapping("/buscarPorNome/{nome}")
+    public contatosModel buscarPorNome(@PathVariable String nome){
+        return repository.findByNome(nome);
+    }
+
+
+}
+
+-- Repository
+public interface contatosRepository extends JpaRepository<contatosModel, Integer> {
+
+    public List<contatosModel> findAll();
+
+    public contatosModel findById(int id);
+
+    public contatosModel findByNome(String nome);
+}
+
+
