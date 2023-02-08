@@ -1,0 +1,132 @@
+CREATE table livros (
+  titulo VARCHAR(255),
+  autor VARCHAR(255),
+  ano_publicacaoo NUMBER(4),
+  genero VARCHAR(255)
+);
+
+Criar uma api para manipular livros, com metodos crud
+
+--Application
+
+@SpringBootApplication
+public class ExercicioApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ExercicioApplication.class, args);
+	}
+
+}
+
+
+--Model
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Data
+@Table(name = "ANA_LIVROS")
+@Entity
+public class livrosModel {
+
+    @Id
+    @Column(name = "titulo")
+    private String titulo;
+
+    @Column(name = "autor")
+    private String autor;
+
+    @Column(name = "ano_publicacaoo")
+    private int anoPublicacaoo;
+
+    @Column(name = "genero")
+    private String genero;
+
+}
+
+-- Controller
+
+package com.example.demo.controller;
+
+import com.example.demo.model.livrosModel;
+import com.example.demo.repository.livrosRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RequestMapping("/livro")
+@RestController
+public class livrosController {
+
+    @Autowired
+    private livrosRepository repository;
+
+    @GetMapping("/buscar")
+    public List<livrosModel> buscarTodos(){
+        return repository.findAll();
+    }
+
+    @GetMapping("/buscar/{titulo}")
+    public livrosModel buscarPorTitulo(@PathVariable String titulo){
+        return repository.findByTitulo(titulo);
+    }
+
+    @PutMapping("/atualizar")
+    public livrosModel atualizar(@RequestBody livrosModel livros){
+        return repository.save(livros);
+    }
+
+    @PostMapping("/inserir")
+    public livrosModel inserir(@RequestBody livrosModel livros){
+        return repository.save(livros);
+    }
+
+    @DeleteMapping("remover/{titulo}")
+    public void remover(@PathVariable String titulo){
+        repository.deleteByTitulo(titulo);
+        System.out.println("Livro removido com sucesso!");
+    }
+
+}
+
+-- Repository
+
+package com.example.demo.repository;
+
+import com.example.demo.model.livrosModel;
+import com.example.demo.model.tarefasModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface livrosRepository extends JpaRepository<livrosModel, Integer> {
+
+    public List<livrosModel> findAll();
+
+    public livrosModel findByTitulo(String titulo);
+    public void deleteByTitulo(String titulo);
+
+
+}
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+create TABLE produtos (
+  id_produto NUMBER(10) PRIMARY KEY,
+  nome_produto VARCHAR(255),
+  descricao_produto VARCHAR(255),
+  categoria VARCHAR(255),
+  fabricante VARCHAR(255),
+  fornecedor VARCHAR(255),
+  preco_unitario NUMBER(10,2),
+  unidades_estoque NUMBER(10)
+);
+
+1- Criar os metodos CRUD do produtos.
+2- Possibilitar:Buscar somente os produtos com estoque superior a 0
