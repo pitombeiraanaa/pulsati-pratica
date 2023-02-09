@@ -142,4 +142,166 @@ o case usando o UPPER(Criar um get separado);
 11- A Categoria nao pode estar vazia;
 12- nao pode cadastrar produto com unidades_estoque menor que 1;
 
+package com.example.demo.Model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+import org.hibernate.validator.constraints.Range;
+
+/*
+O preco deve ser superior a 0;
+O produto deve ter no minimo 4 caracteres e no maximo 100;
+A Categoria nao pode estar vazia;
+nao pode cadastrar produto com unidades_estoque menor que 1;
+ */
+
+//  Model
+@Entity
+@Data
+@Table(name = "produtos")
+public class produtosModel {
+    @Id
+    @Column(name = "id_produto")
+    private int idProduto;
+
+    @Column(name = "nome_produto")
+    @Size(min = 4, max = 100, message = "O produto deve ter no minimo 4 caracteres e no maximo 100")
+    private String nomeProduto;
+
+    @Column(name = "descricao_produto")
+    private String descricaoProduto;
+
+    @Column(name = "categoria")
+    @NotBlank(message = "A categoria nao pode estar vazia")
+    private String categoria;
+
+    @Column(name = "fabricante")
+    private String fabricante;
+
+    @Column(name = "fornecedor")
+    private String fornecedor;
+
+    @Column(name = "preco_unitario")
+    @Range(min = 1, message = "O preco deve ser superior a 0")
+    private double precoUnitario;
+
+    @Column(name = "unidades_estoque")
+    @Range(min = 1, message = "nao pode cadastrar produto com unidade estoque menor que 1")
+    private int unidadeEstoque;
+}
+
+// Controller
+
+package com.example.demo.Controller;
+
+import com.example.demo.Model.produtosModel;
+import com.example.demo.Repository.produtosRepository;
+
+import com.example.demo.Model.produtosModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/produtos")
+public class produtosController {
+    @Autowired
+    private produtosRepository repository;
+
+    @GetMapping("/buscar/categoria/{categoria}")
+    public List<produtosModel> getProdutosByCategoria(@PathVariable String categoria) {
+        return repository.findByCategoria(categoria);
+    }
+
+    @GetMapping("/buscar/fornecedor/{fornecedor}")
+    public List<produtosModel> getProdutosByFornecedor(@PathVariable String fornecedor) {
+        return repository.findByFornecedor(fornecedor);
+    }
+
+    @GetMapping("/buscar/fabricante/{fabricante}")
+    public List<produtosModel> getProdutosByFabricante(@PathVariable String fabricante) {
+        return repository.findByFabricante(fabricante);
+    }
+
+    @GetMapping("/buscar/estoque")
+    public List<produtosModel> getProdutosByEstoque() {
+        return repository.findByUnidadeEstoqueGreaterThan(0);
+    }
+
+    @GetMapping("/buscar/nome/{nome}")
+    public List<produtosModel> getProdutosByNome(@PathVariable String nome) {
+        return repository.findByNomeProdutoContainingIgnoreCase(nome);
+    }
+
+    @GetMapping("/buscar/descricao/{descricao}")
+    public List<produtosModel> getProdutosByDescricao(@PathVariable String descricao) {
+        return repository.findByDescricaoProdutoContainingIgnoreCase(descricao);
+    }
+
+
+    @GetMapping("/buscar")
+    public List<produtosModel> getProdutos() {
+        return repository.findAll();
+    }
+
+    @GetMapping("/buscar/{id}")
+    public produtosModel getProdutoById(@PathVariable int id) {
+        return repository.findById(id).get();
+    }
+
+    @PostMapping("/salvar")
+    public produtosModel salvarProduto(@RequestBody @Validated produtosModel produto) {
+        return repository.save(produto);
+    }
+
+    @PutMapping("/atualizar")
+    public produtosModel atualizarProduto(produtosModel produto) {
+        return repository.save(produto);
+    }
+
+    @DeleteMapping("/apagar/{id}")
+    public void deletarProduto(int id) {
+        repository.deleteById(id);
+    }
+
+}
+
+// repository
+/*
+create TABLE produtos (
+  id_produto NUMBER(10) PRIMARY KEY,
+  nome_produto VARCHAR(255),
+  descricao_produto VARCHAR(255),
+  categoria VARCHAR(255),
+  fabricante VARCHAR(255),
+  fornecedor VARCHAR(255),
+  preco_unitario NUMBER(10,2),
+  unidades_estoque NUMBER(10)
+);
+ */
+package com.example.demo.Repository;
+
+import com.example.demo.Model.produtosModel;
+import com.example.demo.Model.produtosModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface produtosRepository extends JpaRepository<produtosModel, Integer>{
+
+
+    List<produtosModel> findByUnidadeEstoqueGreaterThan(int unidadeEstoque);
+    List<produtosModel> findByNomeProdutoContainingIgnoreCase(String nomeProduto);
+    List<produtosModel> findByDescricaoProdutoContainingIgnoreCase(String descricaoProduto);
+    List<produtosModel> findByCategoria(String categoria);
+    List<produtosModel> findByFornecedor(String fornecedor);
+    List<produtosModel> findByFabricante(String fabricante);
+
+}
