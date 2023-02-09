@@ -1,0 +1,38 @@
+package com.example.exemploJoin.Controller;
+
+
+import com.example.exemploJoin.Model.LivroModel;
+import com.example.exemploJoin.Repository.LivroRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/livro")
+public class LivroController {
+
+    @Autowired
+    private LivroRepository repository;
+
+    @GetMapping("/buscar")
+    public List<LivroModel> buscarLivro(){
+        return repository.findAll();
+    }
+
+    @GetMapping("/buscar/{id}")
+    public LivroModel buscarPorId(@PathVariable Long id){
+        return repository.findById(id).get();
+    }
+
+    @PutMapping("/atualizar")
+    public LivroModel atualizarLivro(@RequestBody LivroModel livro) {
+        return repository.save(livro);
+    }
+
+
+    @DeleteMapping("/deletar/{id}")
+    public void deletarLivro(@PathVariable Long id){
+        repository.deleteById(id);
+    }
+}

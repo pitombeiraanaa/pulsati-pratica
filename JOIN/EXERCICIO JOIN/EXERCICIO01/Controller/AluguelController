@@ -1,0 +1,41 @@
+package com.example.exemploJoin.Controller;
+
+import com.example.exemploJoin.Model.AluguelModel;
+import com.example.exemploJoin.Repository.AluguelRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/aluguel")
+public class AluguelController {
+
+    @Autowired
+    private AluguelRepository repository;
+
+    @GetMapping("/buscar")
+    public List<AluguelModel> buscarAluguel(){
+        return repository.findAll();
+    }
+
+    @GetMapping("/buscar/{id}")
+    public AluguelModel buscarAlguelPorId(@PathVariable Long id){
+        return repository.findById(id).get();
+    }
+
+    @PutMapping("/atualizar")
+    public AluguelModel atualizarAluguel(@RequestBody AluguelModel aluguel){
+        return repository.save(aluguel);
+    }
+
+    @PostMapping("/salvar")
+    public AluguelModel salvarAluguel(@RequestBody AluguelModel aluguel){
+        return repository.save(aluguel);
+    }
+
+    @DeleteMapping("/deletar/{id}")
+    public void deletarAluguel(@PathVariable Long id){
+        repository.deleteById(id);
+    }
+}
