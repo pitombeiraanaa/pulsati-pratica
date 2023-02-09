@@ -1,0 +1,26 @@
+1- Crie uma classe de bean chamada "Pessoa" que tenha as seguintes propriedades:
+- nome (obrigatório, tamanho máximo de 100 caracteres), 
+- idade (obrigatório, valor mínimo de 18 anos)
+- endereço de e-mail (obrigatório, formato de e-mail válido). 
+- Adicione validações apropriadas para cada propriedade usando as anotações do Hibernate Validator.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2- Crie uma classe de bean chamada "Produto" que tenha as seguintes propriedades: 
+- nome (obrigatório, tamanho máximo de 100 caracteres),
+- preço (obrigatório, valor mínimo de 0) 
+- descrição (opcional, tamanho máximo de 250 caracteres). 
+- Adicione validações apropriadas para cada propriedade usando as anotações do Hibernate Validator.
