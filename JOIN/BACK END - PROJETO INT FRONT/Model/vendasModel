@@ -1,0 +1,32 @@
+package com.example.BACK_END.Model;
+
+/*
+CREATE TABLE vendas_ana (
+ id_venda NUMBER DEFAULT seq_vendas_ana.NEXTVAL,
+  id_produto NUMBER NOT NULL,
+   id_cliente NUMBER NOT NULL,
+     data_venda DATE NOT NULL,
+       FOREIGN KEY (id_produto) REFERENCES produtos(id_produto),
+        FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),  PRIMARY KEY (id_venda));
+ */
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+@Table(name = "vendas_ana")
+@Data
+public class vendasModel {
+
+    @Id
+    @Column(name= "id_venda")
+    private int idVenda;
+
+    @ManyToOne
+    @JoinColumn(name = "id_produto" , referencedColumnName = "id_produto")
+    private produtosModel produtos;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente")
+    private clientesModel clientes;
+}

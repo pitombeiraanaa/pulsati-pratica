@@ -1,0 +1,42 @@
+package com.example.BACK_END.Controller;
+
+import com.example.BACK_END.Model.vendasModel;
+import com.example.BACK_END.Repository.vendasRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/vendas")
+public class vendasController {
+
+    @Autowired
+    private vendasRepository Repository;
+
+    @GetMapping("/buscar")
+    private List<vendasModel> buscarVendas(){
+        return Repository.findAll();
+    }
+
+    @GetMapping("/buscarPorId/{idVenda}")
+    private vendasModel buscarVendaPorId(@PathVariable int idVenda){
+        return Repository.findById(idVenda).get();
+    }
+
+    @PostMapping("/adicionar")
+    private vendasModel adicionarVenda(@RequestBody vendasModel venda){
+        return Repository.save(venda);
+    }
+
+    @PutMapping("/atualizar")
+    private vendasModel atualizarVenda(@RequestBody vendasModel venda){
+        return Repository.save(venda);
+    }
+
+    @DeleteMapping("/apagar/{idVenda}")
+    private void apagarVenda(@PathVariable int idVenda){
+        Repository.deleteById(idVenda);
+    }
+
+}
