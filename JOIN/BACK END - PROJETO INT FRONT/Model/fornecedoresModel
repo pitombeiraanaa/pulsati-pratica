@@ -1,0 +1,33 @@
+package com.example.BACK_END.Model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+
+/*
+CREATE TABLE fornecedores_ana (
+ id_fornecedor NUMBER DEFAULT seq_fornecedores_ana.NEXTVAL,
+  nome VARCHAR2(50) NOT NULL,
+   endereco VARCHAR2(100),
+     telefone VARCHAR2(20),
+      PRIMARY KEY (id_fornecedor));
+ */
+@Entity
+@Table(name = "fornecedores_ana")
+@Data
+public class fornecedoresModel {
+
+    @Id
+    @Column(name = "id_fornecedor")
+    private int idFornecedor;
+
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "endereco")
+    private String endereco;
+
+    @Column(name = "telefone")
+    private String telefone;
+
+}

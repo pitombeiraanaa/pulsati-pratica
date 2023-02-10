@@ -1,0 +1,47 @@
+package com.example.BACK_END.Controller;
+
+import com.example.BACK_END.Model.fornecedoresModel;
+import com.example.BACK_END.Repository.fornecedoresRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/fornecedores")
+
+public class fornecedoresController {
+    @Autowired
+    private fornecedoresRepository Repository;
+
+    @GetMapping("/buscar")
+    public List<fornecedoresModel> buscarFornecedores(){
+        return Repository.findAll();
+    }
+
+    @GetMapping("/buscar/{id}")
+    public fornecedoresModel buscar(@PathVariable int id){
+        return Repository.findById(id).get();
+    }
+
+
+   @GetMapping("buscarpornome/{nome}")
+    public fornecedoresModel buscarPorNome(@PathVariable String nome)  {
+       return Repository.findByNome(nome);
+   }
+
+   @PostMapping("/adicionar")
+    public fornecedoresModel adicionarFornecedor(@RequestBody fornecedoresModel fornecedores){
+        return Repository.save(fornecedores);
+   }
+
+   @PutMapping("/atualizar")
+    public fornecedoresModel atualizarFornecedor(@RequestBody fornecedoresModel fornecedores){
+        return Repository.save(fornecedores);
+   }
+
+   @DeleteMapping("apagar/{id}")
+    public void apagarFornecedor(@PathVariable int id){
+        Repository.deleteById(id);
+   }
+}

@@ -1,0 +1,40 @@
+package com.example.BACK_END.Controller;
+
+import com.example.BACK_END.Model.clientesModel;
+import com.example.BACK_END.Repository.clientesRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/clientes")
+public class clientesController {
+    @Autowired
+    private clientesRepository Repository;
+
+    @GetMapping("/buscar")
+    public List<clientesModel> buscar(){
+        return Repository.findAll();
+    }
+
+    @GetMapping("/buscarPorId/{id}")
+    public clientesModel buscarPorId(@PathVariable int id){
+        return Repository.findById(id).get();
+    }
+
+    @PostMapping("/adicionar")
+    public clientesModel adicionar(@RequestBody clientesModel clientes){
+        return Repository.save(clientes);
+    }
+
+    @PostMapping("/atualizar")
+    public clientesModel atualizar(@RequestBody clientesModel clientes){
+        return Repository.save(clientes);
+    }
+
+    @DeleteMapping("/apagar/{id}")
+    public void apagar(@PathVariable int id){
+        Repository.deleteById(id);
+    }
+}

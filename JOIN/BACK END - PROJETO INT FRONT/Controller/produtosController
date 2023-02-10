@@ -1,0 +1,49 @@
+package com.example.BACK_END.Controller;
+
+
+import com.example.BACK_END.Model.produtosModel;
+import com.example.BACK_END.Repository.produtosRepository;
+import jakarta.persistence.Id;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+@RestController
+@RequestMapping("/produtos")
+public class produtosController {
+
+    @Autowired
+    private produtosRepository Repository;
+
+
+    @GetMapping("/buscar")
+    public List<produtosModel> buscarVendas(){
+        return Repository.findAll();
+    }
+
+    @GetMapping("/buscar/{id}")
+    public produtosModel buscarPorId(@PathVariable int id){
+        return Repository.findById(id).get();
+    }
+
+    @GetMapping("/buscarpornome/{nome}")
+    public produtosModel buscarPorNome(@PathVariable String nome){
+        return Repository.findByNome(nome);
+    }
+
+    @PostMapping("/adicionar")
+    public produtosModel adicionar(@RequestBody produtosModel produtos){
+        return Repository.save(produtos);
+    }
+
+    @PutMapping("/atualizar")
+    public produtosModel atualizar(@RequestBody produtosModel produtos){
+        return Repository.save(produtos);
+    }
+
+    @DeleteMapping("/apagar/{id}")
+    public void apagar(@PathVariable int id){
+        Repository.deleteById(id);
+    }
+
+}

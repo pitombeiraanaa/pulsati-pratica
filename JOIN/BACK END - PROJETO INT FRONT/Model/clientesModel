@@ -1,0 +1,38 @@
+package com.example.BACK_END.Model;
+
+/*
+
+CREATE TABLE clientes_ana (
+id_cliente NUMBER DEFAULT seq_clientes_ana.NEXTVAL,
+nome VARCHAR2(50) NOT NULL,
+endereco VARCHAR2(100),
+telefone VARCHAR2(20),
+ PRIMARY KEY (id_cliente));
+ */
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+
+@Entity
+@Table(name = "clientes_ana")
+@Data
+
+public class clientesModel {
+
+    @Id
+    @Column(name = "id_cliente")
+    private int idCliente;
+
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "endereco")
+    private String endereco;
+
+    @Column(name = "telefone")
+    private String telefone;
+}

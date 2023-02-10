@@ -1,0 +1,11 @@
+package com.example.BACK_END.Repository;
+
+import com.example.BACK_END.Model.fornecedoresModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface fornecedoresRepository extends JpaRepository<fornecedoresModel, Integer >{
+
+    public fornecedoresModel findByNome(String nome);
+}
