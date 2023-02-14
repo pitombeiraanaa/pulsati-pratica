@@ -26,7 +26,7 @@ const readline = require("readline").createInterface({
   output: process.stdout,
 });
 
-class Voos {
+class Voo {
   constructor(codigoVoo, codigoAeroOrigem, codigoAeroDestino) {
     this.codigoVoo = codigoVoo;
     this.codigoAeroOrigem = codigoAeroOrigem;
@@ -35,7 +35,7 @@ class Voos {
 }
 
 class Passageiros {
-  constructor(nome, codigoVoo) {
+  constructor(nomePassageiro, codigoVoo) {
     this.nomePassageiro = nomePassageiro;
     this.codigoVoo = codigoVoo;
   }
@@ -45,7 +45,6 @@ class Aeroporto {
   constructor(codigoVoo, nomeAeroportoOrigem, nomeTodosPassageiros) {
     this.codigoVoo = codigoVoo;
     this.nomeAeroportoOrigem = nomeAeroportoOrigem;
-    this.nomeTodosPassageiros = nomeTodosPassageiros;
   }
 }
 
@@ -62,8 +61,8 @@ function adicionarVoo() {
           readline.question(
             "Digite o código do aeroporto de destino:",
             (codigoAeroDestino) => {
-              voos.push(
-                new voo(
+              voo.push(
+                new Voo(
                   nomeEmpresaAerea,
                   codigoVoo,
                   codigoAeroOrigem,
@@ -83,7 +82,7 @@ function adicionarVoo() {
 function adicionarPassageiro() {
   readline.question("Digite o nome do passageiro: ", (nomePassageiro) => {
     readline.question("Digite o codigo do voo: ", (codigoVoo) => {
-      passageiros.push(new passageiros(nomePassageiro, codigoVoo));
+      passageiros.push(new Passageiros(nomePassageiro, codigoVoo));
       console.log("Passageiro adicionado com sucesso!");
       showMenu();
     });
@@ -93,14 +92,21 @@ function adicionarPassageiro() {
 function adicionarAeroporto() {
   readline.question("Digite o nome da empresa: ", (nomeEmpresaAerea) => {
     readline.question("Digite o endereço empresa: ", (endereco) => {
-      aeroporto.push(new aeroporto(nomeEmpresaAerea, endereco));
+      aeroporto.push(new Aeroporto(nomeEmpresaAerea, endereco));
       console.log("Aeroporto adicionado com sucesso!");
       showMenu();
     });
   });
 }
 
-function listarVoos() {
+
+
+function listarPassageiros() {
+ console.log(passageiros);
+ showMenu();
+}
+
+function listarVoo() {
   console.log(voo);
   console.log(passageiros);
   console.log(aeroporto);
@@ -109,7 +115,7 @@ function listarVoos() {
 
 function showMenu() {
   readline.question(
-    "Digite a opção: \n 1 - Adicionar voo \n 2 - Adicionar passageiro \n 3 - Listar voo \n 4 - Listar passageiros  \n 5 - Aeroporto \n 6 - Sair \n",
+    "Digite a opção: \n 1 - Adicionar voo \n 2 - Adicionar passageiro \n 3 - Aeroporto \n 4 - Listar passageiros  \n 5 - Listar Voo \n 6 - Sair \n",
   (opcao) => {
     let armazenar = opcao;
     if (armazenar == "1") {
@@ -117,11 +123,11 @@ function showMenu() {
     } else if (armazenar == "2") {
       adicionarPassageiro();
     } else if (armazenar == "3") {
-      listarVoo();
+      adicionarAeroporto();
     } else if (armazenar == "4") {
       listarPassageiros();
     } else if (armazenar == "5") {
-      adicionarAeroporto();
+      listarVoo();
     } else if (armazenar == "6") {
       readline.close();
     } else {
