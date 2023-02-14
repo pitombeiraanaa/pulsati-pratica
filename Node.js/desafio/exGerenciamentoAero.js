@@ -59,25 +59,26 @@ function adicionarVoo() {
           readline.question(
             "Digite o código do aeroporto de destino:",
             (codigoAeroDestino) => {
-                
-                let voar = new Voo (nomeEmpresaAerea, codigoVoo, codigoAeroOrigem, codigoAeroDestino);
-            
-                voo.push(voar);
-                salvarArquivo("voo.txt", voar.getVoo());
-                console.log("Voo adicionado com sucesso!");
-                showMenu();
+              let voar = new Voo(
+                nomeEmpresaAerea,
+                codigoVoo,
+                codigoAeroOrigem,
+                codigoAeroDestino
+              );
+
+              voo.push(voar);
+              salvarArquivo("voo.txt", voar.getVoo());
               console.log("Voo adicionado com sucesso!");
               showMenu();
-            } 
-      )}
-        );
+              console.log("Voo adicionado com sucesso!");
+              showMenu();
+            }
+          );
         }
-      
-    );
-  
+      );
     });
+  });
 }
-
 
 function adicionarPassageiro() {
   readline.question("Digite o nome do passageiro: ", (nomePassageiro) => {
