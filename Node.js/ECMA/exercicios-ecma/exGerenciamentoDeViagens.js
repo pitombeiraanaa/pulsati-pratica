@@ -1,104 +1,133 @@
-//criar uma aplicação de gerenciamento de viagens com classes: 
+//criar uma aplicação de gerenciamento de viagens com classes:
 //passageiros
 // voos
 //aeroporto
 
-
-
-// com as funcionalidades: 
+// com as funcionalidades:
 //A aplicação deve apresentar um menu no console com as opções, cada opção tem um número
 
 //O menu de opçãoes deve ter as seguintes opções:
-//Adicionar aeroporto, com as informações de Nome, código e endereço 
+//Adicionar aeroporto, com as informações de Nome, código e endereço
 
 //Adicionar voo, com as informações de código do voo, código aeroporto, codigo aeroporto destino e nome da empresa aerea
 
-
-
 //Adicionar passageiro em um voo, com as informações de código do voo, nome do passageiro
-
 
 //Listar voos, apresentando as informações: código do voo, nome do aeroporto de origem, nome do aeroporto de destino e
 // o nome de todos os passageiros no voo
-
 
 //Quando o usuario digitar o número de uma das opções, a aplicação deve solicitar as informações através do console,
 // sendo que todas as informações são de preenchimento obrigatório
 
 //ATENÇÃO: VOCÊ DEVE USAR CLASSES, ARRAYS E MAPS PARA ARMAZENAR AS INFORMAÇÕES OBTIDAS PELO USUÁRIO
-  class Aeroporto {
-    constructor(nome, codigo, endereco) {
-      this.nome = nome;
-      this.codigo = codigo;
-      this.endereco = endereco;
-    }
-  
-    getNome() {
-      return this.nome;
-    }
-  
-    getCodigo() {
-      return this.codigo;
-    }
-  
-    getEndereco() {
-      return this.endereco;
-    }
+
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+class Voos {
+  constructor(codigoVoo, codigoAeroOrigem, codigoAeroDestino) {
+    this.codigoVoo = codigoVoo;
+    this.codigoAeroOrigem = codigoAeroOrigem;
+    this.codigoAeroDestino = codigoAeroDestino;
   }
-  
-  class Voo {
-    constructor(codigoVoo, codigoAeroportoOrigem, codigoAeroportoDestino, nomeEmpresaAerea) {
-      this.codigoVoo = codigoVoo;
-      this.codigoAeroportoOrigem = codigoAeroportoOrigem;
-      this.codigoAeroportoDestino = codigoAeroportoDestino;
-      this.nomeEmpresaAerea = nomeEmpresaAerea;
-      this.passageiros = [];
-    }
-  
-    adicionarPassageiro(nomePassageiro) {
-      this.passageiros.push(nomePassageiro);
-    }
-  
-    getCodigoVoo() {
-      return this.codigoVoo;
-    }
-  
-    getCodigoAeroportoOrigem() {
-      return this.codigoAeroportoOrigem;
-    }
-  
-    getCodigoAeroportoDestino() {
-      return this.codigoAeroportoDestino;
-    }
-  
-    getNomeEmpresaAerea() {
-      return this.nomeEmpresaAerea;
-    }
-  
-    getPassageiros() {
-      return this.passageiros;
-    }
-  }
-  
-  const aeroportos = new Map();
-  const voos = new Map();
-  
-  function adicionarAeroporto() {
-    const nome = prompt("Nome:");
-    const codigo = prompt("Código:");
-    const endereco = prompt("Endereço:");
-  
-    const aeroporto = new Aeroporto(nome, codigo, endereco);
-    aeroportos.set(codigo, aeroporto);
-  
-    console.log("Aeroporto adicionado com sucesso!");
-  }
-  
-  function adicionarVoo() {
-    const codigoVoo = prompt("Código do voo:");
-    const codigoAeroportoOrigem = prompt("Código do aeroporto de origem:");
-    const codigoAeroportoDestino = prompt("Código do aeroporto de destino:");
-    const nomeEmpresaAerea = prompt("Nome da empresa aérea:");
-  
-    const voo = new Voo(codigoVoo, codigoAeroportoOrigem, codigoAeroportoDestino, nomeEmpresaAerea);
 }
+
+class Passageiros {
+  constructor(nome, codigoVoo) {
+    this.nomePassageiro = nomePassageiro;
+    this.codigoVoo = codigoVoo;
+  }
+}
+
+class Aeroporto {
+  constructor(codigoVoo, nomeAeroportoOrigem, nomeTodosPassageiros) {
+    this.codigoVoo = codigoVoo;
+    this.nomeAeroportoOrigem = nomeAeroportoOrigem;
+    this.nomeTodosPassageiros = nomeTodosPassageiros;
+  }
+}
+
+const voo = [];
+const passageiros = [];
+const aeroporto = [];
+
+function adicionarVoo() {
+  readline.question("Digite o nome da empresa:", (nomeEmpresaAerea) => {
+    readline.question("Digite o código do voo:", (codigoVoo) => {
+      readline.question(
+        "Digite o código do aeroporto de origem:",
+        (codigoAeroOrigem) => {
+          readline.question(
+            "Digite o código do aeroporto de destino:",
+            (codigoAeroDestino) => {
+              voos.push(
+                new voo(
+                  nomeEmpresaAerea,
+                  codigoVoo,
+                  codigoAeroOrigem,
+                  codigoAeroDestino
+                )
+              );
+              console.log("Voo adicionado com sucesso!");
+              showMenu();
+            }
+          );
+        }
+      );
+    });
+  });
+}
+
+function adicionarPassageiro() {
+  readline.question("Digite o nome do passageiro: ", (nomePassageiro) => {
+    readline.question("Digite o codigo do voo: ", (codigoVoo) => {
+      passageiros.push(new passageiros(nomePassageiro, codigoVoo));
+      console.log("Passageiro adicionado com sucesso!");
+      showMenu();
+    });
+  });
+}
+
+function adicionarAeroporto() {
+  readline.question("Digite o nome da empresa: ", (nomeEmpresaAerea) => {
+    readline.question("Digite o endereço empresa: ", (endereco) => {
+      aeroporto.push(new aeroporto(nomeEmpresaAerea, endereco));
+      console.log("Aeroporto adicionado com sucesso!");
+      showMenu();
+    });
+  });
+}
+
+function listarVoos() {
+  console.log(voo);
+  console.log(passageiros);
+  console.log(aeroporto);
+  showMenu();
+}
+
+function showMenu() {
+  readline.question(
+    "Digite a opção: \n 1 - Adicionar voo \n 2 - Adicionar passageiro \n 3 - Listar voo \n 4 - Listar passageiros  \n 5 - Aeroporto \n 6 - Sair \n",
+  (opcao) => {
+    let armazenar = opcao;
+    if (armazenar == "1") {
+      adicionarVoo();
+    } else if (armazenar == "2") {
+      adicionarPassageiro();
+    } else if (armazenar == "3") {
+      listarVoo();
+    } else if (armazenar == "4") {
+      listarPassageiros();
+    } else if (armazenar == "5") {
+      adicionarAeroporto();
+    } else if (armazenar == "6") {
+      readline.close();
+    } else {
+      console.log("Opção inválida!");
+      showMenu();
+    }
+  });
+}
+showMenu();
