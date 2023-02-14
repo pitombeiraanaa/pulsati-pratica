@@ -26,44 +26,79 @@
 // sendo que todas as informações são de preenchimento obrigatório
 
 //ATENÇÃO: VOCÊ DEVE USAR CLASSES, ARRAYS E MAPS PARA ARMAZENAR AS INFORMAÇÕES OBTIDAS PELO USUÁRIO
-
-
-
-
-class Voos{
-    constructor(nomeEmpresaAerea, codigoVoo, codigoAeroOrigem, codigoAeroDestino){
-
-        this.nomeEmpresaAerea = nomeEmpresaAerea;
-        this.codigoVoo = codigoVoo;
-        this.codigoAeroOrigem = codigoAeroOrigem;
-        this.codigoAeroDestino = codigoAeroDestino;
+  class Aeroporto {
+    constructor(nome, codigo, endereco) {
+      this.nome = nome;
+      this.codigo = codigo;
+      this.endereco = endereco;
     }
-}
-
-class Passageiros{
-    constructor(nome, codigoVoo){
-        this.nomePassageiro = nomePassageiro;
-        this.codigoVoo = codigoVoo;
-    }
-}
-
-class Aeroporto{
-    constructor(codigoVoo, nomeAeroportoOrigem, nomeAeroportoDestino, nomeTodosPassageiros){
-       this.codigoVoo = codigoVoo;
-        this.nomeAeroportoOrigem = nomeAeroportoOrigem;
-        this.nomeAeroportoDestino = nomeAeroportoDestino;
-        this.nomeTodosPassageiros = nomeTodosPassageiros;
-    }
-}
-
-
-const 
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
   
-  readline.question('Who are you?', name => {
-    console.log(`Hey there ${name}!`);
-    readline.close();
-  });
+    getNome() {
+      return this.nome;
+    }
+  
+    getCodigo() {
+      return this.codigo;
+    }
+  
+    getEndereco() {
+      return this.endereco;
+    }
+  }
+  
+  class Voo {
+    constructor(codigoVoo, codigoAeroportoOrigem, codigoAeroportoDestino, nomeEmpresaAerea) {
+      this.codigoVoo = codigoVoo;
+      this.codigoAeroportoOrigem = codigoAeroportoOrigem;
+      this.codigoAeroportoDestino = codigoAeroportoDestino;
+      this.nomeEmpresaAerea = nomeEmpresaAerea;
+      this.passageiros = [];
+    }
+  
+    adicionarPassageiro(nomePassageiro) {
+      this.passageiros.push(nomePassageiro);
+    }
+  
+    getCodigoVoo() {
+      return this.codigoVoo;
+    }
+  
+    getCodigoAeroportoOrigem() {
+      return this.codigoAeroportoOrigem;
+    }
+  
+    getCodigoAeroportoDestino() {
+      return this.codigoAeroportoDestino;
+    }
+  
+    getNomeEmpresaAerea() {
+      return this.nomeEmpresaAerea;
+    }
+  
+    getPassageiros() {
+      return this.passageiros;
+    }
+  }
+  
+  const aeroportos = new Map();
+  const voos = new Map();
+  
+  function adicionarAeroporto() {
+    const nome = prompt("Nome:");
+    const codigo = prompt("Código:");
+    const endereco = prompt("Endereço:");
+  
+    const aeroporto = new Aeroporto(nome, codigo, endereco);
+    aeroportos.set(codigo, aeroporto);
+  
+    console.log("Aeroporto adicionado com sucesso!");
+  }
+  
+  function adicionarVoo() {
+    const codigoVoo = prompt("Código do voo:");
+    const codigoAeroportoOrigem = prompt("Código do aeroporto de origem:");
+    const codigoAeroportoDestino = prompt("Código do aeroporto de destino:");
+    const nomeEmpresaAerea = prompt("Nome da empresa aérea:");
+  
+    const voo = new Voo(codigoVoo, codigoAeroportoOrigem, codigoAeroportoDestino, nomeEmpresaAerea);
+}
