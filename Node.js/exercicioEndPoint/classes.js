@@ -15,8 +15,7 @@ class Aeroporto {
 
       exports.Aeroporto = Aeroporto;
 
-
-
+      
       class Voo {
         constructor(codigoVoo, codigoAeroOrigem, codigoAeroDestino) {
           this.codigoVoo = codigoVoo;
