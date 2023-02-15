@@ -3,8 +3,7 @@
 //para o usuario a confirmação que salvou
 
 const salvarArquivo = require("./arquivo").salvarArquivo;
-// const lerArquivo = require("./arquivo").lerArquivo;
-// const Usuario = require("./usuario").Usuario;
+
 
 const readline = require("readline").createInterface({
   input: process.stdin,
