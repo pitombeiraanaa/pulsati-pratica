@@ -40,7 +40,7 @@ http
           const Voo = JSON.parse(body);
           console.log(Voo);
 
-         salvarArquivo(`${Voo.CodigoVoo}.json`, JSON.stringify(Voo));
+         salvarArquivo(`${Voo.codigoVoo}.json`, JSON.stringify(Voo));
          res.writeHead(201,
           {
             "Content-Type": "application/json"
