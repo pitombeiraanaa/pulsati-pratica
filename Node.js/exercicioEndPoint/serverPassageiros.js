@@ -2,6 +2,7 @@ const http = require("http");
 const classes = require("./classes").Passageiros;
 const salvarArquivo = require("./arquivo").salvarArquivo;
 const lerArquivo = require("./arquivo").lerArquivo;
+const { deletarArquivo } = require("./arquivo");
 
 http
   .createServer((req, res) => {
@@ -54,6 +55,20 @@ http
           lerArquivo("./Passageiros.json").then((conteudo) => {
             res.end(conteudo);
           });
+
+         
+
+          // método DELETE
+        }
+      } else if (req.method == "DELETE") {
+        if (req.url.indexOf("/deletar") >= 0) {
+          deletarArquivo(`teste.json`).then((texto) => {
+            res.end(texto);
+          });
+          res.writeHead(201, {
+            "Content-Type": "application/json",
+          });
+          res.end("Arquivo deletado!");
         } else {
           res.end("Not found");
         }
