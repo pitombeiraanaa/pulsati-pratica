@@ -38,7 +38,23 @@ http
 
               lerArquivo("./Aeroporto.json").then((conteudo) => {
                 res.end(conteudo);
+
+
+
               });
+
+
+       //método DELETE
+      }
+    } else if (req.method == "DELETE") {
+      if (req.url.indexOf("/deletar") >= 0) {
+        deletarArquivo(`teste.json`).then((texto) => {
+          res.end(texto);
+        });
+        res.writeHead(201, {
+          "Content-Type": "application/json",
+        });
+        res.end("Arquivo deletado!");
             } else {
               res.end("Not found");
             }
