@@ -1,10 +1,10 @@
 const express = require('express');
 const Usuario = require('./usuario').Usuario;
 const app = express();
-app.use(express.json());
-
 const usuarios = [];
-const proximoCodigo = 1;
+let proximoCodigo = 1;
+
+app.use(express.json());
 
 app.post('/usuarios', (req, res) => {
  const {nome,sobrenome} = req.body;

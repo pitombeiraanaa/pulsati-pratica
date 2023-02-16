@@ -1,3 +1,4 @@
+
 class Usuario{
     codigo;
     nome;
@@ -9,3 +10,5 @@ class Usuario{
     this.sobrenome = sobrenome
   }
 }
+
+exports.Usuario = Usuario;
