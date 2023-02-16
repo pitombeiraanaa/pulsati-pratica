@@ -38,9 +38,6 @@ http
 
               lerArquivo("./Aeroporto.json").then((conteudo) => {
                 res.end(conteudo);
-
-
-
               });
 
 
