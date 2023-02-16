@@ -1,12 +1,11 @@
 class Aeroporto {
-    codigo;  
-    nome;
-  
-
   constructor(nome, codigo) {
     this.codigo = codigo;  
     this.nome = nome;
-   
+  }
+
+  getAeroporto(){
+    return(`${this.codigo} ${this.nome}`);
   }
 }
 
