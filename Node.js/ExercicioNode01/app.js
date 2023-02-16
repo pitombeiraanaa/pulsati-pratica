@@ -15,15 +15,13 @@ objeto Aeroporto deve ser salvo em uma lista
 const express = require('express');
 const { empresasAereas } = require('./empresasAereas');
 const Aeroporto = require('./aeroportos').Aeroporto;
-const EmpresasAereas = require('./empresasAereas').EmpresasAereas;
 const salvarArquivo = require('./arquivo').salvarArquivo;
 const lerArquivo = require('./arquivo').lerArquivo;
 const deletarArquivo = require('./arquivo').deletarArquivo;
 const app = express();
 const aeroportos = [];
 let codigoAero = 1;
-const empresasLista =[];
-let codigoEmpresa = 1;
+
 
 app.use(express.json());
 
@@ -61,17 +59,6 @@ app.delete('/aeroportos/:codigo', (req, res) => {
   delete aeroportos[posicao];
   res.json({data: 'Deletado com sucesso'})
 })
-
-
-
-// app.post('/empresasAereas', (req, res) => {
-//   const {nome} = req.body;
-//   const empresas = new empresasAereas(nome, codigoAero);
-//   codigoEmpresa++;
-//   empresasLista.push(empresas);
-//   res.json(empresas);
-// })
-
 
 app.listen(3000);
 
