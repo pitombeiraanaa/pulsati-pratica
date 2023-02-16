@@ -34,6 +34,7 @@ app.put('/usuarios/:codigo', (req, res) => {
 
 app.delete('/usuarios/:codigo', (req, res) => {
  const codigo = req.params.codigo;
+ let posicao;
  usuarios.forEach((usuario, index)=> {
     if (usuario.codigo === codigo) {
      posicao = index;
