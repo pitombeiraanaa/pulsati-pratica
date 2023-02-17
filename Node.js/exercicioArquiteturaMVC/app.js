@@ -1,4 +1,4 @@
-const { createPassageiro } = require('./controller/passageiro-controller');
+const { createPassageiro, getPassageiro, updatePassageiro, deletePassageiro } = require('./controller/passageiro-controller');
 const express = require('express');
 const app = express();
 app.use(express.json());

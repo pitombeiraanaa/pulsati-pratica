@@ -1,5 +1,5 @@
 const {Model, DataTypes} = require('sequelize');
-const dbConfig = require('../config-db').getConfig;
+const dbConfig = require('../config-db').getDbConfig;
 
 class Passageiro extends Model{}
 Passageiro.init({
@@ -13,9 +13,8 @@ Passageiro.init({
         type: DataTypes.STRING,
         allowNull: false
     },
- 
-
-    
+},
+{
         sequelize: dbConfig(),
         modelName: 'Passageiro',
         timestamps: false

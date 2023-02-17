@@ -1,9 +1,13 @@
+const { Passageiro } = require("../model/passageiro");
+
 exports.createPassageiro = async (req, res) => {
     const {nomePassageiro, codigoVoo} = req.body;
-    nomePassageiro.nome = nome;
-    codigoVoo.codigo = codigo;
-    await passageiro.save();
-    res.json(passageiro);
+    const codigoVooExistente = new Passageiro ()
+    codigoVooExistente.nomePassageiro = nomePassageiro;
+    codigoVooExistente.codigoVoo = codigoVoo;
+    await codigoVooExistente.save();
+    res.json(codigoVooExistente);
+    
 };
 
 exports.getPassageiro = async (req, res) =>{
@@ -17,7 +21,7 @@ exports.updatePassageiro = async (req, res) => {
     const passageiro = await Passageiro.findByPK(codigoPassageiro);
     const {nomePassageiro, codigoVoo} = req.body;
     passageiro.nome = nome;
-    passageiro.codigoPassageiro = codigo;
+    passageiro.codigoVoo = codigo;
     await passageiro.save();
     res.json(passageiro);
 };
