@@ -1,3 +1,4 @@
+
 const { Passageiro } = require("../model/passageiro");
 
 exports.createPassageiro = async (req, res) => {

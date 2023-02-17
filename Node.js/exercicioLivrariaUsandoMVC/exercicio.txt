@@ -1,0 +1,39 @@
+Crie uma aplicação já estruturada no MVC
+
+Vamos iniciar um projeto e precisamos de uma aplicação onde possam ser cadastrados todos os livros disponíveis
+em nossa loja. Temos mais de mil exemplares disponíveis para venda e precisamos catalogar tudo.
+
+Atividade 1: Preciso cadastrar todos os autores disponíveis. Eu quero poder informar
+ o nome,
+ sobrenome e 
+ a data de nascimento desse autor.
+ Sabemos que no nosso cadastro manual, podemos correr o risco de errar, 
+ então eu quero poder alterar qualquer dado de um autor e
+ também consultar todos os autores cadastrados.
+
+Atividade 2: Preciso cadastrar todas as editoras dos livros.
+ Eu quero poder informar o nome 
+ e cnpj da editora.
+ Sabemos que no nosso cadastro manual, podemos correr o risco de errar, então eu necessito poder alterar
+ qualquer dado da editora 
+ e também quero poder listar todas elas.
+
+Atividade 3: Para o cadastro dos livros eu preciso informar o
+ título do livro,
+ o número da edição, 
+ o número com o ano de lançamento, 
+ o código da editor e
+ o código do autor.
+
+ Atividade 4: Quando um usuário buscar um livro, eu preciso que retorne todos os dados do livro. Porém, eu também
+quero que apresente
+ o nome do autor e também 
+ o nome da editora do livro.
+
+Atividade 5: Quando eu deletar um livro. 
+Se a editora deste livro, tiver somente o livro que estou deletando,
+registrado no nosso sistema, eu quero que a editora também seja deletada. 
+Da mesma forma, se o autor do livro,
+tiver somente esse livro registrado no nosso sistema, 
+eu quero que esse editor também seja deletado do nosso
+sistema.
