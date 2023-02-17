@@ -1,0 +1,27 @@
+Requisito 1: Criar um CRUD para o cadastro de
+vendedores. Deve ser possível informar o nome, cpf,
+telefone e endereço. Deve ser gerado um 'id' para
+cada vendedor;
+
+Requisito 2: Criar um CRUD de produtos. Onde deve
+ser possível cadastrar as informações de nome,
+marca, descrição e valor;
+
+Requisito 3: Deve ter uma forma de controlar o estoque de
+todos os produtos (pode ser uma tabela com o código do
+produto e a quantidade que existe em estoque);
+
+Requisito 4: Eu quero poder cadastrar uma venda (pode ser
+uma rota para executar venda) onde eu informo o código de
+um vendedor, o código de um produto e a quantidade
+vendida (pode ter uma tabela para registrar as vendas);
+
+Requisito 5: Verifico diariamente o que foi vendido, é
+muito importante que eu tenha uma forma de ver
+todos os produtos vendidos até o momento, os
+últimos produtos vendidos devem vir por primeiro;
+
+Requisito 6: Deve ser possível verificar todos os
+produtos que tem quantidade disponível no estoque
+com menos de 10 (pode ser uma rota específica que
+retorne essa informação)
