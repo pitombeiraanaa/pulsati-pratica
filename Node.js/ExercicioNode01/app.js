@@ -25,9 +25,10 @@ let codigoAero = 1;
 
 app.use(express.json());
 
-app.post('/aeroportos', (req, res) => {
+app.post('/aeroportos', async (req, res) => {
   const {nome} = req.body;
-  const aeroporto = new Aeroporto(nome, codigoAero);
+  const aeroporto = new Aeroporto(codigoAero, nome);
+  await salvarArquivo(`${codigoAero}-aeroporto.json`, JSON.stringify(aeroporto))
   codigoAero++;
   aeroportos.push(aeroporto);
   res.json(aeroporto);

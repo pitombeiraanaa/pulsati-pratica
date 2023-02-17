@@ -1,5 +1,5 @@
 class Aeroporto {
-  constructor(nome, codigo) {
+  constructor( codigo, nome) {
     this.codigo = codigo;  
     this.nome = nome;
   }
