@@ -13,7 +13,7 @@ app.delete('/vendedores/:nome', deleteVendedor);
 
 app.post('/produto', createProduto);
 app.get('/produto', getProdutos);
-app.put('/produto/:marca', updateProduto);
-app.delete('/produto/:nomeproduto', deleteProduto);
+app.put('/produto/:idProduto', updateProduto);
+app.delete('/produto/:idProduto', deleteProduto);
 
 app.listen(8000);

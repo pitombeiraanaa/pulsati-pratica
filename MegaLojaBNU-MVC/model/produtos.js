@@ -8,7 +8,14 @@ const dbConfig = require("../config-db").getDbConfig;
 
 class Produtos extends Model {}
 Produtos.init(
-  {
+    {
+  idProduto: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true
+  }, 
+  
   nomeProduto: {
     type: DataTypes.STRING,
     allowNull: false
@@ -28,7 +35,7 @@ Produtos.init(
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false
   },
-
+  },{
   sequelize: dbConfig(),
   modelName: "Ana_Produtos_Node",
   timestamps: false,
