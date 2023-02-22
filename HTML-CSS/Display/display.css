@@ -1,0 +1,33 @@
+/* p:nth-child(1){
+display: block;
+background-color: aqua;
+}
+
+p:nth-child(2){
+    display: inline-block;
+    background-color: blanchedalmond;
+} */
+
+/* p:nth-child(3){
+    display: inline-block;
+    /* background-color: blanchedalmond; */
+/* } */
+
+.caixa {
+    max-width: 700px;
+    background-color: gray;
+ 
+    display: flex;
+ 
+    /* Sao obrigatorias do display flex */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+ }
+ 
+ .caixa img {
+    border-radius: 50%;
+    width: 100px;
+ }
