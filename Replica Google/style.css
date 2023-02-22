@@ -1,0 +1,127 @@
+@font-face {
+ font-family: fontgoogle;
+ src: url(./Product\ Sans\ Regular.ttf);
+}
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+header{
+    display:flex;
+    justify-content: end;
+    gap: 10px;
+    align-items: center;
+    margin: 10px;
+}
+
+p{
+ font-family: arial, sans-serif;
+ font-size: 13px;
+ padding: 0, 0, 0, 15px;
+ color: #2a2c36;
+
+ transition: 0.5s;
+}
+
+p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.iconeHeader{
+    width:24px;
+    height: 24px;
+    transition: 0.5s;
+    color: #2a2c36;
+}
+
+.iconeHeader:hover{
+    cursor: pointer;
+    opacity: 0.5;
+    
+}
+
+.perfil {
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    margin: 1px solid transparent;
+    transition: 0.5s;
+}
+
+.perfil:hover{
+    cursor: pointer;
+    transform: scale(0.5);
+}
+
+main{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.letraGoogle {
+    font-family: fontgoogle;
+    font-size: 80px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-top: 90px;
+
+}
+
+.g{
+    color:#4285F4
+    
+}
+
+.o{
+    color: #DB4437
+}
+
+.o2{
+    color:#f4B400;
+}
+
+.g2{
+    color:#4285F4;
+}
+
+.l{
+    color: #0F9D58;
+}
+
+.e2{
+    color: #DB4437
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px, 8px , 0px , 14px;
+    border: 1px solid #333;
+    background-color: red;
+}
+
+input{
+    width: 500px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 30px;
+    outline: 0;
+}
+
+
+.iconBody{
+    width: 30px;
+    height: 30px;
+    display: flex;
+}
+
+
