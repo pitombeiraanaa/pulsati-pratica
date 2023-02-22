@@ -1,0 +1,35 @@
+EX1: Crie um botão e aplique a ele um conjunto de propriedades do CSS, como por exemplo, cor de fundo, 
+cor da fonte, tamanho da fonte, largura, altura, borda, e ao passar o mouse por cima do botão devera inverter a cor
+do texto com a cor do fundo
+   
+
+EX2: Crie um input do tipo texto e aplique a ele um conjunto de propriedades CSS 
+para criar um gradiente de cor linear de azul claro para azul escuro em um elemento.
+   
+   
+EX3: Crie uma tabela onde todos os itens tenham bordas e cores de fundo diferentes.
+(é pra ficar bem feio mesmo rsrs)
+    
+    
+EX4: Crie um conjunto de propriedades CSS para fazer com que o texto de um paragrafo tenha uma sombra de texto.
+     
+     
+EX5: Crie um conjunto de propriedades CSS para fazer com que uma imagem tenha um efeito de rotação de 45 graus.
+     
+     
+EX6: Crie uma um botão com uma transicao suave que ao passar o mouse por cime ele aumenta de tamanho.
+     
+     
+EX7: Crie uma animação css que faça com que o elemento fique com opacidade de 0 ao passar o mouse por cima dele,
+e também tenha uma transicao suave
+     
+     
+EX8:Crie um conjunto de propriedades CSS para fazer com que uma divisiao tenha uma sombra que é virada para a esquerda.
+      
+      
+EX9: Crie um conjunto de propriedades CSS para fazer com que um paragrafo tenha um efeito de transição 
+que altera a cor do texto de azul para vermelho ao passar o mouse por cima.
+       
+       
+EX10: Crie um conjunto de propriedades CSS para fazer com que quando o inpupt do tipo texto estiver 
+vazio o fundo dele seja em verde claroe quando tenha conteudo seja vermelho claro.

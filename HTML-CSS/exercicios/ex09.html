@@ -1,0 +1,28 @@
+<!-- EX9: Crie um conjunto de propriedades CSS para fazer com que um paragrafo tenha um efeito de transição 
+que altera a cor do texto de azul para vermelho ao passar o mouse por cima. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+    <style>
+        p{
+         font-size: 18px;
+         color: blue;
+         transition: color 0.3s ease-in-out;
+        }
+
+        p:hover{  
+         color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Somos autores e protagonistas da nossa própria história, <br/>
+        cada página é cada dia, os amores são os momentos e oportunidades são os capítulos... <br/>
+        Façamos que essa nossa história se torne um bom livro de vida.</p>
+</body>
+</html>
