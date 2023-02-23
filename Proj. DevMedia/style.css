@@ -144,7 +144,6 @@ h1{
     color: #424242;
 }
 
-
 .btn{
 display: flex;
 flex-direction: row;
@@ -170,10 +169,7 @@ align-items: center;
   color: #253a44;
   background-color: aliceblue;
   border: 2px solid #253a44;
-  
 }
-
-
 
 main img{
   display: flex;
