@@ -1,0 +1,35 @@
+body {
+    height: 200vh;
+ }
+ 
+ .caixa {
+    width: 500px;
+    height: 500px;
+    background-color: brown;
+    margin-left: 500px;
+ }
+ 
+ .caixa2 {
+    width: 500px;
+    height: 500px;
+    background-color: blue;
+    margin: 20px;
+ }
+ 
+ .fixed {
+    /* top, left, right, bottom   transform: translate(valor1, valor2) */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+ }
+ 
+ .relative {
+    position: relative;
+ }
+ 
+ .absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
