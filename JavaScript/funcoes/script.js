@@ -170,3 +170,5 @@ let existeAlgumPar = numeros2.some((numero) => {
 
 
 
+
+
