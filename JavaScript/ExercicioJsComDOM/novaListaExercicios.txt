@@ -40,7 +40,7 @@ de clique que remova um elemento HTML da página.
 23. Crie uma função que, quando chamada, altere o valor de um atributo de um elemento HTML.
 
 
-24. Crie um botão e use o método addEventListener para adicionar um evento de clique
+24. Crie um botão e use o método addEventListener para adicionar um evento de clique 
 que adicione um atributo a um elemento HTML.
  
 
@@ -48,8 +48,7 @@ que adicione um atributo a um elemento HTML.
 um atributo de um elemento HTML.
 
 
-26. Crie um botão e use o método addEventListener para adicionar um evento de 
-clique que altere o valor de um atributo de um elemento HTML.
+26. Crie um botão e use o método addEventListener para adicionar um evento de clique que altere o valor de um atributo de um elemento HTML.
 
 
 27. Crie uma função que, quando chamada, adicione um novo elemento HTML como 
