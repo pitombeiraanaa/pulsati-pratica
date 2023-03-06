@@ -1,8 +1,10 @@
+/* Global ===================== */
 :root {
   --dark-blue: #363f5f;
   --green: #49AA26;
-  --lightGreen: #3dd705;
+  --light-green: #3dd705;
   --red: #e92929;
+
 }
 
 * {
@@ -12,11 +14,17 @@
 }
 
 html {
-  font-size: 93.75%; /*15px (100 vezes 15 div por 16 = 93.75 */
+  font-size: 93.75%; /* 15px */
 }
+
+
+header img{
+  width: 3rem;
+}
+
 body {
   background: #f0f2f5;
-  font-family: "Poppins", sans-serif;
+  font-family:'Poppins', sans-serif
 }
 
 .sr-only {
@@ -29,147 +37,129 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-  /* border: solid 1px red; */
 }
 
 .container {
-  width: min(90vw, 500px);
+  width: min(90vw, 800px);
   margin: auto;
 }
 
+/* Titles ===================== */
 h2 {
   margin-top: 3.2rem;
   margin-bottom: 0.8rem;
   color: var(--dark-blue);
 
-  font-weight: 400;
+  font-weight: normal;
 }
 
+/* Links & Buttons ===================== */
 a {
   color: var(--green);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover {
-  color: var(--lightGreen);
+  color: var(--light-green);
+}
+
+button {
+  width: 100%;
+  height: 50px;
+
+  border: none;
+
+  color: white;
+  background: var(--green);
+
+  padding: 0;
+
+  border-radius: 0.25rem;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--light-green);
 }
 
 .button.new {
   display: inline-block;
-  margin-bottom: 0.8rem;
+  margin-bottom: .8rem;
 }
 
-button{
-    width: 100%;
-    height: 50px;
+.button.cancel {
+  color: var(--red);
+  border: 2px var(--red) solid;
+  border-radius: 0.25rem;
 
-    border: none;
-    color: white;
-    background: var(--green);
+  height: 50px;
 
-    padding:0;
-    border-radius: 0.25rem;
-    cursor: pointer;
-}
-
-button:hover{
-background: var(--lightGreen);
-}
-
-.button.new{
-    display: inline-block;
-    margin-bottom: 0.8rem;
-}
-
-.button.cancel{
-    color: var(--red);
-    border: 2px var(--red) solid;
-    border-radius: 0.25rem;
-    height: 50px;
-    text-decoration: none;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.6;
-}
-
-.button.cancel:hover{
-  opacity: 1;
-}
-
-header {
-  background-color: #2d4a22;
-  padding: 2rem 5rem 5rem 2rem;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  opacity: 0.6;
+}
+
+.button.cancel:hover {
+  opacity: 1;
+}
+
+/* Header ===================== */
+header {
+  background: #2D4A22;
+  padding: 2rem 0 10rem;
+  text-align: center;
 }
 
 #logo {
-  color: #f0f2f5;
+  color: #fff;
   font-weight: 100;
-  margin-bottom: 3rem;
 }
 
-header img {
-  width: 1.5rem;
-  height: auto;
-  margin-bottom: 3rem;
-}
-
+/* Balance ===================== */
 #balance {
   margin-top: -8rem;
 }
 
 #balance h2 {
-  color: #f0f2f5;
+  color:white;
+  margin-top:0;
 }
 
+/* Cards ===================== */
 .card {
   background: white;
   padding: 1.5rem 2rem;
   border-radius: 0.25rem;
+
+  margin-bottom: 2rem;
+
   color: var(--dark-blue);
-  margin: 2rem;
 }
 
-.entradas {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: row;
+.card img{
+  width: 3rem;
 }
 
-.entradas img {
-  width: 1rem;
-  height: auto;
-  margin-right: 1rem;
-}
-
-.saidas {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: row;
-}
-
-.saidas img {
-  width: 1rem;
-  height: auto;
-  margin-right: 1rem;
+.iconRemove{
+  width: 1.3rem;
 }
 
 .card h3 {
   font-weight: normal;
   font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card p {
   font-size: 2rem;
   line-height: 3rem;
-
+  white-space:nowrap;
   margin-top: 1rem;
 }
 
@@ -178,61 +168,49 @@ header img {
   color: white;
 }
 
-.card.total .total {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: row;
-}
-
-.card.total .total img {
-  width: 1rem;
-  height: auto;
-  margin-right: 1rem;
-}
-
-section#transaction {
+/* Table ===================== */
+#transaction {
   display: block;
   width: 100%;
   overflow-x: auto;
 }
-
 #data-table {
   width: 100%;
   border-spacing: 0 0.5rem;
   color: #969cb3;
 }
 
-table thead tr:first-child,
-table tbody tr:first-child {
+table thead tr th:first-child, 
+table tbody tr td:first-child
+{
   border-radius: 0.25rem 0 0 0.25rem;
 }
 
-table thead tr:last-child,
-table tbody tr:last-child {
+table thead tr th:last-child, 
+table tbody tr td:last-child{
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
-table th {
+table thead th {
   background: white;
+
   font-weight: normal;
   padding: 1rem 2rem;
+
   text-align: left;
-  color: #969cb3;
 }
 
 table tbody tr {
-  opacity: 0.7;
+  opacity: 0.7
 }
 
 table tbody tr:hover {
-  opacity: 1;
+  opacity: 1
 }
 
-table td {
-  background: white;
+table tbody td {
+  background:white;
   padding: 1rem 2rem;
-  color: #969cb3;
 }
 
 td.description {
@@ -244,24 +222,20 @@ td.income {
 }
 
 td.expense {
-  color: var(--red);
+  color: #e92929;
 }
 
-td img {
-  width: 1rem;
-  height: auto;
-}
-
+/* Modal ===================== */
 .modal-overlay {
   width: 100%;
   height: 100%;
 
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0,0,0,0.7);
 
   position: fixed;
   top: 0;
 
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: center;
 
@@ -277,13 +251,15 @@ td img {
 }
 
 .modal {
-  background: #f0f2f5;
+  background: #F0F2f5;
   padding: 2.4rem;
 
   position: relative;
   z-index: 1;
 }
 
+
+/* Form ===================== */
 #form {
   max-width: 500px;
 }
@@ -292,10 +268,12 @@ td img {
   margin-top: 0;
 }
 
-#form form input {
+input {
   border: none;
   border-radius: 0.2rem;
+
   padding: 0.8rem;
+
   width: 100%;
 }
 
@@ -303,7 +281,7 @@ td img {
   margin-top: 0.8rem;
 }
 
-.input-group small {
+.input-group .help{
   opacity: 0.4;
 }
 
@@ -318,21 +296,26 @@ td img {
   width: 48%;
 }
 
+
+/* Footer ===================== */
 footer {
   text-align: center;
   padding: 4rem 0 2rem;
   color: var(--dark-blue);
+
   opacity: 0.6;
 }
 
-@media screen and (min-width: 800px) {
+
+/* Responsive ===================== */
+@media (min-width: 800px) {
   html {
-    font-size: 87.5%;
+      font-size: 87.5%;
   }
 
   #balance {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
   }
 }
