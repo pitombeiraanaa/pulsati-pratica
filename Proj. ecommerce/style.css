@@ -14,6 +14,10 @@ header {
   height: auto;
 }
 
+body{
+    background: hsl(220, 18%, 93%);
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -51,4 +55,76 @@ header {
   cursor: pointer;
   scale: 1.2;
 }
+
+.main{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    
+}
+.card1{
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-radius: 1.5rem;
+    
+
+}
+
+.card1 .burguinho{
+    display: flex;
+    align-items: center;
+    width: 15rem;
+    flex-direction: column;
+}
+
+.card1 span{
+width: 15rem;
+margin-top:2rem;
+margin-bottom: 1rem;
+}
+
+.card1 .icon{
+    width: 2rem;
+    margin-top: 1rem;
+}
+
+.card2{
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-radius: 1.5rem;
+    
+
+}
+
+.card2 .burguinho{
+    display: flex;
+    align-items: center;
+    width: 15rem;
+    flex-direction: column;
+}
+
+.card2 span{
+width: 15rem;
+margin-top:2rem;
+margin-bottom: 1rem;
+}
+
+.card2 .icon{
+    width: 2rem;
+    margin-top: 1rem;
+}
+
 
