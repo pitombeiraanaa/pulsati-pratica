@@ -1,0 +1,26 @@
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    background-image: url(../src/Images/fundo.jpg);
+    background-size: cover; /* redimensionar imagem para preencher o elemento */
+    width: 100vw;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    z-index: 0; /* definir ordem de empilhamento */
+    /* position: fixed; */
+    /* min-height: 100vh; */
+  }
+  
+  body {
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+    
+  }
+

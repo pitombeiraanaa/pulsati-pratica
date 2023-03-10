@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    background-image: url(assets_login/background.png);
+    background-size: cover; /* redimensionar imagem para preencher o elemento */
+    width: 100vw;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    z-index: 0; /* definir ordem de empilhamento */
+    /* position: fixed; */
+    /* min-height: 100vh; */
+  }
+  
+  body {
+    overflow: hidden;
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .transparent {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2.8rem;
+  }
+  
+  .img-login-left {
+    width: 35vw;
+  }
+  
+  .card-right {
+    z-index: 2;
+    color: #cacaca;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 35%;
+    height: 55rem;
+    margin-top: 5rem;
+    border: 3px solid rgba(158, 148, 148, 0.048);
+    background-color: #43414934;
+    border-radius: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.3rem;
+  }
+  .card-right h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    padding-top: 3rem;
+  }
+  
+  .icons-card {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .icons-card img {
+    width: 3rem;
+    height: 3rem;
+    transition: 0.8s;
+  }
+  
+  .fb:hover {
+    cursor: pointer;
+    scale: 1.1;
+  }
+  
+  .google:hover {
+    cursor: pointer;
+    scale: 1.1;
+  }
+  
+  .usuario,
+  .senha {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 1.7rem;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #cacaca;
+  }
+  
+  input {
+    display: flex;
+    align-items: center;
+    text-align: start;
+    width: 40rem;
+    height: 4rem;
+    border-radius: 4rem;
+    padding-left: 2rem;
+    background-color: #28272cf6;
+    border: none;
+    color: #cacaca;
+    margin-top: 1rem;
+  }
+  
+  input:hover {
+    border: 1px solid #cacaca;
+  }
+  
+  .btn-login {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #28272cf6;
+    border: 1px solid #706868;
+    color: #cacaca;
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    border-radius: 3rem;
+    transition: 0.5s;
+  }
+  
+  .btn-login:hover {
+    background-color: #706868;
+    border: #28272cf6;
+  }
+  @media screen and (min-width:320px) and (max-width:780px)  {
+    html {
+      font-size: 40%;
+      width: 70%;
+      height: 100%;
+    }
+    body {
+      overflow-x: hidden;
+      overflow: scroll;
+    }
+    header{
+      height: 50rem;
+      margin-top: 0.5rem;
+    }
+  
+    .nav {
+      display: none;
+    }
+  
+   
+    .login-left {
+      display: none;
+    }
+  
+    .card-right {
+      width: 70%;
+      height: 90rem;
+      margin-top: 10rem;
+      font-size: 40rem;
+    }
+   .usuario label,
+   .senha label{
+      font-size: 3rem;
+    }
+    .usuario input,
+    .senha input {
+      display: flex;
+      width: 40vw;
+      height: 5rem;
+      font-size: 2rem;
+    }
+  
+    span{
+      font-size: 2.5rem;
+    }
+  
+    .icons-card{
+      width: 2rem;
+      height: 2rem;
+      position: relative;
+      bottom: 12rem;
+    }
+  
+    .btn-login{
+      width: 24rem;
+      height: 6rem;
+      font-size: 2rem;
+  
+    }
+  }
+  
+  @media screen and (min-width: 781px) and (max-width: 920px) {
+    html {
+      font-size: 50%;
+      width: 60%;
+    }
+    body {
+      overflow: scroll;
+      overflow-x: hidden;
+  
+    }
+    .nav {
+      display: none;
+    }
+  
+    .login-left {
+      display: none;
+    }
+  
+    .card-right {
+      width: 60%;
+      height: 90rem;
+      margin-top: 9rem;
+    }
+  
+    .usuario label,
+    .senha label{
+       font-size: 2.5rem;
+     }
+  
+    .usuario input,
+    .senha input {
+      display: flex;
+      width: 40vw;
+      height: 6.5rem;
+    }
+  
+    .btn-login{
+      width: 24rem;
+      height: 6rem;
+      font-size: 2rem;
+    }
+  
+    span{
+      font-size: 2rem;
+    }
+  
+    .icons-card{
+      width:12rem;
+      height:8rem;
+    }
+  }
+  
+  @media screen and (min-width: 921px) and (max-width: 1690px) {
+    
+    html{
+      font-size:62.5%
+    }
+    body {
+      overflow-x: hidden;
+      overflow: scroll;
+  
+    }
+    .login {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      flex-direction: row;
+      margin-top: 2rem;
+    }
+  
+  
+    .card-right {
+      width: 40%;
+      height: 50rem;
+      margin-top: 2rem;
+    }
+  
+    span{
+      font-size: 1.5rem;
+    }
+  }
+  
