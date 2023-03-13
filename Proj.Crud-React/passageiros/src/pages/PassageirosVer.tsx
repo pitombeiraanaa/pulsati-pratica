@@ -15,20 +15,19 @@ export function PassageirosVer() {
 
   return (
     <div>
-      <span>Passageiro</span>
+      <span>Usuário</span>
       <div>
-        <span>Código</span>
-        <input type="number" value={passageiro?.codigo} />
+        <span>Código ID</span>
+        <input type="text" value={passageiro?.codigo} />
       </div>
       <div>
         <span>Nome</span>
         <input type="text" value={passageiro?.nome} />
       </div>
-
       <div>
-        <span>Código Voo</span>
+        <span>Codigo Voo</span>
         <input type="text" value={passageiro?.codigoVoo} />
       </div>
     </div>
-  );
+  )
 }

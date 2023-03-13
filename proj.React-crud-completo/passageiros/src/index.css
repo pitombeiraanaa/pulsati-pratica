@@ -1,0 +1,21 @@
+* {
+  font-family: sans-serif;
+}
+
+a {
+  font-weight: 300;
+  color: white;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: rgb(5, 18, 169);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  width: 100vw;
+  min-height: 100vh;
+}

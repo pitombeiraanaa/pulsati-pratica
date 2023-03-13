@@ -32,17 +32,17 @@ export function Passageiros() {
                 <tbody>
                     {
                         passageiros?.map(passageiro =>{
-                            return(
+                            return (
                                 <tr>
-                                    <td>{passageiro.codigo}</td>
-                                    <td>{passageiro.nome}</td>
-                                    <td>{passageiro.codigoVoo}</td>
-                                    <td>
-                                        <a href={`/passageiros/${passageiro.codigo}`}>Ver</a>
-                                        <button onClick= {() => onClickDeletePassageiro(passageiro.codigo)}>Delete</button>
-                                    </td>
+                                  <td>{passageiro.codigo}</td>
+                                  <td>{passageiro.nome}</td>
+                                  <td>{passageiro.codigoVoo}</td>
+                                  <td>
+                                    <a href={`/passageiros/${passageiro.codigo}`}>Ver</a>
+                                    <button onClick={() => onClickDeletePassageiro(passageiro.codigo)}>Delete</button>
+                                  </td>
                                 </tr>
-                            )
+                              )
                         })
                     }
                 </tbody>
