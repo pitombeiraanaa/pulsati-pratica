@@ -1,0 +1,30 @@
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+
+}
+
+form input {
+    border-radius: 50px;
+    border: none;
+    height: 2rem;
+    padding: 1rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+input[type=submit] {
+    width: 6rem;
+    background-color:  rgb(197, 80, 99);
+    border: none;
+    border-radius: 10px;
+    height: 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0;
+}

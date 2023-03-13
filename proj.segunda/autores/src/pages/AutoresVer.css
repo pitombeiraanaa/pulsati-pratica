@@ -1,0 +1,15 @@
+.lista{
+    text-align: center;
+    padding: 1rem;
+    font-weight: 700;
+    text-decoration: double;
+}
+
+.lista div {
+    padding: 1rem;
+
+}
+
+.lista span input {
+    padding: 1rem;
+}

@@ -1,0 +1,9 @@
+body {
+  background-color: pink;
+}
+
+#home {
+  margin: 3rem;
+  text-align: center;
+  font-size: 2rem;
+}
