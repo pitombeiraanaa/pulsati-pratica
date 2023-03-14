@@ -1,9 +1,9 @@
 body {
-  background-color: pink;
+  background-color: rgba(105, 152, 214, 0.815);
 }
 
 #home {
   margin: 3rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }

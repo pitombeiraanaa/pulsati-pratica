@@ -21,7 +21,7 @@ Autores.init({
     }
 }, {
     sequelize: dbConfig(),
-    modelName: 'adri_autores_nodejs',
+    modelName: 'Ana_autores_nodejs',
     timestamps: false
 });
 

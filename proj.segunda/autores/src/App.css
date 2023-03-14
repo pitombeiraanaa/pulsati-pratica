@@ -10,12 +10,12 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background-color: rgb(197, 80, 99);
+    background-color:rgba(105, 152, 214, 0.815);
     gap: 2rem;
 }
 
 #links a {
     text-decoration: none;
-    color: black;
+    color: rgba(0, 0, 0, 0.76);
     font-weight: 700;
 }
