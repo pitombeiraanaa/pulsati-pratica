@@ -1,4 +1,4 @@
-const Autores = require('./autores-model').Autores;
+const Autores = require('../model/autores-model').Autores;
 
 exports.createAutores = async (req, res) => {
     const {nomeAutor, sobrenomeAutor, dataNascimento} = req.body;

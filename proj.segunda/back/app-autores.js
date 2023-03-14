@@ -1,4 +1,5 @@
 const {createAutores,getAutoresById,getAllAutores,updateAutores,deleteAutores} = require('./autores-controller');
+const {createLivros, getLivrosById, getAllLivros,updateLivros, deleteLivros} = require('./Livros-controller');
 const express = require('express');
 const app = express();
 app.use(express.json());
@@ -15,5 +16,12 @@ app.get('/autores', getAllAutores);
 app.get('/autores/:codigo', getAutoresById);
 app.put('/autores/:codigo', updateAutores);
 app.delete('/autores/:codigo', deleteAutores);
+
+
+app.post('/livros', createLivros);
+app.get('/livros', getAllLivros);
+app.get('/livros/:codigoLivro', getLivrosById);
+app.put('/livros/:codigoLivro', updateLivros);
+app.delete('/livros/:codigoLivro', deleteLivros);
 
 app.listen(8000)

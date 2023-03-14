@@ -1,30 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
-const dbConfig = require('./config-db').getDbConfig;
+const dbConfig = require('../config-db').getDbConfig;
 
-class Autores extends Model { }
-Autores.init({
-    idAutor: {
+class Livros extends Model { }
+Livros.init({
+    codigoLivro: {
         type: DataTypes.NUMBER,
         primaryKey: true,
         autoIncrement: true,
     },
-    nomeAutor: {
+    titulo: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    sobrenomeAutor: {
+    descricao: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    dataNascimento: {
-        type: DataTypes.STRING,
-    }
+    }  
 }, {
     sequelize: dbConfig(),
-    modelName: 'Ana_autores_nodejs',
+    modelName: 'Ana_livros_nodejs',
     timestamps: false
 });
 
 
 
-exports.Autores = Autores;
+exports.Livros = Livros;

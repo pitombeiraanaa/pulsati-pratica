@@ -3,5 +3,6 @@ export interface Autor{
     nomeAutor: string;
     sobrenomeAutor: string;
     dataNascimento: string;
+    codigoLivro: number;
   }
   
