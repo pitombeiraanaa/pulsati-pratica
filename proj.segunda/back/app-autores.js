@@ -1,5 +1,5 @@
-const {createAutores,getAutoresById,getAllAutores,updateAutores,deleteAutores} = require('./autores-controller');
-const {createLivros, getLivrosById, getAllLivros,updateLivros, deleteLivros} = require('./Livros-controller');
+const {createAutores,getAutoresById,getAllAutores,updateAutores,deleteAutores} = require('./controller/autores-controller');
+const {createLivros, getLivrosById, getAllLivros,updateLivros, deleteLivros} = require('./controller/Livros-controller');
 const express = require('express');
 const app = express();
 app.use(express.json());

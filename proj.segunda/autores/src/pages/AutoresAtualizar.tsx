@@ -21,6 +21,7 @@ export function AutoresAtualizar() {
       nomeAutor: data.nomeAutor.toString(),
       sobrenomeAutor: data.sobrenomeAutor.toString(),
       dataNascimento: data.dataNascimento.toString(),
+      codigoLivro: parseInt(data.codigoLivro.toString()),
     });
     alert("Autor Atualizado!");
   };
