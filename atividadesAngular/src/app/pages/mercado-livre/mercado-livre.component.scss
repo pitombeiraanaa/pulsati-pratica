@@ -104,6 +104,17 @@
           height: 2rem;
         }
       }
+
+      .abas{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+       .mat-tab{
+        color: black;
+      }
     }
   }
+}
 }
