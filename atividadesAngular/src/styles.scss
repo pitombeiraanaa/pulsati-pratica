@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+p.mat-expansion-indicator {
+  width: 60px;
+  margin-bottom: 12px;
+}
+
+.mat-expansion-indicator::after {
+  color: rgba(38, 35, 35, 0.552);
+  margin: 0vh 0vw 0vh 2vw;
+  background-color: transparent;
+}

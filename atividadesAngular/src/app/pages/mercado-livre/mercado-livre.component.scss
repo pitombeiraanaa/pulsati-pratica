@@ -1,120 +1,222 @@
-.header {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  background-color: yellow;
-  width: 100%;
-  height: 8rem;
-  padding: 5rem;
-  font-family: Arial, Helvetica, sans-serif;
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: bisque;
 
-  .linhas {
+  .mat-toolbar {
+    background-color: rgb(255, 241, 89);
+    color: #333;
     display: flex;
     align-items: center;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 
     .linha1 {
       display: flex;
       align-items: center;
       text-align: center;
-      justify-content: space-around;
-      flex-direction: row;
-    }
+      justify-content: space-evenly;
 
-    .logo {
-      width: 100px;
-      height: 45px;
-    }
-
-    .icones {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      height: 20px;
-    }
-
-    .pesquisar {
-      width: 400px;
-      height: 20px;
-      padding: 10px;
-      outline: 0;
-      border: none;
-    }
-
-    .lupa {
-      width: 1rem;
-      position: absolute;
-      margin-left: 22rem;
-      border-left: 1px solid gray;
-      padding-left: 0.5rem;
-    }
-
-    .promo-left {
-      padding-left: 10rem;
-      font-size: medium;
-      display: flex;
-      text-align: center;
-      align-items: center;
-      width: 30%;
-      margin-left: 0.3rem;
-
-      .promo {
-        width: 1.5rem;
-        height: 1.5rem;
+      .logo {
+        margin-left: 3rem;
       }
-    }
 
-    span {
-      color: black;
+      input {
+        width: 560px;
+        height: 20px;
+        padding: 10px;
+        outline: 0;
+        border: none;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .icon-search {
+        width: 1rem;
+        position: absolute;
+        margin-left: 22rem;
+        border-left: 1px solid gray;
+        padding-left: 0.5rem;
+      }
+
+      .disney {
+        width: 20rem;
+        display: flex;
+        align-items: center;
+        margin-right: 3.5rem;
+      }
     }
 
     .linha2 {
       display: flex;
-      flex-direction: row;
-      text-align: center;
       align-items: center;
-      justify-content: space-between;
-       margin: 1.2rem;
+      text-align: center;
+      justify-content: space-evenly;
 
-      .envio {
+      .box-cep {
         display: flex;
         align-items: center;
+        text-align: center;
 
-        .text-envio {
-          display: flex;
-          text-align: center;
-          align-items: center;
-          flex-direction: column;
-          font-size: 10px;
-          line-height: 12px;
-
-
-          .text-enviar{
-           margin-right: 0.5rem;
-           }
+        .icon-localizacao {
+          width: 2.5rem;
+          height: 2.5rem;
         }
 
-        .localizacao {
-          width: 2rem;
-          height: 2rem;
+        .infoCep {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 11px;
+
+          .info {
+            font-size: small;
+            color: rgba(128, 128, 128, 0.788);
+            font-weight: 100;
+          }
+
+          .cep {
+            font-size: small;
+            font-weight: lighter;
+            padding-right: 2.5rem;
+            line-height: 12px;
+          }
         }
       }
 
-      .abas{
+      .links {
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding-right: 5rem;
+        transition: 1s;
+
+        .arrow-nav {
+          width: 1rem;
+          height: 1rem;
+          display: flex;
+          align-items: center;
+          margin-top: 0.5rem;
+          margin-right: 1rem;
+        }
+
+        .link {
+          color: rgba(128, 128, 128, 0.795);
+          text-decoration: none;
+          font-weight: lighter;
+        }
+      }
+
+      .logar {
         display: flex;
         align-items: center;
         text-align: center;
         justify-content: center;
 
-       .mat-tab{
-        color: black;
+        .icon-user {
+          width: 1.8rem;
+          height: 1.8rem;
+          display: flex;
+          align-items: center;
+          margin-top: 0.5rem;
+          padding-left: 6rem;
+        }
+
+        span {
+          font-size: small;
+          font-weight: lighter;
+          padding-top: 1rem;
+          padding-left: 0.8rem;
+        }
+
+        .arrow-user {
+          width: 1rem;
+          height: 1rem;
+          display: flex;
+          align-items: center;
+          padding-top: 1.3rem;
+          padding-left: 0.2rem;
+          padding-right: 0.2rem;
+        }
+
+        .arrow {
+          width: 1rem;
+          height: 1rem;
+          display: flex;
+          align-items: center;
+          padding-top: 1.3rem;
+          padding-left: 0.2rem;
+        }
+
+        .icon-sino {
+          width: 1.2rem;
+          height: 1.2rem;
+          display: flex;
+          align-items: center;
+          margin-top: 0.5rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .icon-carrinho {
+          width: 1.2rem;
+          height: 1.2rem;
+          display: flex;
+          align-items: center;
+          margin-top: 0.5rem;
+        }
       }
     }
   }
-}
+
+  mat-drawer-container {
+    height: 80.3vh;
+
+    mat-drawer {
+      width: 228px;
+      background-color: #f5f5f5;
+      color: grey;
+      display: flex;
+      align-items: center;
+      text-align: start;
+      justify-content: flex-start;
+
+      .minhaConta {
+        margin-right: 5rem;
+        padding: 0.84rem;
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        color: rgba(109, 109, 109, 0.815);
+        font-weight: lighter;
+        font-size: smaller;
+      }
+
+      mat-expansion-panel {
+        background-color: #f5f5f5;
+
+        mat-expansion-panel-header {
+          background-color: #f5f5f5;
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    mat-drawer-content {
+      background-color: #eeeeee;
+
+      .foto-perfil{
+        width: 70px;
+        height: 75px;
+        border-radius: 50%;
+      }
+      .example-card.card1{
+        width: 50vw;
+        height: 20vh;
+      }
+    }
+  }
 }

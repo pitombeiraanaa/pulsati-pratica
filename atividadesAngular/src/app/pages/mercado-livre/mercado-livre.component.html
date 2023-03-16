@@ -1,50 +1,219 @@
 <body>
-  <mat-toolbar class="header">
-    <div class="linhas">
-      <div class="linha1">
+  <mat-toolbar>
+    <mat-toolbar-row class="linha1">
+      <img class="logo" src="../../../assets/logoML.png" />
+      <input
+        type="text"
+        placeholder="Buscar produtos, marcas e muito mais..."
+      />
+      <img class="icon-search" src="../../../assets/icon-search.png" alt="" />
+      <a href="http://disneyplus.com.br"
+        ><img class="disney" src="../../../assets/logo-disney.webp" alt=""
+      /></a>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row class="linha2">
+      <div class="box-cep">
         <img
-          class="logo"
-          src="../../../assets/logoML.png"
-          alt="logo Mercado Livre"
+          class="icon-localizacao"
+          src="../../../assets/icon-localizacao.png"
+          alt=""
         />
-
-        <div class="icones">
-          <input
-            class="pesquisar"
-            type="text"
-            placeholder="Buscar produtos, marcas e muito mais"
-            name="search"
-          />
-          <img class="lupa" src="../../../assets/icon-search.png" />
-        </div>
-
-        <div class="promo-left">
-          <img class="promo" src="../../../assets/icon-desconto.png" />
-          <span>Ofertas por tempo limitado</span>
+        <div class="infoCep">
+          <span class="info"> Informe seu </span>
+          <span class="cep">CEP</span>
         </div>
       </div>
 
-      <div class="linha2">
-        <div class="envio">
-          <img class="localizacao" src="../../../assets/localizacao.png" />
-         <div class="text-envio">
-          <span class="text-enviar">Enviar para Jhonny</span>
-          <span class="text-rua">Rua Frederico Jens...</span>
-        </div>
-        </div>
-
-        <div class="abas">
-          <mat-tab-group class="mat-tab">
-            <mat-tab label="Categorias"> </mat-tab>
-            <mat-tab label="Oferta do Dia"> </mat-tab>
-            <mat-tab label="Histórico"> </mat-tab>
-            <mat-tab label="Supermercado"> </mat-tab>
-            <mat-tab label="Moda"> </mat-tab>
-            <mat-tab label="Vender"> </mat-tab>
-            <mat-tab label="Contato"> </mat-tab>
-          </mat-tab-group>
-        </div>
+      <div class="links">
+        <a class="link" href="">Ofertas do Dia</a>
+        <img class="arrow-nav" src="../../../assets/down-arrow.png" alt="" />
+        <a class="link" href="">Histórico</a>
+        <a class="link" href="">moda</a>
+        <a class="link" href="">Vender</a>
+        <a class="link" href="">Contato</a>
       </div>
-    </div>
+
+      <div class="logar">
+        <img class="icon-user" src="../../../assets/icon-user.png" alt="" />
+        <span class="name">Ana</span>
+        <img class="arrow-user" src="../../../assets/down-arrow.png" alt="" />
+        <span class="compras">Compras</span>
+        <span class="favoritos">Favoritos</span>
+        <img class="arrow" src="../../../assets/down-arrow.png" alt="" />
+        <img class="icon-sino" src="../../../assets/icon-sino.png" alt="" />
+        <img
+          class="icon-carrinho"
+          src="../../../assets/icon-carrinho.png"
+          alt=""
+        />
+      </div>
+    </mat-toolbar-row>
   </mat-toolbar>
+
+  <!-- Aside -->
+  <mat-drawer-container class="example-container">
+    <!-- Minha conta -->
+    <mat-drawer mode="side" opened>
+      <mat-list-item>
+        <p class="minhaConta" mat-line>
+          <mat-icon mat-list-icon>menu</mat-icon>Minha conta
+        </p>
+      </mat-list-item>
+
+      <!-- Compras -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item>
+              <p mat-line>
+                <mat-icon mat-list-icon>shopping_basket</mat-icon>Compras
+              </p>
+            </mat-list-item>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Compras</p>
+        <p>Opniões</p>
+      </mat-expansion-panel>
+
+      <!-- Vendas -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item>
+              <p mat-line><mat-icon mat-list-icon>loyalty</mat-icon>Vendas</p>
+            </mat-list-item>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Resumo</p>
+        <p>Anúncios</p>
+        <p>Reputação</p>
+      </mat-expansion-panel>
+
+      <!-- Mercado Shops -->
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item>
+              <p mat-line>
+                <mat-icon mat-list-icon>store_mall_directory</mat-icon>Mercado
+                Shops
+              </p>
+            </mat-list-item>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Adidas</p>
+        <p>Nike</p>
+        <p>Farm</p>
+        <p>Puma</p>
+      </mat-expansion-panel>
+
+      <!-- Vídeos e músicas -->
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item>
+              <p mat-line>
+                <mat-icon mat-list-icon>library_music</mat-icon>Vídeo e Música
+              </p>
+            </mat-list-item>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Destaques</p>
+        <p>Nacional</p>
+        <p>Internacional</p>
+        <p>Sucessos</p>
+      </mat-expansion-panel>
+
+      <!-- Faturamento -->
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item>
+              <p mat-line>
+                <mat-icon mat-list-icon>receipt</mat-icon>Faturamento
+              </p>
+            </mat-list-item>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Status de Faturamento</p>
+        <p>Relatórios</p>
+        <p>Em Andamento</p>
+      </mat-expansion-panel>
+
+      <!-- Meu perfil -->
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item>
+              <p mat-line>
+                <mat-icon mat-list-icon>person_pin</mat-icon>Meu Perfil
+              </p>
+            </mat-list-item>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Esqueci a senha</p>
+        <p>Sair</p>
+      </mat-expansion-panel>
+
+      <!-- Configurações -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item>
+              <p mat-line>
+                <mat-icon mat-list-icon>settings</mat-icon>Configurações
+              </p>
+            </mat-list-item>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Alertas de busca</p>
+        <p>eShop</p>
+      </mat-expansion-panel>
+    </mat-drawer>
+
+    <!-- Main -->
+    <mat-drawer-content>
+      <mat-card class="example-card card1">
+        <mat-card-header>
+          <mat-card-title-group>
+            <img class="foto-perfil" src="../../../assets/foto-perfil.jpg" alt="">
+            <mat-card-title>Ana Pitombeira</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Nível 4 - Mercado de Pontos</p>
+        </mat-card-content>
+      </mat-card>
+
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Ana Pitombeira</mat-card-title>
+            <mat-card-subtitle>Extra large</mat-card-subtitle>
+            <img mat-card-xl-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+         <p>teste</p>
+        </mat-card-content>
+      </mat-card>
+
+
+
+
+    </mat-drawer-content>
+  </mat-drawer-container>
 </body>

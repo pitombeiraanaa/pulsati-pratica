@@ -6,11 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: MercadoLivreComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
