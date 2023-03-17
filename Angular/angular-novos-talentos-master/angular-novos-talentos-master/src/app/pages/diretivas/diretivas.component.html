@@ -1,0 +1,46 @@
+<div class="container">
+   <h1>NgStyle</h1>
+
+   <p [ngStyle]="ngStyle">NgStyle Aplicado</p>
+
+</div>
+
+<div class="container">
+   <h1>ngClass</h1>
+
+   <p [ngClass]="1 == 1 ? 'devendo' : ''">NgClass aplicado</p>
+
+   <button (click)="trocarNgClass()">Trocar Classe</button>
+</div>
+
+<div class="container">
+   <h1>NgIf</h1>
+
+   <p *ngIf="ngIfEstaMostrando else naoEstaMostrando">Esta mostrando</p>
+
+   <ng-template #naoEstaMostrando>
+   </ng-template>
+
+
+   <button (click)="trocarNgIf()">TrocarNgIf</button>
+</div>
+
+<div class="container">
+   <h1>ngSwitch e *ngSwitchCase</h1>
+
+   <div [ngSwitch]="ngSwitchCor">
+      <div *ngSwitchCase=" 'vermelho' ">Vermelho</div>
+      <div *ngSwitchCase=" 'azul' ">Azul</div>
+      <div *ngSwitchCase=" 'verde' ">Verde</div>
+      <div *ngSwitchDefault>Cor não encontrada</div>
+   </div>
+</div>
+
+<div class="container">
+   <h1>*ngFor</h1>
+
+   <div *ngFor="let item of ngForValues">
+      <p>{{item.nome}} - {{item.idade}}</p>
+   </div>
+
+</div>

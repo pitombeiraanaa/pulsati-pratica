@@ -1,0 +1,7 @@
+<input (keyup)="changeAltura($event)" type="text" placeholder="Digite sua altura">
+<input (keyup)="changePeso($event)" type="text" placeholder="Digite seu peso">
+<button (click)="calcularImc()">Calcular</button>
+
+<h1>Resultado: {{resultado}}</h1>
+
+<app-resultado [resultadoComponente]="resultado"></app-resultado>
